@@ -108,7 +108,6 @@ import { ControlAccessComponent } from './manageStation/controlAccess/control-ac
     NgxMaterialTimepickerModule,
     MatIconModule,
     
-    
   ],
   providers: [],
   bootstrap: [AppComponent],
