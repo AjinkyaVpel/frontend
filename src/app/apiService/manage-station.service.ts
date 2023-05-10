@@ -47,8 +47,9 @@ export class ManageStationService {
     )  //real station api
   }
   // delete station from list of station using stationId
-
+  // comment added
   deleteStationById(id: any) {
     return this.http.delete(`http://192.168.0.243:8096/manageStation/deleteStation?stationId=${id}`);
   }
 }
+
