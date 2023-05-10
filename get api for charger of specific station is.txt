@@ -1,0 +1,1 @@
+API Required parameter StationId : http://192.168.0.43:8081/vst1/manageStation/station 

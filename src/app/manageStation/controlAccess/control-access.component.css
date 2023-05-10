@@ -1,0 +1,206 @@
+.manage-station{
+    margin-top: 50px;
+}
+.control-access-section{
+    display: flex;
+    /* border: 1px solid black; */
+    margin-top: 30px;
+}
+.location-setting{
+    /* border: 1px solid black; */
+    width: 50%;
+    padding: 0px 40px;
+}
+.location-setting h2{
+    font-size: 23px;
+    color: rgb(26, 131, 167);
+}
+.location-name{
+    display: flex;
+    justify-content: center;
+}
+.location-name label{
+    font-size: 14px;
+}
+.control-access-button{
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    padding: 2px 5px;
+    margin: 0px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.control-access-button h5{
+    margin:2px 0px 0px 5px;
+    font-size: 14px;
+    color: rgb(26, 131, 167);
+}
+
+/* input */
+.location-info input{
+    padding: 8px 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(140, 190, 207);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: black;
+}
+.location-info input::placeholder{
+    font-size: 14px;
+    color: black;
+}
+/* checkbox CSS */
+.checkbox-section p {
+    margin: -12px 0px 0px 0px;
+}
+
+/* amenitites Section CSS */
+.location-amenities-active{
+    display: flex;
+}
+.location-amenitites{
+    /* border: 1px solid black; */
+    width: 45%;
+    padding: 5px 10px 0px 10px;
+    background-color: rgb(173, 213, 228);
+    border-radius: 10px;
+
+}
+.location-amenitites h3{
+    text-align: center;
+}
+.location-station-active{
+    /* border: 1px solid black; */
+    width: 44%;
+    padding: 20px;
+    align-items: center;
+    background-color: rgb(173, 213, 228);
+    border-radius: 10px;
+    
+}
+.location-station-active h4{
+    text-align: center;
+}
+
+/* station Button CSS */
+.station-button{
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    padding: 7px 7px;
+    margin: 20px 0px 10px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
+    background-color: rgb(224, 224, 224);
+}
+.station-button:hover{
+    color: rgb(26, 131, 167);
+}
+.station-button h5{
+    margin:2px 0px 0px 5px;
+    font-size: 14px;
+}
+
+
+/* Station Info CSS */
+.stationSetting{
+    width: 50%;
+    padding: 0px 40px;
+}
+.stationSetting-info h2{
+    font-size: 23px;
+    color: rgb(26, 131, 167);
+}
+.station-name{
+    display: flex;
+    justify-content: center;
+}
+.stationSetting-info input{
+    padding: 8px 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(140, 190, 207);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: black;
+}
+.stationSetting-info input::placeholder{
+    font-size: 14px;
+    color: black;
+}
+
+/* Station Type */
+.stationSetting-type{
+    display: flex;
+    margin-top: 10px;
+    background-color: rgb(140, 190, 207);
+    border-radius: 5px;
+    padding: 0px 7px;
+}
+.stationSetting-type h5{
+    font-size: 14px;
+    margin-top: 7px;
+}
+.stationSetting-type mat-slide-toggle{
+    margin-top: 7px;
+}
+
+/* Map and photo Station Setting CSS */
+.stationSetting-map-photo{
+    display: flex;
+    margin-top:20px;
+}
+.stationSetting-map{
+    width: 50%;
+    margin-right: 20px;
+    /* border: 1px solid black; */
+}
+.stationsetting-photo{
+    width: 50%;
+    /* border: 1px solid black; */
+}
+/* back to myStation button CSS */
+.myStation-back-button{
+    padding: 40px 40px;
+    /* border: 1px solid black; */
+}
+.myStation-back-button h4{
+    color: #4ba5d3;
+    font-size: 25px;
+    font-weight: bold;
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+}
+.back-button{
+    /* border: 1px solid black; */
+    margin: 30px 1000px 10px 0px;
+;
+}
+.back-button button{
+    display: flex;
+    align-items: center;
+
+    display: flex;
+    position: relative;
+    padding: 15px;
+    color: #4ba5d3;
+    border: 1px solid #4ba5d3;
+    border-radius: 7px;
+    cursor: pointer;
+    height: 2.1rem;
+
+    font-size: 20px;
+    margin-left: 115%;
+}
+.back-button button:hover{
+    color: #4ba5d3;
+    border: none;
+    background-color: black;
+}

@@ -1,0 +1,13 @@
+/* back to myStation button CSS */
+.myStation-back-button{
+    padding: 20px 20px;
+    /* border: 1px solid black; */
+}
+.myStation-back-button h4{
+    color: #4ba5d3;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+}

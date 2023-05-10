@@ -1,0 +1,78 @@
+<h1>Charger Settings</h1>
+<div class="edit-option">
+    <h4>Change Charger Setting </h4>
+    <mat-slide-toggle [(ngModel)]="isChecked"></mat-slide-toggle>
+</div>
+<div class="charger-setting-page">
+<form [formGroup]="chargerSetting" (ngSubmit)="updateChargerForm()">
+            <div mat-dialog-content>
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Charger Id </mat-label>
+                        <input matInput type="text" placeholder="Vaibhav" formControlName="chargerId"> 
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Charger Name</mat-label>
+                        <input matInput type="text" placeholder="wagh" formControlName="chargerName">
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Charger Input Voltage</mat-label>
+                        <input matInput type="text" placeholder="Vaibhav" formControlName="chargerInputVoltage"> 
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Charger Output Voltage</mat-label>
+                        <input matInput type="text" placeholder="wagh" formControlName="chargerOutputVoltage">
+                      </mat-form-field>
+                </div>
+            
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>chargerMinInputAmpere</mat-label>
+                        <input matInput type="text" placeholder="Vaibhav" formControlName="chargerMinInputAmpere"> 
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>chargerMaxInputAmpere</mat-label>
+                        <input matInput type="text" placeholder="wagh" formControlName="chargerMaxInputAmpere">
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>chargerOutputAmpere</mat-label>
+                        <input matInput type="text" placeholder="Vaibhav" formControlName="chargerOutputAmpere"> 
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>chargerInputFrequency</mat-label>
+                        <input matInput type="text" placeholder="wagh" formControlName="chargerInputFrequency">
+                      </mat-form-field>
+                </div>       
+                
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>chargerOutputFrequency</mat-label>
+                        <input matInput type="text" placeholder="Vaibhav" formControlName="chargerOutputFrequency"> 
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>chargerIPRating</mat-label>
+                        <input matInput type="text" placeholder="wagh" formControlName="chargerIPRating">
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>chargerMountType</mat-label>
+                        <input matInput type="text" placeholder="Vaibhav" formControlName="chargerMountType"> 
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Charger Serial Number</mat-label>
+                        <input matInput type="text" placeholder="wagh" formControlName="chargerSerialNumber">
+                      </mat-form-field>
+                </div> 
+            </div>
+            <div mat-dialog-actions class="action" *ngIf="isChecked">
+                <button mat-raised-button class="form-button" type="button" mat-dialog-close="false" (click)="closeUpdateCharger()">Cancel</button>
+                <button mat-raised-button class="form-button" type="submit">Update</button>
+            </div>
+</form>
+</div>
+
+<div>
+  <app-connectors></app-connectors>
+</div>
+
+
+

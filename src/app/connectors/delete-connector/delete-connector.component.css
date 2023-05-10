@@ -1,0 +1,20 @@
+.dialog-box{
+    width: 450px;
+    height: 150px;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+button{
+    color: black;
+    width: 100px;
+    height: 30px;
+    overflow: hidden;
+}
+.mat-raisd-button  {
+    display: table-cell;
+    max-width: 600px;
+    text-align: center;
+    
+  }

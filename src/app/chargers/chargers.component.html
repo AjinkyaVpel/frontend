@@ -1,0 +1,145 @@
+<h1>Charger List</h1>
+<h2 style="color: red;">{{errorMessage}}</h2>
+<!-- table header section for button and filters -->
+<div class="table-header-card tab-content">
+    <mat-card>
+        <mat-card-content>
+            <button mat-raised-button [matMenuTriggerFor]="bulkmenu">
+                <h5>Bulk</h5>
+                <mat-icon>expand_more</mat-icon>
+            </button>
+            <mat-menu #bulkmenu="matMenu" class="filter-charger">
+                <section class="filter-checkbox-section">
+                    <mat-checkbox>Start</mat-checkbox><br>
+                    <mat-checkbox>Stop</mat-checkbox><br>
+                    <mat-checkbox>Active</mat-checkbox><br>
+                    <mat-checkbox>Inactive</mat-checkbox>
+                  </section>
+                  <!--  filter-close-button-section -> filter-button-section,  filter-close-button -> filter-button -->
+                <div class="filter-button-section">  
+                    <button class="filter-button">Reset</button>  
+                    <span class="example-spacer"></span>
+                    <button class="filter-button">Apply</button>
+                </div>
+            </mat-menu>    
+            <span class="example-spacer"></span>
+            <button mat-raised-button [matMenuTriggerFor]="menu" >
+                <h5>Select Charging Station</h5>
+                <mat-icon>expand_more</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" class="filter-charger">
+                <section class="filter-checkbox-section">
+                    <mat-checkbox>Virtuoso</mat-checkbox><br>
+                    <mat-checkbox>Seasons Mall</mat-checkbox><br>
+                    <mat-checkbox>World Trade Center</mat-checkbox>
+                  </section>
+                <div class="filter-button-section">
+                    <button class="filter-button">Close</button>
+                </div>
+            </mat-menu>    
+            <input placeholder="Search" class="searchbar" >
+        </mat-card-content>
+    </mat-card> 
+</div>
+
+<h4 class="charging-station-heading" >Charging Station: </h4>
+<div class="table-header-card tab-content">
+  <mat-card>
+      <mat-card-content>
+          <span class="example-spacer"></span>
+          <button mat-raised-button (click)="addChargerDialog()">
+              <mat-icon aria-hidden="false" aria-label="Example download icon" fontIcon="add"></mat-icon>
+              <h5>Add Charger</h5>
+          </button>
+      </mat-card-content>
+    </mat-card> 
+</div>
+<div class="table-content-card">
+    <mat-card>
+    <mat-card-content>
+        
+<!-- using mat-table for display list of charger list for particular station-->
+<table mat-table [dataSource]="dataSource" matSort>
+  
+  <ng-container matColumnDef="id" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="2"> Sr No </th>
+    <td mat-cell *matCellDef="let row; let i=index;"> {{i + 1}} </td>
+  </ng-container>
+  
+    <ng-container matColumnDef="chargerName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="2" >Charger </th> <!--(click)="openChargerList()"-->
+      <td mat-cell *matCellDef="let row" style="cursor: pointer;" (click)="openConnector(row.chargerId)"> {{row.chargerName}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="chargerserialNumber">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="2"> Charger Serial Number </th>
+      <td mat-cell *matCellDef="let row"> {{row.chargerSerialNumber}} </td>
+    </ng-container>
+
+    <!-- no of connectors -->
+    <ng-container matColumnDef="connectorStatus">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.colspan]="3">Connectors Status</th>
+    </ng-container>
+  
+    <!-- total column -->
+    <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header > Total</th>
+      <td mat-cell *matCellDef="let row" style="color:rgb(29, 147, 194); font-weight: bold;" > {{row.totalConnectors}} </td>
+    </ng-container>
+  
+    <!-- available column -->
+    <ng-container matColumnDef="activeConnector">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header > Active </th>
+      <td mat-cell *matCellDef="let row" style="color: green; font-weight: bold;"> {{row.activeConnectors}} </td>
+    </ng-container>
+  
+    <!-- inuse column -->
+    <ng-container matColumnDef="inactiveConnector">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header > Inactive </th>
+      <td mat-cell *matCellDef="let row" style="color: orangered; font-weight: bold;"> {{row.inactiveConnectors}} </td>
+    </ng-container>
+  
+  
+    <ng-container matColumnDef="chargerStatus">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="2">Charger Status </th>
+      <td mat-cell *matCellDef="let row" [ngStyle]="{'color': row.active == true ? 'green' : 'red' }" class="station-status"> {{row.active}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="menu">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header  class="menu-col"></th>
+        <td mat-cell *matCellDef="let row">
+            <mat-icon class="vertical-menu-icon" [matMenuTriggerFor]="dotmenu">more_vert</mat-icon>
+            <mat-menu #dotmenu="matMenu" class="chargingStation-threeDot-Menu">
+                &nbsp;&nbsp;<mat-slide-toggle>Stop-Start</mat-slide-toggle>&nbsp;<br>
+                &nbsp;&nbsp;<mat-slide-toggle >Inactive-Active</mat-slide-toggle>&nbsp;&nbsp;&nbsp;
+                <div class="delete-station" (click)="onRemove(row.chargerId)">
+                  <mat-icon aria-hidden="false"  fontIcon="delete"></mat-icon>
+                   <h4>Delete Charger</h4>
+                   </div>
+                <div class="myStation-menu-setting" (click)="openChargerSetting(row)">
+                  <mat-icon>settings</mat-icon>
+                  <h4>Setting</h4>
+              </div>
+            </mat-menu> 
+        </td>
+    </ng-container>
+  
+  <tr mat-header-row *matHeaderRowDef="['id',  'chargerName', 'chargerserialNumber','connectorStatus','chargerStatus']"></tr> <!-- display these column in the 1st row -->
+ <tr mat-header-row *matHeaderRowDef="['total','activeConnector','inactiveConnector']"></tr>    <!-- displaying these column in 2nd row -->
+  <tr mat-row *matRowDef="let row; columns: ['id', 'chargerName', 'chargerserialNumber','total','activeConnector','inactiveConnector','chargerStatus','menu']"></tr> <!--display value -->
+  
+  </table>
+  
+  <mat-paginator [pageSizeOptions]="[4]" aria-label="Select page of users"></mat-paginator>
+
+        </mat-card-content>
+    </mat-card>
+    
+    <div class="myStation-back-button">
+      <h4 routerLink="/manageStation">Back To My Station</h4>
+    </div>
+    
+    <div class="back-button">
+        <button routerLink="/dashboard">Back</button>
+    </div>
+</div>

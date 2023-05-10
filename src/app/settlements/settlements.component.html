@@ -1,0 +1,54 @@
+<h1>Settlement</h1>
+<div class="table-header-card tab-content">
+    <mat-card>
+        <mat-card-content>
+            <span class="example-spacer"></span>
+            <div class="search-dropdown" *ngIf="openSearch">
+                <input placeholder="Enter Transcation Id" class="searchbar" [matMenuTriggerFor]="menu"/>
+                <mat-menu #menu="matMenu" class="search-menu">
+                    <button mat-menu-item class="profile-dropdown-button">
+                        Starting Date
+                        <mat-datepicker-toggle matSuffix [for]="datepicker" class="filter-datepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #datepicker></mat-datepicker>
+                    </button>
+                    <button mat-menu-item class="profile-dropdown-button ">
+                        End Date
+                        <mat-datepicker-toggle matSuffix [for]="datepicker" class="filter-datepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #datepicker></mat-datepicker>
+                    </button>
+                    <section class="checkbox-section">
+                        <h4>Settlement Status</h4>
+                        <mat-checkbox>Completed</mat-checkbox><br>
+                        <mat-checkbox>Pending</mat-checkbox><br>
+                        <mat-checkbox>Rejected</mat-checkbox>
+                      </section>
+                    <div class="filter-search-menu-button">
+                        <div class="apply">
+                            <button class="filter-button">Apply</button>
+                        </div>
+                        <span class="example-spacer"></span>
+                        <div class="reset">
+                            <button class="filter-button">Reset</button>
+                        </div>
+                    </div>
+                </mat-menu>    
+            </div>
+            <button mat-raised-button (click)="openSearchBar()">
+                <mat-icon aria-hidden="false" aria-label="Example filter icon" fontIcon="filter"></mat-icon>
+                <h5>Filter</h5>
+            </button>
+            <button mat-raised-button >
+                <mat-icon aria-hidden="false" aria-label="Example download icon" fontIcon="download"></mat-icon>
+                <h5>Export</h5>
+            </button>
+            <button mat-raised-button >
+                <mat-icon aria-hidden="false" aria-label="Example print icon" fontIcon="print"></mat-icon>
+                <h5>Print</h5>
+            </button>
+        </mat-card-content>
+      </mat-card> 
+</div>       
+    
+<div class="back-button">
+        <button routerLink="/dashboard">Back</button>
+</div>

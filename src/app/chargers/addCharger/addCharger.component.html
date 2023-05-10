@@ -1,0 +1,145 @@
+<div mat-dialog-title>
+    <h2>Add Charger</h2>
+</div>
+
+<form [formGroup]="addStation" (ngSubmit)="onFormSubmit()"> <!--[formGroup]="empForm" (ngSubmit)="onFormSubmit()"-->
+    <div mat-dialog-content>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Chager Name</mat-label>
+                <input matInput type="text" placeholder="" formControlName="chargerName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Charger Number</mat-label>
+                <input matInput type="text" placeholder="Ex: 1" formControlName="chargerNumber">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Charger Input Voltage</mat-label>
+                <input matInput type="text" placeholder="Ex: 220V" formControlName="chargerInputVoltage">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Charger Output Voltage</mat-label>
+                <input matInput type="text" placeholder="Ex: 12V" formControlName="chargerOutputVoltage">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>ChargerOutputAmpere</mat-label>
+                <input matInput type="text" placeholder="Ex: 50A" formControlName="chargerOutputAmpere">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>ChargerMaxInputAmpere</mat-label>
+                <input matInput type="text" placeholder="Ex: 20A" formControlName="chargerMaxInputAmpere">
+            </mat-form-field>
+
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Charger Input Frequency</mat-label>
+                <input matInput type="text" placeholder="Ex: 50Hz" formControlName="chargerInputFrequency">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Charger Output Frequency</mat-label>
+                <input matInput type="text" placeholder="Ex:90Hz" formControlName="chargerOutputFrequency">
+            </mat-form-field>
+        </div>
+        
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Charger IP Rating</mat-label>
+                <input matInput type="text" placeholder="Ex: IP67" formControlName="chargerIpRating">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Charger Mount Type</mat-label>
+                <input matInput type="text" placeholder="Ex: wall mounted" formControlName="chargerMountType">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>ChargerNumberOfConnector</mat-label>
+                <input matInput type="text" placeholder="Ex: 1" formControlName="chargerNumberOfConnector">
+            </mat-form-field>
+            
+
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="isRFID">
+                <mat-label><b>isRFID</b></mat-label>
+                <mat-radio-button value="Available">Yes</mat-radio-button>
+                <mat-radio-button value="Unavailable">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Charger Serial Number</mat-label>
+                <input matInput type="text" placeholder="Ex: CHG1234" formControlName="chargerSerialNumber">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Charger OCPP Protocol</mat-label>
+                <input matInput type="text" placeholder="Ex: Modbus" formControlName="chargerOcppProtocol">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Charger Type</mat-label>
+                <input matInput type="text" placeholder="Ex: Type1" formControlName="chargerConnectorType">
+            </mat-form-field>
+           
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="isAppSupport">
+                <mat-label><b>isAppSupport</b></mat-label>
+                <mat-radio-button value="Available">Yes</mat-radio-button>
+                <mat-radio-button value="Unavailable">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="isTBCutOff">
+                <mat-label><b>isTBCutOff</b></mat-label>
+                <mat-radio-button value="Available">Yes</mat-radio-button>
+                <mat-radio-button value="Unavailable">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="isAntitheft">
+                <mat-label><b>isAntitheft</b></mat-label>
+                <mat-radio-button value="Available">Yes</mat-radio-button>
+                <mat-radio-button value="Unavailable">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="isLEDDisplay">
+                <mat-label><b>isLEDDisplay</b></mat-label>
+                <mat-radio-button value="Available">Yes</mat-radio-button>
+                <mat-radio-button value="Unavailable">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="isLEDIndications">
+                <mat-label><b>isLEDIndications</b></mat-label>
+                <mat-radio-button value="Available">Yes</mat-radio-button>
+                <mat-radio-button value="Unavailable">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="isSmart">
+                <mat-label><b>isSmart</b></mat-label>
+                <mat-radio-button value="Available">Yes</mat-radio-button>
+                <mat-radio-button value="Unavailable">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+    </div>
+
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button class="form-button" type="button" mat-dialog-close="false">Cancel</button>
+        <button mat-raised-button class="form-button" type="submit">Submit</button>
+    </div>
+
+</form>
+

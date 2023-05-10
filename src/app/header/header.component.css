@@ -1,0 +1,76 @@
+.head{
+    width:calc(100% - 5rem);
+    margin-left: 5rem;
+    z-index: 2;
+    transition: all 0.3s ease;
+    background-color: rgb(32, 32, 32);
+    padding: 0.4rem 2rem 0.4rem 1.5rem;
+    border-radius: 0rem 0rem 0.5rem 0.5rem;
+
+    position:fixed;
+    top: 0;
+}
+.head-trimmed{
+    width: calc(100% - 16.5625rem);
+    margin-left:16.5rem;
+}
+.head-md-screen{
+    width: calc(100% -5rem);
+    margin-left: 5rem;
+}
+
+.header-content{
+    display:flex;
+}
+.header-content img{
+    height: 60px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.nav-profile{
+    display:flex;
+    color: white;
+}
+.nav-profile img{
+    height: 60px;
+    width: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+}
+mat-toolbar{
+    background-color: rgb(32, 32, 32) ;
+}
+.profile-menu-button{
+    background-color: rgb(32, 32, 32) ;
+    color: rgb(26, 131, 167);
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.profile-menu-button span{
+    margin-left:5px;
+    margin-top: -10px;
+}
+.profile-menu-button mat-icon{
+    color: rgb(88, 171, 199);
+    padding-top: 5px;
+}
+.profile-dropdown-button:hover{
+    background-color: rgb(148, 184, 196);
+    border-radius: 8px;
+}
+
+/* notification icon in navbar CSS */
+.notification-icon mat-icon{
+    margin-right: 30px;
+    cursor: pointer;
+    color: rgb(219, 219, 219);
+}
+.notification-icon mat-icon:hover{
+    color:rgb(26, 131, 167)
+}
+
+

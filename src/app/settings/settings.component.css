@@ -1,0 +1,35 @@
+/* profile page middle section css */
+.infomation-display-format{
+    display:flex;
+    font-size: 19px;
+    padding: 0px 10px;
+    margin: 90px 20px 70px 20px;
+}
+.div1{
+    text-align: left;
+    justify-content: left;
+    padding: 10px 50px;
+}
+.div2{
+    padding: 10px 0px;
+    margin-left: 20px;
+}
+.ans-title{
+    padding: 4px 20px;
+    color: black;
+    background-color: #91b9ce;
+    border-radius: 5px;
+}
+
+/* Two way authenication CSS */
+.accountSetting-auth-section{
+    display: flex;
+    padding-left: 60px;
+    margin: 10px 20px;
+}
+.accountSetting-auth-section h4{
+    font-size: 19px;
+}
+.accountSetting-auth-section mat-slide-toggle{
+    margin-left: 450px;
+}

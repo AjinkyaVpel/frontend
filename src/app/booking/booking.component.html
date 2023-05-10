@@ -1,0 +1,44 @@
+<h1>My Booking</h1>
+<div class="rfids-content">
+    <div class="table-header-card tab-content">
+        <!-- card for filter button -->
+        <mat-card>
+            <mat-card-content>
+                <!-- <h3>Booking</h3> -->
+                <span class="example-spacer"></span>
+                <button mat-raised-button (click)="openSearchBar()" *ngIf="!openSearch">
+                    <!-- <mat-icon aria-hidden="false" aria-label="Example search icon" fontIcon="">filter</mat-icon> -->
+                    <i style="font-size:24px" class="fa">&#xf0b0;</i>
+                    <h5>Filter</h5>
+                </button>
+                <div class="search-dropdown" *ngIf="openSearch">
+                    <input placeholder="Search " class="searchbar" [matMenuTriggerFor]="menu"/>
+                        <mat-menu #menu="matMenu" class="search-menu">
+                            <button mat-menu-item class="profile-dropdown-button">Booking Id</button>
+                            <button mat-menu-item class="profile-dropdown-button">
+                                Date
+                                <span class="example-spacer"></span>
+                                <mat-datepicker-toggle matSuffix [for]="datepicker" class="filter-datepicker"></mat-datepicker-toggle>
+                                <mat-datepicker #datepicker></mat-datepicker>
+                            </button>
+                            <div class="filter-search-menu-button">
+                                <div class="close">
+                                    <button class="filter-button">close</button>
+                                </div>
+                                <span class="example-spacer"></span>
+                                <div class="search">
+                                    <button class="filter-button">search</button>
+                                </div>
+                            </div>
+                        </mat-menu>                    
+                </div>
+            </mat-card-content>
+        </mat-card> 
+    </div>
+<!-- booking table  -->
+
+
+    <div class="back-button">
+        <button routerLink="/dashboard">Back</button>
+    </div>
+</div>

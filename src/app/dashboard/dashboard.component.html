@@ -1,0 +1,226 @@
+<h1>Dash<span>board</span></h1>
+<div class="dashboard">
+    <div class="dashboard-groups">
+        <!-- commenting for git practice  -->
+        <!-- grouping all tabs which are created -->
+        <mat-tab-group animationDuration="1000ms">
+            
+            <!--1st tab:- Overview tabs -->
+            <mat-tab label="Overview">
+                <div class="tab-content">
+<button class="danger" (click)="displayCard=false">Hide button</button>
+<button (click)="displayCard=true">Show button</button>
+
+                    <!-- 1st section for 5 mat-cards (including chart card) -->
+                    <div *ngIf="displayCard" class="grid-container cards-collection-container">
+
+                        <!-- charging session (1st row 1st column) -->
+                        <mat-card class="dashboard-overview-card">
+                            <mat-card-header>
+                                <mat-card-title>Charging Session</mat-card-title>
+                                <mat-card-subtitle>6</mat-card-subtitle>
+                            </mat-card-header>
+                            <mat-card-actions align="end">
+                            </mat-card-actions>
+                        </mat-card>
+                          
+                        <!-- total devices (1st row  2nd column) -->
+                        <mat-card class="dashboard-overview-card">
+                            <mat-card-header>
+                                <mat-card-title>Total Devices</mat-card-title>
+                                <mat-card-subtitle>100</mat-card-subtitle>
+                            </mat-card-header>
+                            <mat-card-actions align="end">
+                            </mat-card-actions>
+                        </mat-card>
+                              
+                        <!-- chart container card -->
+                        <div class="chart-container ">
+                            <h2>Charts</h2>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/India_religion_pie_graph.svg/1200px-India_religion_pie_graph.svg.png"
+                                alt="chart image" class="piechart-image" />
+                        </div>
+                         
+                        <!-- Total revenue card (2nd row 1st column) -->
+                        <mat-card class="dashboard-overview-card">
+                            <mat-card-header>
+                                <mat-card-title>Total Revenue</mat-card-title>
+                                <mat-card-subtitle>930.80 </mat-card-subtitle>
+                            </mat-card-header>
+                            <mat-card-actions align="end">
+                            </mat-card-actions>
+                        </mat-card>
+              
+                        <!-- Total Energy card (2nd row 2nd column) -->
+                        <mat-card class="dashboard-overview-card">
+                            <mat-card-header>
+                                <mat-card-title>Total Energy Delivered</mat-card-title>
+                                <mat-card-subtitle>0 kWh</mat-card-subtitle>
+                            </mat-card-header>
+                            <mat-card-actions align="end">
+                            </mat-card-actions>
+                        </mat-card>
+                    </div>
+                    
+                    <!--2nd section Map and graph section  -->
+                    <div class="graph-container">
+                        <mat-card class="dashboard-overview-card">
+                            <mat-card-header>
+                                <mat-card-title>Revenue</mat-card-title>
+                                <mat-card-subtitle></mat-card-subtitle>
+                            </mat-card-header>
+                            <mat-card-actions align="end">
+                                <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+                                <img src="https://www.slideteam.net/media/catalog/product/cache/1280x720/l/i/line_chart_showing_monthly_revenue_trend_of_company_for_2_years_slide01.jpg"
+                                    alt="graph" style="height: 20rem;width: 33rem;">
+                            </mat-card-actions>
+                        </mat-card>
+                        <mat-card class="dashboard-overview-card">
+                            <mat-card-header>
+                                <mat-card-title>Charger Status</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-actions>
+                                <img src="https://i.stack.imgur.com/DqOxB.png" alt="charger status"
+                                    style="height: 20rem;width: 33rem;" />
+                            </mat-card-actions>
+                        </mat-card>
+                    </div>
+
+                    <!-- 3rd section for earning and booking  -->
+                    <div class="earning-booking-container">
+                        <mat-card class="dashboard-overview-card">
+                            <mat-card-header>
+                                <mat-card-title>Earnings</mat-card-title>
+                                <mat-card-subtitle></mat-card-subtitle>
+                            </mat-card-header>
+                            <mat-card-actions align="end">
+                                <div class="infomation-display-format">
+                                    <div class="left-label">
+                                        <label for="name" class="left-label-title">January</label><br><br>
+                                        <label for="avatar" class="left-label-title">February</label><br><br>
+                                        <label for="name" class="left-label-title">March</label><br><br>
+                                        <label for="name" class="left-label-title">April</label>
+                                    </div>
+                                    <div class="right-label">
+                                        <label for="name" class="ans-title">Rs. 9000</label><br><br>
+                                        <label for="name" class="ans-title">Rs. 10,000</label><br><br>
+                                        <label for="name" class="ans-title">Rs. 11,000</label><br><br>
+                                        <label for="name" class="ans-title">Rs. 11,000</label>
+                                    </div>
+                                </div>
+                            </mat-card-actions>
+                        </mat-card>
+                        <mat-card class="dashboard-overview-card">
+                            <mat-card-header>
+                                <mat-card-title>Booking</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-actions class="booking-card-container">
+                                <!-- <div class="booking-card-data"> -->
+                                <div class="infomation-display-format">
+                                    <div class="left-label">
+                                        <label for="name" class="left-label-title">January</label><br><br>
+                                        <label for="avatar" class="left-label-title">February</label><br><br>
+                                        <label for="name" class="left-label-title">March</label><br><br>
+                                        <label for="name" class="left-label-title">April</label>
+                                    </div>
+                                    <div class="right-label">
+                                        <label for="name" class="ans-title">100</label><br><br>
+                                        <label for="name" class="ans-title">110</label><br><br>
+                                        <label for="name" class="ans-title">120</label><br><br>
+                                        <label for="name" class="ans-title">140</label>
+                                    </div>
+                                </div>
+                                <!-- </div> -->
+                            </mat-card-actions>
+                        </mat-card>
+                        <div class="booking-card-calender">
+                            <mat-radio-group [(ngModel)]="selectedOption">
+                                <mat-radio-button value="daily">Daily</mat-radio-button>
+                                <mat-radio-button value="monthly">Monthly</mat-radio-button>
+                            </mat-radio-group>
+                            <br>
+
+                            <mat-card class="booking-calendar" *ngIf="selectedOption === 'daily'">
+                                <mat-calendar></mat-calendar>
+                            </mat-card>
+
+                            <ng-container *ngIf="selectedOption === 'monthly'">
+                                <mat-form-field>
+                                    <mat-label>Month</mat-label>
+                                    <mat-select>
+                                        <mat-option *ngFor="let month of months" [value]="month">{{ month
+                                            }}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </ng-container>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </mat-tab>
+
+            <!--2nd tab:- Location tabs -->
+            <mat-tab label="Location">
+                <div class="table-header-card tab-content">
+                    <mat-card>
+                        <mat-card-content>
+                            <h3>Location</h3>
+                            <span class="example-spacer"></span>
+                            <button mat-raised-button>
+                                <mat-icon aria-hidden="false" aria-label="Example add icon" fontIcon="add"></mat-icon>
+                                <h5>Add</h5>
+                            </button>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <!-- <div class="table-content-card">
+                    <mat-card>
+                        <mat-card-content>
+                            <table mat-table >
+                                <tr>
+                                    <th>Sr no</th>
+                                    <th>Address</th>
+                                    <th>City</th>
+                                    <th>Enabled</th>
+                                    <th>Actions</th>
+                                  </tr>
+                                  <tr>
+                                    <td>1</td>
+                                    <td>Dwarka</td>
+                                    <td>
+                                        <div>
+                                        <mat-select name="status" id="of">
+                                        <mat-option value="one">Pune</mat-option>
+                                        <mat-option value="two" selected>Nashik</mat-option>
+                                        <mat-option value="three">Mumbai</mat-option>
+                                        <mat-option value="four">Delhi</mat-option>
+                                        </mat-select>
+                                        </div>
+                                    </td>
+                                    <td><mat-slide-toggle></mat-slide-toggle></td>
+                                    <td class="table-button">
+                                        <button mat-raised-button >
+                                            <mat-icon aria-hidden="false" aria-label="Example details icon" fontIcon="details"></mat-icon>
+                                        </button>
+                                        <button mat-raised-button >
+                                            <mat-icon aria-hidden="false" aria-label="Example edit icon" fontIcon="edit"></mat-icon>
+                                        </button>
+                                        <button mat-raised-button >
+                                            <mat-icon aria-hidden="false" aria-label="Example detele icon" fontIcon="delete"></mat-icon>
+                                        </button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                            </table>
+                        </mat-card-content>
+                    </mat-card>                      
+                </div> -->
+            </mat-tab>
+
+            <!--4th tab:- OCPP Logs tabs -->
+            <mat-tab label="OCPP Logs">OCPP Logs</mat-tab>
+        </mat-tab-group>
+    </div>
+
+</div>

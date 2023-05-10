@@ -1,0 +1,191 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+
+}
+/* Dashboard title */
+.ng-star-inserted h1{
+    margin-top: 2.5rem;
+    font-weight: bold;
+    font-size: 30px;
+    color: #3a83a8;
+}
+.ng-star-inserted span{
+    color:black;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* for space between two ends */
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+/* table cards CSS */
+/* table header content css */
+.table-header-card mat-card-content{
+    display: flex;
+    margin: -10px 10px;
+    align-items: center;
+}
+.table-header-card mat-card-content button{
+    display: flex;
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: rgb(26, 131, 167);
+    color: black;
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    height: 2.1rem;
+}
+.table-header-card mat-card-content button:hover{
+    color: rgb(26, 131, 167);
+    background-color: black;
+}
+/* for mat icons */
+.table-header-card mat-card-content button mat-icon{
+    font-size: 22px;
+}
+
+.table-header-card mat-card-content button h5{
+    font-size: 13px;
+    text-align: center;
+    margin-top: 2px;
+}
+
+
+/*table content header css  */
+table {
+    width: 100%;
+    
+}
+.table-content-card{
+    margin-top: 5px;
+    padding-bottom: 10px;
+}
+.table-content-card th{
+    text-align: center;
+    padding: 0px;
+    font-weight: bold;
+}
+
+.table-content-card td{
+    text-align: center;
+}
+
+/* searchbar CSS */
+.searchbar{
+    width: 13rem;
+    margin-right: 10px;
+    padding: 6px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid rgb(26, 131, 167);
+    text-align: center;
+}
+
+/* mat dropdown menu css */
+.mat-mdc-menu-content{
+    width: auto;
+    padding: 0px 20px;
+    
+}
+
+/* back button CSS */
+.back-button{
+    /* border: 1px solid black; */
+    margin: 20px 10px 10px 10px;
+}
+.back-button button{
+    display: flex;
+    align-items: center;
+
+    display: flex;
+    position: relative;
+    padding: 15px;
+    color: #4ba5d3;
+    border: 1px solid #4ba5d3;
+    border-radius: 7px;
+    cursor: pointer;
+    height: 2.1rem;
+
+    font-size: 20px;
+    margin-left: 43%;
+}
+.back-button button:hover{
+    color: #4ba5d3;
+    border: none;
+    background-color: black;
+}
+
+/*filter search menu button */
+.filter-search-menu-button{
+    padding: 10px 15px;
+    display: flex;
+}
+.filter-button{
+    padding: 3px 7px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+.filter-button:hover{
+    background-color: #4ba5d3;
+}
+.filter-datepicker{
+    position: absolute;
+    right:0%;
+    top:0%
+}
+
+/* vertical menu icon CSS */
+.vertical-menu-icon{
+    cursor: pointer;
+}
+/* myCharging station routing td CSS */
+.myCharging-station-routing-td{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+/* station page active or inactive status CSS (globally) */
+.station-status{
+    font-weight: bold;
+}
+
+/* setting button in menu dropdown CSS */
+.myStation-menu-setting{
+    display: flex;
+    padding: 12px 10px 0px 10px;
+    cursor: pointer;
+}
+.myStation-menu-setting h4{
+    margin-left: 18px;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+.delete-station{
+    display: flex;
+    padding: 12px 10px 0px 10px;
+    cursor: pointer;
+}
+.delete-station h4{
+    margin-left: 18px;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

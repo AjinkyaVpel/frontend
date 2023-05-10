@@ -1,0 +1,45 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed':'' ">
+
+    <!-- sidenav header container -->
+    <div class="sidenav-header-container">
+        <button class="logo" (click)="toggleCollapse()">A</button>
+        <div class="admin-text" *ngIf="collapsed">Admin</div>
+        <button class="sidenav-btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </button>
+    </div>
+
+    <!-- sidenav menu list -->
+    <div class="scrollwrap scrollwrap_delayed">
+        <ul class="sidenav-nav">
+            <li class="sidenav-nav-item" *ngFor="let data of navData"> <!--iterating data from nav-data.ts file
+                to display all the menu list which is routed and label in nav-data.ts file -->
+                
+                <!-- sidenav menu html for those components which are using sub-level menu (Ex:- setting in menu list)-->
+                <a class="sidenav-nav-link" (click)="handleClick(data)" *ngIf="data.items && data.items.length > 0"
+                    [ngClass]="getActiveClass(data)">
+                    <i class="sidenav-link-icon" [class]="data.icon"></i>
+                    <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
+                    <i *ngIf="data.items && collapsed" class="menu-collapse-icon"
+                        [ngClass]="!data.expanded ? 'fal fa-angle-right': 'fal fa-angle-down'"></i>
+                </a>
+                 
+                <!-- sidenav menu html for those components which are NOT using sub-level menu  -->
+                <a class="sidenav-nav-link" *ngIf="!data.items || (data.items && data.items.length === 0)"
+                    [routerLink]="[data.routeLink]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <i class="sidenav-link-icon" [class]="data.icon"></i>
+                    <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
+                </a>
+                
+                <!-- sidenav sub-level menu -->
+                <div *ngIf="collapsed && data.items && data.items.length > 0">
+                    <app-sublevel-menu [data]="data" [collapsed]="collapsed" [multiple]="multiple"
+                        [expanded]="data.expanded"></app-sublevel-menu>
+                </div>
+                
+            </li>
+        </ul>
+    </div>
+
+
+</div>

@@ -1,0 +1,145 @@
+.tab-content{
+    margin-top:15px;
+}
+.dashboard-groups{
+    margin-top: -10px;
+}
+mat-card-title{
+    font-size: 22px;
+}
+/*CSS for all the Dashboard cards*/
+.dashboard-overview-card{
+    align-items: center;
+    text-align: center;
+}
+
+
+/* 1st tab : overview CSS started*/
+.cards-collection-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.cards-collection-container mat-card{
+    padding: 10px 0px;
+    width: 18rem;
+    /* margin-left: 10px; */
+    height: 10rem;
+    cursor: pointer;
+    /* border-radius: 15px; */
+
+    /* for glass effects on cards */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.cards-collection-container mat-card:hover{
+    background-color: lightblue;
+}
+.cards-collection-container mat-card-subtitle{
+    margin-top: 28px;
+    font-size: 32px;
+    color: rgb(26, 131, 167);
+}
+
+/* grid css for 5 cards  */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 2px;
+    grid-row-gap: 11px;
+    padding: 0px 20px;
+}
+.chart-container{
+    /* used for expanding the grid for  2 rows */
+    grid-row-start: 1;     
+    grid-row-end: span 2;
+    grid-column-start: 3;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    /* glass effect CSS */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.chart-container h2{
+    font-size: 20px;
+}
+/* pie chart image (going to remove once the pie chart is inserted)*/
+.piechart-image{
+    height: 14rem;
+    width: 18rem;
+}
+
+
+/* map-graph container CSS */
+.graph-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+.graph-container mat-card{
+    margin-right: 10px;
+    width: 34rem;
+    border-radius: 15px;
+}
+
+/* earning booking container css */
+.earning-booking-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Earning Css picked from the profile component ------------ */
+.infomation-display-format{
+    display:flex;
+    justify-content: space-evenly;
+    font-size: 19px;
+}
+
+/* left side label CSS  */
+.left-label-title{
+    color: rgb(73, 153, 180);
+    font-weight: bold;
+}
+.left-label{
+    /* border: 1px solid black; */
+    text-align: left;
+    margin-right: 70px;
+    padding: 5px 10px;
+
+}
+.right-label{
+    /* border: 1px solid black; */
+    text-align: left;
+    margin-left: 23px;
+    padding: 5px 10px;
+ 
+}
+/* ---------------------------------------------- */
+
+/* css for booking calender  */
+.booking-card-calender{
+    width: 20rem;
+    padding: 10px 20px;
+    
+}
+
+/* dasboard booking calender CSS */
+.booking-calendar{
+    width: 210px;
+    height: 255px;
+}

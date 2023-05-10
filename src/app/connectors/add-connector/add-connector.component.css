@@ -1,0 +1,39 @@
+.form-heading{
+    margin-left: 25px;
+}
+.row{
+    display: flex;
+    gap:10px;
+}
+mat-form-field{
+    width:100%;
+}
+mat-form-field mat-label{
+    color: black;
+    font-style: normal;
+}
+.action{
+    margin-bottom: 5px;
+    justify-content: center;
+}
+#button{
+    flex:1;
+}
+
+.form-button{
+    display: flex;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: rgb(26, 131, 167);
+    align-items: center;
+    color: black;
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    height: 2.1rem;
+}
+.form-button:hover{
+    color: rgb(26, 131, 167);
+    background-color: black;
+}

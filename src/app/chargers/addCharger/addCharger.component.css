@@ -1,0 +1,47 @@
+.mdc-dialog__title{
+    padding: 0px 24px 0px 24px;
+}
+.content{
+    padding-top:10px;
+}
+.row{
+    display: flex;
+    gap:10px;
+}
+mat-form-field{
+    width:100%;
+}
+mat-form-field input::placeholder{
+    color: black;
+}
+.action{
+    margin-bottom: 5px;
+    justify-content: center;
+}
+#button{
+    flex:1;
+}
+
+.form-button{
+    display: flex;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: rgb(26, 131, 167);
+    align-items: center;
+    color: black;
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    height: 2.1rem;
+}
+.form-button:hover{
+    color: rgb(26, 131, 167);
+    background-color: black;
+}
+
+/* snackbar CSS */
+.snack-bar{
+    background: antiquewhite;
+    color: black;
+}

@@ -1,0 +1,50 @@
+/* security section CSS */
+.securitySetting-section{
+    padding: 20px 60px;
+}
+/* security section heading CSS */
+.securitySetting-section h2{
+    font-size: 24px;
+}
+
+/* password form CSS */
+.password-form{
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+.password-form label{
+    font-size: 16px;
+}
+.password-form input{
+    width: 300px;
+    padding: 10px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: black;
+    background-color: #91b9ce;
+    border-radius: 5px;
+    border: none;
+}
+.password-form input ::placeholder{
+    color: black;
+    font-size: 18px;
+}
+
+/* footer button CSS */
+.footer-button{
+    display: flex;
+    padding: 20px 8px 0px 8px;
+
+}
+.footer-button button{
+    padding: 10px 15px;
+    color: #4ba5d3;
+    border: 1px solid #4ba5d3;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.footer-button button:hover{
+    color: #4ba5d3;
+    border: none;
+    background-color: black;
+}
