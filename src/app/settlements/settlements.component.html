@@ -33,7 +33,7 @@
                     </div>
                 </mat-menu>    
             </div>
-            <button mat-raised-button (click)="openSearchBar()">
+            <button mat-raised-button >
                 <mat-icon aria-hidden="false" aria-label="Example filter icon" fontIcon="filter"></mat-icon>
                 <h5>Filter</h5>
             </button>
@@ -47,7 +47,55 @@
             </button>
         </mat-card-content>
       </mat-card> 
-</div>       
+      
+      
+<div class="table-content-card">
+    <mat-card>
+    <mat-card-content>
+        
+<!-- using mat-table for display list of charger list for particular station-->
+<table mat-table  matSort>
+  
+    <ng-container matColumnDef="srNo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1" >Sr.No </th> <!--(click)="openChargerList()"-->
+      <td mat-cell *matCellDef="let row" style="cursor: pointer;"> {{row.connectorNumber}} </td>
+    </ng-container>
+            
+    <ng-container matColumnDef="settlementId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1"> Settelment Id </th>
+      <td mat-cell *matCellDef="let row"> {{row.connectorType}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1"> Amount </th>
+        <td mat-cell *matCellDef="let row"> {{row.connectorSocket}} </td>
+      </ng-container>
+    
+    <ng-container matColumnDef="settlementStatus">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1">UTR No </th>
+      <td mat-cell *matCellDef="let row" [ngStyle]="{'color': row.connectorStatus === 'Connected' ? 'green' : 'red' }" class="station-status"> {{row.connectorStatus}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="paymentDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1">payment Date </th>
+        <td mat-cell *matCellDef="let row"> {{row.connectorOutputPower}} </td>
+      </ng-container>
+         
+    <ng-container matColumnDef="utrNo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header  class="menu-col">Settelment Status</th>
+        
+    </ng-container>
+  
+  <tr mat-header-row *matHeaderRowDef="[ 'srNo', 'settlementId','amount','settlementStatus','paymentDate','utrNo']"></tr> <!-- display these column in the 1st row -->
+  <tr mat-row *matRowDef="let row; columns: [ 'srNo', 'settlementId','amount','settlementStatus','paymentDate','utrNo']"></tr> <!--display value -->
+  
+  </table>
+  <mat-paginator [pageSizeOptions]="[4]" aria-label="Select page of users"></mat-paginator>
+  
+     </mat-card-content>
+    </mat-card>
+   </div>
+      
     
 <div class="back-button">
         <button routerLink="/dashboard">Back</button>

@@ -52,7 +52,7 @@ import { DeleteConnectorComponent } from './connectors/delete-connector/delete-c
 import { AddConnectorComponent } from './connectors/add-connector/add-connector.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ControlAccessComponent } from './manageStation/controlAccess/control-access.component';
-
+import { SearchPipe } from './chargers/search.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +80,8 @@ import { ControlAccessComponent } from './manageStation/controlAccess/control-ac
     DeleteConnectorComponent,
     ControlAccessComponent,
     AddConnectorComponent,
+    SearchPipe,
+    
   ],
   imports: [
     BrowserModule,

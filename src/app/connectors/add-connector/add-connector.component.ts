@@ -48,20 +48,21 @@ export class AddConnectorComponent implements OnInit {
     
   }
 
-  // getConnectorDetails(sId:any,cId:any){
-  //   this.connectors.getConnector(sId,cId);
-  // }
+  //  getConnectorDetails(sId:any,cId:any){
+  //    this.connectors.getConnector(sId,cId);
+  //  }
 
   onFormSubmit(){
     if(this.data.connectorId){
-      this.connectors.updatingConnector(this.data.connectorId,this.addConnector.value).subscribe((result) =>{
+      this.connectors.updatingConnector(this.data.connectorId,this.addConnector.value, this.data.chargerId,this.data.stationId).subscribe((result) =>{
         console.warn(result);
       })
     }else{         
       this.connectors.addConnector(this.addConnector.value,this.stationId,this.chargerId);
       this.dialogRef.close(true);
-      // this.getConnectorDetails(this.stationId,this.chargerId);
+       //this.getConnectorDetails(this.stationId,this.chargerId);
     }
+    window.location.reload();
     
   }
 }

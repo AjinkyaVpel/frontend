@@ -1,6 +1,5 @@
 import { Connector } from "../connectors/connector";
 
-// import { Connector } from "./connector";
 export class Charger {
     chargerId!:string;
   chargerName!:string;

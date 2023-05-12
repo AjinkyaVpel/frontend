@@ -8,7 +8,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ChargerService } from '../apiService/charger.service';
 import { DeleteDialogComponent } from './deleteDialog/delete-dialog.component';
 import { AddChargerComponent } from './addCharger/addCharger.component';
-
 @Component({
   selector: 'app-chargers',
   templateUrl: './chargers.component.html',
@@ -21,7 +20,7 @@ export class ChargersComponent implements OnInit {
   selectedItem: any;
   errorMessage!:string;
   
-
+  
   constructor(private activeRoute:ActivatedRoute,private charger:ChargerService, private myStation:ChargerService,private route:Router, private dialog:MatDialog, private snackBar:MatSnackBar) {}
 
   displayedColumns: string[] = ['id', 'chargerName', 'chargerserialNumber','connectorStatus','total','activeConnector','inactiveconnector','chargerStatus', 'menu'];
@@ -29,7 +28,7 @@ export class ChargersComponent implements OnInit {
   totalConnectors: number = 0;
   activeConnectors: number = 0;
   inactiveConnectors: number = 0;
-
+                                 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -37,7 +36,6 @@ export class ChargersComponent implements OnInit {
     this.activeRoute.params.subscribe(params => {
       this.stationId =params['stationId'];    
       this.getChargerListById(this.stationId);      //to get the charger list of particular station using charger service
-
      })
   }
 
@@ -59,7 +57,7 @@ export class ChargersComponent implements OnInit {
         }));
         
       },
-      error: (err) => {
+      error: (err:any) => {
         this.openSnackBar(err.error.error.message)
         this.errorMessage=err.error.error.message;
       }
@@ -81,6 +79,7 @@ export class ChargersComponent implements OnInit {
         stationId: this.stationId,
       };
       this.dialog.open(AddChargerComponent,dialogRef)
+
     }
   
     
@@ -101,9 +100,6 @@ export class ChargersComponent implements OnInit {
       }
 
     });
-
-
-
 
     // listen to response
 
@@ -139,6 +135,11 @@ export class ChargersComponent implements OnInit {
       panelClass: ['warning']
       
     });
+  }
+  
+    applyFilter(event: Event) {
+      const filterValue = (event.target as HTMLInputElement).value;
+      this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   
 }
