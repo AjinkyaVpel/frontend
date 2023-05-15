@@ -10,7 +10,7 @@ export class BookingService {
 
   //get booking by hostid
   getBookingByHostId(hostId: string){   
-    return this.http.get(`http://192.168.0.41:8099/manageBooking/getBookingsByHost?hostId=${hostId}`);
+    return this.http.get(`http://192.168.0.243:8099/manageBooking/getBookingsByHost?hostId=${hostId}`);
   }
 
 }
