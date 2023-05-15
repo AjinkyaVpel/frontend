@@ -37,7 +37,8 @@
                     <button class="filter-button">Close</button>
                 </div>
             </mat-menu>    
-            <input placeholder="Search" class="searchbar" >
+            <input placeholder="Search"  class="searchbar" #input  (keyup)="applyFilter($event)" >
+            
         </mat-card-content>
     </mat-card> 
 </div>

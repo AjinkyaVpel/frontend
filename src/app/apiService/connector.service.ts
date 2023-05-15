@@ -31,8 +31,8 @@ export class ConnectorService {
   }
    
   // updating connnector data
-  updatingConnector(id:any,data:any){
-    return this.http.put(`${id}`,data)
+  updatingConnector(stationId:any,chargerId:any,connectorId:any, data:any){
+    return this.http.put(`http://192.168.0.243:8096/manageConnector/updateConnector=${stationId}&chargerId=${chargerId}&connectorId=${connectorId}`,data)
   }
   //Delete the connector by using connectorId
   deleteConnectorById(id:any){

@@ -35,7 +35,7 @@ export class ManageStationService {
     return this.http.get<Station>(`http://192.168.0.243:8096/manageStation/getStation?stationId=${id}`);
   }
 
-  //for adding the station in staionlist
+  //for adding the station in stationlist
   addStationToList(data: any) {
     return this.http.post('http://192.168.0.243:8096/manageStation/addStation', data).subscribe(
       (response) => {

@@ -84,6 +84,8 @@ export class AddChargerComponent {
       this.chargerService.addChargerToList(this.addStation.value, this.stationId);
       this.openSnackBar("Charger added successfully","Done")
       this.dialogRef.close(true);
+      window.location.reload();
+
   }
 
 }

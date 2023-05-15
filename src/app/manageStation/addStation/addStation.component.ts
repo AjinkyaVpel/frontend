@@ -73,7 +73,9 @@ export class AddStationComponent {
       this.manageStation.addStationToList(this.addStation.value);
       this.openSnackBar("Station added successfully","Done")
       this.dialogRef.close(true);
+      window.location.reload();
+
   }
-
-
+    
+   
 }

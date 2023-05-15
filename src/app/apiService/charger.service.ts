@@ -6,12 +6,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ChargerService {
+  
 
   constructor(private http:HttpClient) { }
 
   //get the complete list of charger bu passing the stationId
   getChargerAllList(stationId: any){    
     return this.http.get(`http://192.168.0.243:8096/manageCharger/getChargers?stationId=${stationId}`);
+    
   }
 
   // get the information of charger using chargerId
