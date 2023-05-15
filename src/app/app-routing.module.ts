@@ -4,7 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DownloadsComponent } from './downloads/downloads.component';
-import { BookingComponent, } from './booking/booking.component';
+import { BookingComponent } from './booking/booking.component';
 import { SettingModule } from './settings/setting.module';
 import { SettingsComponent } from './settings/settings.component';
 import { SettlementsComponent } from './settlements/settlements.component';
