@@ -33,10 +33,10 @@
                     </div>
                 </mat-menu>    
             </div>
-            <button mat-raised-button >
-                <mat-icon aria-hidden="false" aria-label="Example filter icon" fontIcon="filter"></mat-icon>
-                <h5>Filter</h5>
-            </button>
+            <mat-card-content >
+                
+             <input matInput placeholder="Search columns" class="searchbar" (keyup)="applyFilter($event)" #input >
+            </mat-card-content>
             <button mat-raised-button >
                 <mat-icon aria-hidden="false" aria-label="Example download icon" fontIcon="download"></mat-icon>
                 <h5>Export</h5>
@@ -47,52 +47,56 @@
             </button>
         </mat-card-content>
       </mat-card> 
-      
-      
+   
+     
+    
 <div class="table-content-card">
     <mat-card>
     <mat-card-content>
         
 <!-- using mat-table for display list of charger list for particular station-->
-<table mat-table  matSort>
+<table mat-table [dataSource]="dataSource"  matSort>
   
-    <ng-container matColumnDef="srNo">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1" >Sr.No </th> <!--(click)="openChargerList()"-->
-      <td mat-cell *matCellDef="let row" style="cursor: pointer;"> {{row.connectorNumber}} </td>
-    </ng-container>
-            
+    <ng-container matColumnDef="srNo" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="2"> Sr No </th>
+        <td mat-cell *matCellDef="let row; let i=index;"> {{i + 1}} </td>
+      </ng-container>
+
     <ng-container matColumnDef="settlementId">
       <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1"> Settelment Id </th>
-      <td mat-cell *matCellDef="let row"> {{row.connectorType}} </td>
+      <td mat-cell *matCellDef="let row"> {{row.settlementId}} </td>
     </ng-container>
     
-    <ng-container matColumnDef="amount">
+    <ng-container matColumnDef="settlementAmount">
         <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1"> Amount </th>
-        <td mat-cell *matCellDef="let row"> {{row.connectorSocket}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.settlementAmount}} </td>
       </ng-container>
     
     <ng-container matColumnDef="settlementStatus">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1">UTR No </th>
-      <td mat-cell *matCellDef="let row" [ngStyle]="{'color': row.connectorStatus === 'Connected' ? 'green' : 'red' }" class="station-status"> {{row.connectorStatus}} </td>
+    
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1">Settlement Status </th>
+      <td mat-cell *matCellDef="let row" [ngStyle]="{'color': row.settlementStatus === 'Connected' ? 'green' : 'red' }" class="station-status"> {{row.settlementStatus}} </td>
     </ng-container>
     
-    <ng-container matColumnDef="paymentDate">
+    <ng-container matColumnDef="settlementDate">
         <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1">payment Date </th>
-        <td mat-cell *matCellDef="let row"> {{row.connectorOutputPower}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.settlementDate}} </td>
       </ng-container>
          
-    <ng-container matColumnDef="utrNo">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header  class="menu-col">Settelment Status</th>
-        
-    </ng-container>
+      <ng-container matColumnDef="settlementUTR">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1">UTR NO </th>
+        <td mat-cell *matCellDef="let row"> {{row.settlementUTR}} </td>
+      </ng-container>
   
-  <tr mat-header-row *matHeaderRowDef="[ 'srNo', 'settlementId','amount','settlementStatus','paymentDate','utrNo']"></tr> <!-- display these column in the 1st row -->
-  <tr mat-row *matRowDef="let row; columns: [ 'srNo', 'settlementId','amount','settlementStatus','paymentDate','utrNo']"></tr> <!--display value -->
+  <tr mat-header-row *matHeaderRowDef="[ 'srNo', 'settlementId','settlementAmount','settlementStatus','settlementDate','settlementUTR']"></tr> <!-- display these column in the 1st row -->
+  <tr mat-row *matRowDef="let row; columns: [ 'srNo', 'settlementId','settlementAmount','settlementStatus','settlementDate','settlementUTR']"></tr> <!--display value -->
   
   </table>
-  <mat-paginator [pageSizeOptions]="[4]" aria-label="Select page of users"></mat-paginator>
   
      </mat-card-content>
+     
+  <mat-paginator [pageSizeOptions]="[4]" aria-label="Select page of users"></mat-paginator>
+  
     </mat-card>
    </div>
       
