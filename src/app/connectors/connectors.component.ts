@@ -61,7 +61,7 @@ export class ConnectorsComponent {
   }
 
   onUpdateConnector(data: any){
-    const dialogRef = this.dialog.open(ConnectorsComponent,{
+    const dialogRef = this.dialog.open(AddConnectorComponent,{
       data,
     })
 
@@ -128,9 +128,12 @@ export class ConnectorsComponent {
   
     this.dialog.open(AddConnectorComponent,dialogRef)
     this.getConnectorUsingIds(this.stationId,this.chargerId);
+
   }
 
   openConnectorSetting(id: any){
     this.route.navigate([`manageStation/chargers/${this.stationId}/connector/${this.chargerId}/connector-setting`,id])
+
   }
+  
 }

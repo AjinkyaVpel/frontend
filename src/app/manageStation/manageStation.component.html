@@ -5,6 +5,8 @@
     <mat-card>
         <mat-card-content>
             <span class="example-spacer"></span>
+            <input placeholder="Search"  class="searchbar" #input  (keyup)="applyfilter($event)" >
+
             <button mat-raised-button (click)="addStationDialog()">
                 <mat-icon aria-hidden="false" aria-label="Example download icon" fontIcon="add"></mat-icon>
                 <h5>Add</h5>
