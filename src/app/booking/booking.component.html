@@ -5,22 +5,29 @@
         <mat-card>
             <mat-card-content>
                 <!-- <h3>Booking</h3> -->
-                <span class="example-spacer"></span>
-                <button mat-raised-button (click)="openSearchBar()" *ngIf="!openSearch">
+                <input matInput placeholder="Search by" (keyup)="applyFilter($event)" #input>
+                <!-- <span class="example-spacer"></span>
+                <button mat-raised-button (click)="openSearchBar()" *ngIf="!openSearch"> -->
                     <!-- <mat-icon aria-hidden="false" aria-label="Example search icon" fontIcon="">filter</mat-icon> -->
-                    <i style="font-size:24px" class="fa">&#xf0b0;</i>
+                    <!-- <i style="font-size:24px" class="fa">&#xf0b0;</i>
                     <h5>Filter</h5>
-                </button>
-                <div class="search-dropdown" *ngIf="openSearch">
+                </button> -->
+                <!-- <div class="search-dropdown" *ngIf="openSearch">
                     <input placeholder="Search " class="searchbar" [matMenuTriggerFor]="menu"/>
                         <mat-menu #menu="matMenu" class="search-menu">
                             <button mat-menu-item class="profile-dropdown-button">Booking Id</button>
                             <button mat-menu-item class="profile-dropdown-button">
                                 Date
-                                <span class="example-spacer"></span>
+                                <mat-form-field>
+                                  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                  <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field> -->
+                                
+                                <!-- <span class="example-spacer"></span>
                                 <mat-datepicker-toggle matSuffix [for]="datepicker" class="filter-datepicker"></mat-datepicker-toggle>
-                                <mat-datepicker #datepicker></mat-datepicker>
-                            </button>
+                                <mat-datepicker #datepicker></mat-datepicker> -->
+                            <!-- </button>
                             <div class="filter-search-menu-button">
                                 <div class="close">
                                     <button class="filter-button">close</button>
@@ -31,13 +38,74 @@
                                 </div>
                             </div>
                         </mat-menu>                    
-                </div>
+                </div> -->
             </mat-card-content>
         </mat-card> 
     </div>
 <!-- booking table  -->
 
+<div class="table-content-card">
+  <mat-card>
+    <mat-card-content>
 
+<!-- creating new mat-table for datas -->
+<table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="hostId">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="2">Sr No. </th>
+          <td mat-cell *matCellDef="let row, let i=index"> {{ i+1 }} </td>
+        </ng-container>
+
+          <ng-container matColumnDef="stationName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="2">Station Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.stationName}} </td>
+          </ng-container>
+
+           <ng-container matColumnDef="chargerId">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="2">Charger Id </th>
+            <td mat-cell *matCellDef="let row"> {{row.chargerId}} </td>
+          </ng-container> 
+      
+        <ng-container matColumnDef="bookingSocket">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header >Booking Socket</th>
+          <td mat-cell *matCellDef="let row"> {{row.bookingSocket}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="bookingDate">
+          &nbsp;&nbsp;<th mat-header-cell *matHeaderCellDef mat-sort-header >Booking Date</th>
+            <td mat-cell *matCellDef="let row"> {{row.bookingDate|date:'mediumDate'}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="bookingTime">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header >Booking Time</th>
+            <td mat-cell *matCellDef="let row"> {{row.bookingTime}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="bookingCancellationReason">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header >Cancellation Reason</th>
+            <td mat-cell *matCellDef="let row"> {{row.bookingCancellationReason}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="bookingStatus">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header >Booking Status</th>
+            <td mat-cell *matCellDef="let row"> {{row.bookingStatus}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="bookingAmount">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header >Booking Amount</th>
+            <td mat-cell *matCellDef="let row"> {{row.bookingAmount}} </td>
+          </ng-container>
+           
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+      </table>
+      
+      <mat-paginator [pageSizeOptions]="[6]" aria-label="Select page of users"></mat-paginator>
+
+    </mat-card-content>
+  </mat-card>
+</div>
     <div class="back-button">
         <button routerLink="/dashboard">Back</button>
     </div>
