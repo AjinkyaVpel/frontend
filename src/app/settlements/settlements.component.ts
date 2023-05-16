@@ -6,6 +6,7 @@ import { SettlementService } from '../apiService/settlement.service';
 import { ActivatedRoute } from '@angular/router';
 import { Settlement } from './settlement';
 import { FormBuilder } from '@angular/forms';
+import { MatSelect } from '@angular/material/select';
 
 @Component({
   selector: 'app-settlements',
@@ -13,7 +14,7 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./settlements.component.css']
 })
 export class SettlementsComponent {
-  stationId:any
+  stationId:any;
   openSearch:boolean = false;
   completed:boolean = false;
   pending:boolean = false;
@@ -22,24 +23,21 @@ export class SettlementsComponent {
   settlementData!:Settlement[];
   hostId!:string;
   selectedStatus!: string;
+selectedValue !: string;
   constructor(private settlementApi:SettlementService,private route:ActivatedRoute, private formbuilder:FormBuilder){  }
   displayedColumns: string[] = [ 'srNo', 'settlementId','settlementAmount','settlementStatus','settlementDate', 'settlementUTR'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-   
+  @ViewChild(MatSelect)
+  select!: MatSelect;
   ngOnInit(): void {
    
     this.route.params.subscribe(params => {
       //const hostId = params['hostId'];
-      this.hostId="HST20230508154106920";
+      this.hostId="HST20230515152358259";
       this.getSettlementUsingId(this.hostId);
     });
-    this.dataSource.filterPredicate = (row, filter) => {
-      const status = filter as string;
-      return this.statusFilterPredicate(row, status);
-    };
-    
-    this.dataSource.filter = this.selectedStatus;
+   
    
 }
  
@@ -57,15 +55,16 @@ export class SettlementsComponent {
       this.dataSource.paginator = this.paginator;
    },
    error: (err) => {
-    console.log(err)
+    console.log(err);
   } })
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 }
-statusFilterPredicate(row: any, status: string): boolean {
-  return row.settlementStatus === status;
+applyFilters() {
+  const selectedValue = this.select.value;
+  this.dataSource.filter = selectedValue.trim().toLowerCase();
 }
 
 }

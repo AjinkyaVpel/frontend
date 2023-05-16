@@ -110,7 +110,6 @@ import { SearchPipe } from './chargers/search.pipe';
     NgxMaterialTimepickerModule,
     MatIconModule,
     
-    
   ],
   providers: [],
   bootstrap: [AppComponent],

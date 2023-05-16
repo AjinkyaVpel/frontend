@@ -3,7 +3,6 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { INavbarData } from './helper';
 import { navbarData } from './nav-data';
-
 interface SideNavToggle{
   screenWidth: number;
   collapsed:boolean;
@@ -35,6 +34,7 @@ export class SidenavComponent implements OnInit {
   screenWidth = 0;
   navData = navbarData;                 //accessing the data from nav-data.ts file where all the information is stored about the sidenav menu list
   multiple: boolean =false;
+  
 
   constructor(private router:Router) {}
 
@@ -44,16 +44,21 @@ export class SidenavComponent implements OnInit {
 
   // collapse and expansion of sidenav bar
   toggleCollapse(){
+  
     this.collapsed = !this.collapsed;
     this.onToggleSideNav.emit({collapsed: this.collapsed,screenWidth: this.screenWidth})
   }
 
   // to close the sidenav bar
   closeSidenav(){
+   
+
+
     this.collapsed = false;
     this.onToggleSideNav.emit({collapsed: this.collapsed,screenWidth: this.screenWidth})
   }
 
+  
   //handling click of sidenav menu list
   handleClick(item: INavbarData):void{
     if(!this.multiple){
@@ -70,4 +75,5 @@ export class SidenavComponent implements OnInit {
   getActiveClass(data: INavbarData):string{
     return this.router.url.includes(data.routeLink)? 'active' : '';
   }
+
 }
