@@ -3,8 +3,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { BookingService } from '../apiService/booking.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Booking } from './booking';
+import { MatSelect } from '@angular/material/select';
 
 @Component({
   selector: 'app-booking',
@@ -14,9 +15,12 @@ import { Booking } from './booking';
 export class BookingComponent implements OnInit {
   hostId!: string;
   bookingList!: Booking[];
+  selectedValue!:string;
+  selectedStatus!:string;
+ 
+  
 
-
-  constructor(private activeRoute: ActivatedRoute, private bookingApi: BookingService) { }
+  constructor(private router:Router,private activeRoute: ActivatedRoute, private bookingApi: BookingService) { }
   ngOnInit(): void {
     this.activeRoute.params.subscribe(params => {
       // this.hostId =params['hostId']; 
@@ -25,7 +29,7 @@ export class BookingComponent implements OnInit {
       this.getBookingByHostId(this.hostId);      //to get list of bookings by hostId
 
     })
-
+    
 
   }
   getBookingByHostId(hostId: string) {
@@ -47,10 +51,12 @@ export class BookingComponent implements OnInit {
   openSearch: boolean = false;
   displayedColumns: string[] = ['hostId','stationName', 'chargerId', 'bookingSocket', 'bookingDate', 'bookingTime', 'bookingCancellationReason', 'bookingStatus', 'bookingAmount'];
   dataSource!: MatTableDataSource<any>;
+ 
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-
+  @ViewChild(MatSelect)
+  select!: MatSelect;
   openSearchBar() {
     this.openSearch = true;
   }
@@ -59,6 +65,20 @@ export class BookingComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+ applyFilters(){
+  const selectedValue = this.select.value;  
+  this.dataSource.filter = selectedValue.trim().toLowerCase();
+ }
+
+ applyNewFilters(){
+  const selectedValue = this.select.value;  
+  this.dataSource.filter = this.selectedStatus.trim().toLowerCase();
+ }
+ 
+ onClickedStation(stationId: any) {                                //redirect to control access page by sending
+    this.router.navigate(['manageStation/controlAccess/', stationId]);  //the id of that specific station
+    
+  }                      
+
+
 }
-
-
