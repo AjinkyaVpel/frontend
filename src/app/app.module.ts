@@ -113,9 +113,6 @@ import * as _ from "lodash";
     NgxMaterialTimepickerModule,
     MatIconModule,
     
-    
-   
-    
   ],
   providers: [],
   bootstrap: [AppComponent],

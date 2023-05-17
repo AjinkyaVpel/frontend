@@ -18,7 +18,7 @@ export const navbarData:INavbarData[] = [                //array to store the li
     },
     {
         routeLink: 'booking',
-        icon: 'fas fa-book',
+        icon: 'fas fa-calendar-alt',
         label: 'Bookings'
     },
     {
@@ -28,7 +28,7 @@ export const navbarData:INavbarData[] = [                //array to store the li
     },
     {
         routeLink: 'settlements',
-        icon: 'fas fa-wallet',
+        icon: 'fas fa-file-invoice-dollar',
         label: 'Settlements'
     },
     {
@@ -62,7 +62,7 @@ export const navbarData:INavbarData[] = [                //array to store the li
     },
     {
         routeLink: 'support-status',
-        icon: 'fas  fa-users',
+        icon: 'fas fa-user-headset',
         label: 'Help & Support'
     }
 ];

@@ -74,8 +74,13 @@
     
     <ng-container matColumnDef="settlementStatus">
     
-      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1">Settlement Status </th>
-      <td mat-cell *matCellDef="let row" [ngStyle]="{'color': row.settlementStatus === 'Connected' ? 'green' : 'red' }" class="station-status"> {{row.settlementStatus}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1">Settlement Status<mat-select [(ngModel)]="selectedValue" (ngModelChange)="applyFilters()">
+        <mat-option value="">None</mat-option>
+        <mat-option value="pending"> Pending </mat-option>
+        <mat-option value="in Progress">In-Progress</mat-option>
+        <mat-option value="Completed">Completed</mat-option>
+      </mat-select></th>
+      <td mat-cell *matCellDef="let row" [ngStyle]="{'color': row.settlementStatus === 'completed' ? 'green' : 'red' }" class="station-status"> {{row.settlementStatus}} </td>
     </ng-container>
     
     <ng-container matColumnDef="settlementDate">

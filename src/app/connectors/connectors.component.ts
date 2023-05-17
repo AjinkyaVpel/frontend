@@ -17,7 +17,7 @@ export class ConnectorsComponent {
   stationId: any;
   chargerId: any;
   openForm:boolean = false;
-
+  connctorId:any
   displayedColumns: string[] = [ 'connectorNumber', 'connectorType','connectorSocket','connectorStatus','connectorOutputPower', 'menu'];
   dataSource!: MatTableDataSource<any>;
 
@@ -33,6 +33,7 @@ export class ConnectorsComponent {
         console.warn(this.stationId);
         console.warn(this.chargerId);
         this.getConnectorUsingIds(this.stationId,this.chargerId);
+       
   }
 
   getConnectorUsingIds(stationById: any,chargerById: any){
@@ -60,15 +61,16 @@ export class ConnectorsComponent {
     })
   }
 
-  onUpdateConnector(data: any){
+  onUpdateConnector(data:any){
     const dialogRef = this.dialog.open(AddConnectorComponent,{
       data,
+      
     })
 
     dialogRef.afterClosed().subscribe({
       next: (val:any) => {
         if(val){
-          this.getConnectorUsingIds(this.stationId,this.chargerId);
+          this.getConnectorUsingIds(this.stationId,this.chargerId,);
         }
       }
     })                     
