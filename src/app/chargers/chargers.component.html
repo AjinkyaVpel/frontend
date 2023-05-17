@@ -22,39 +22,16 @@
                     <button class="filter-button">Apply</button>
                 </div>
             </mat-menu>    
-            <span class="example-spacer"></span>
-            <button mat-raised-button [matMenuTriggerFor]="menu" >
-                <h5>Select Charging Station</h5>
-                <mat-icon>expand_more</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" class="filter-charger">
-                <section class="filter-checkbox-section">
-                    <mat-checkbox>Virtuoso</mat-checkbox><br>
-                    <mat-checkbox>Seasons Mall</mat-checkbox><br>
-                    <mat-checkbox>World Trade Center</mat-checkbox>
-                  </section>
-                <div class="filter-button-section">
-                    <button class="filter-button">Close</button>
-                </div>
-            </mat-menu>    
             <input placeholder="Search"  class="searchbar" #input  (keyup)="applyFilter($event)" >
-            
-        </mat-card-content>
-    </mat-card> 
-</div>
-
-<h4 class="charging-station-heading" >Charging Station: </h4>
-<div class="table-header-card tab-content">
-  <mat-card>
-      <mat-card-content>
-          <span class="example-spacer"></span>
-          <button mat-raised-button (click)="addChargerDialog()">
+            <button mat-raised-button (click)="addChargerDialog()">
               <mat-icon aria-hidden="false" aria-label="Example download icon" fontIcon="add"></mat-icon>
               <h5>Add Charger</h5>
           </button>
-      </mat-card-content>
+        </mat-card-content>
+    
     </mat-card> 
 </div>
+
 <div class="table-content-card">
     <mat-card>
     <mat-card-content>
