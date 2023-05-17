@@ -53,6 +53,9 @@ import { AddConnectorComponent } from './connectors/add-connector/add-connector.
 import { MatIconModule } from '@angular/material/icon';
 import { ControlAccessComponent } from './manageStation/controlAccess/control-access.component';
 import { SearchPipe } from './chargers/search.pipe';
+import * as _ from "lodash";
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -109,6 +112,9 @@ import { SearchPipe } from './chargers/search.pipe';
     MatSnackBarModule,
     NgxMaterialTimepickerModule,
     MatIconModule,
+    
+    
+   
     
   ],
   providers: [],
