@@ -17,7 +17,6 @@ export class ConnectorsComponent {
   stationId: any;
   chargerId: any;
   openForm:boolean = false;
-  connctorId:any
   displayedColumns: string[] = [ 'connectorNumber', 'connectorType','connectorSocket','connectorStatus','connectorOutputPower', 'menu'];
   dataSource!: MatTableDataSource<any>;
 
