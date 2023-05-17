@@ -36,7 +36,7 @@ constructor(private manageStation:ManageStationService,  private dialog:MatDialo
         this.dataSource.paginator = this.paginator;
 
         // count data of charger from database
-        this.dataSource.data = res.map((station: { chargers: any[]; }) => ({
+        this.dataSource.data = res.map((station:{ chargers: any[]; }) => ({
           ...station,
           totalNoOfChargers: station.chargers.length,
           availableChargers: station.chargers.filter((chargers: { active: boolean; }) => chargers.active == true).length,

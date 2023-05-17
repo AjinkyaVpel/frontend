@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
     
   ngOnInit(){
   }
-  displayHide(){
-    this.displayCard=false;
-  }
+  // displayHide(){
+  //   this.displayCard=false;
+  // }
 }
