@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ChargerService } from 'src/app/apiService/charger.service';
+import { Charger } from '../charger';
 
 @Component({
   selector: 'app-charger-setting',
@@ -16,6 +17,7 @@ export class ChargerSettingComponent {
   chargerData: any;
   chargerFormData: any;
   connector: any;
+  chargerUpdateData:Charger | undefined;
 
   constructor(private activeRoute: ActivatedRoute,private formbuilder:FormBuilder,private charger:ChargerService,) {
     this.chargerSetting = this.formbuilder.group({
@@ -58,8 +60,9 @@ export class ChargerSettingComponent {
   }
 
   updateChargerForm(){
-    this.charger.updateCharger(this.chargerId,this.chargerSetting.value).subscribe((result: any)=>{
-      console.warn(result);
+    this.charger.updateCharger(this.chargerId,this.stationId,this.chargerSetting.value).subscribe((result: any)=>{
+      console.log(result);
+      this.updateChargerForm=result;
       
     })
   }
