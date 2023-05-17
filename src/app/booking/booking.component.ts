@@ -2,7 +2,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { BookingService } from '../apiService/booking.service';
+import { BookingService } from 'src/app/apiService/booking.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Booking } from './booking';
 import { MatSelect } from '@angular/material/select';
