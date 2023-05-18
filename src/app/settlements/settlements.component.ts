@@ -34,7 +34,7 @@ selectedValue !: string;
    
     this.route.params.subscribe(params => {
       //const hostId = params['hostId'];
-      this.hostId="HST20230515152358259";
+      this.hostId="HST20230518045359411";
       this.getSettlementUsingId(this.hostId);
     });
    
