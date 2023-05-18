@@ -45,15 +45,13 @@ export class SidenavComponent implements OnInit {
   // collapse and expansion of sidenav bar
   toggleCollapse(){
   
-    this.collapsed = !this.collapsed;
+    this.collapsed = true;
+    // this.collapsed=!this.collapsed;
     this.onToggleSideNav.emit({collapsed: this.collapsed,screenWidth: this.screenWidth})
   }
 
   // to close the sidenav bar
   closeSidenav(){
-   
-
-
     this.collapsed = false;
     this.onToggleSideNav.emit({collapsed: this.collapsed,screenWidth: this.screenWidth})
   }
