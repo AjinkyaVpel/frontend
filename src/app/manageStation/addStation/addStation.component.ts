@@ -3,6 +3,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ManageStationService } from 'src/app/apiService/manage-station.service';
+import { Station } from '../station';
 
 @Component({
   selector: 'app-add-station',
@@ -11,6 +12,9 @@ import { ManageStationService } from 'src/app/apiService/manage-station.service'
 })
 export class AddStationComponent {
   addStation:FormGroup;
+  stationData:any;
+  submit:boolean=true;
+  update:boolean=false;
   amenities: Array<any> = [
     {name:'WiFi',value: 'WiFi' },
     {name:'Restaurants',value: 'Restaurants' },
@@ -52,8 +56,18 @@ export class AddStationComponent {
       stationParkingType: '',
       stationAmenity: this.formBuilder.array([])
     })
-  }
 
+
+  }
+  ngOnInit():void{
+    if(this.data.stationId){
+      this.update=true;
+      this.submit=false;
+    }
+  this.addStation.patchValue(this.data);  
+  
+ 
+}
   onCheckboxChange(event:any){
     const stationAmenity: FormArray = this.addStation.get('stationAmenity') as FormArray;
     if(event.target.checked){
@@ -69,12 +83,34 @@ export class AddStationComponent {
     });
   }
 
-  onFormSubmit() {
+  // onFormSubmit() {
+  //     this.manageStation.addStationToList(this.addStation.value);
+  //     this.openSnackBar("Station added successfully","Done")
+  //     this.dialogRef.close(true);
+  //     window.location.reload();
+
+  // }
+
+  getStationDetails(stationId:string){
+    this.stationData= this.manageStation.getStationById(stationId);
+  }
+
+
+
+  onFormSubmit(){
+    if(this.data.stationId){
+      this.manageStation.onEditStation(this.data.stationId,this.addStation.value,).subscribe((result) =>{
+        window.location.reload();
+      })
+    }else{         
       this.manageStation.addStationToList(this.addStation.value);
       this.openSnackBar("Station added successfully","Done")
       this.dialogRef.close(true);
+      this.manageStation.getStationById(this.data.stationId);
       window.location.reload();
-
+    }
+    window.location.reload();
+    
   }
     
    

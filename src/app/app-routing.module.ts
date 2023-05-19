@@ -16,6 +16,7 @@ import { ChargersComponent } from './chargers/chargers.component';
 import { ChargerSettingComponent } from './chargers/chargerSetting/charger-setting.component';
 import { ConnectorsComponent } from './connectors/connectors.component';
 import { ControlAccessComponent } from './manageStation/controlAccess/control-access.component';
+import { RestrictedAccessComponent } from './manageStation/restrictedAccess/restricted-access.component';
 
 const routes: Routes = [
   {
@@ -54,6 +55,14 @@ const routes: Routes = [
   {
     path: 'manageStation/controlAccess/:id',
     component: ControlAccessComponent
+  },
+  {
+    path:'manageStation/controlAccess/:stationId/addRestrictions',
+    component: RestrictedAccessComponent,
+  },
+  {
+    path: 'manageStation/restrictedAccess',
+    component: RestrictedAccessComponent
   },
   {
     path:'earnings',
