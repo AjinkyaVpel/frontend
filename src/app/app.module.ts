@@ -55,6 +55,8 @@ import { ControlAccessComponent } from './manageStation/controlAccess/control-ac
 import { SearchPipe } from './chargers/search.pipe';
 import * as CanvasJSAngularChart from '../assets/canvasjs.angular.component';
 import { LiveDataComponent } from './dashboard/live-data/live-data.component';
+import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
+import { MultiChartComponent } from './dashboard/multi-chart/multi-chart.component';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 @NgModule({
@@ -86,7 +88,9 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     AddConnectorComponent,
     SearchPipe,
     CanvasJSChart,
-    LiveDataComponent
+    LiveDataComponent,
+    PieChartComponent,
+    MultiChartComponent
   ],
   imports: [
     BrowserModule,
