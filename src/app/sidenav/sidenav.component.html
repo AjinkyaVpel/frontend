@@ -10,7 +10,7 @@
     </div>
     
     <!-- sidenav menu list -->
-    <div (click)="toggleCollapse()" class="scrollwrap scrollwrap_delayed">
+    <div (click)="toggleCollapse()" (mouseleave)="onMouseClick()"  class="scrollwrap scrollwrap_delayed">
         <ul class="sidenav-nav">
             <li class="sidenav-nav-item" *ngFor="let data of navData" > <!--iterating data from nav-data.ts file
                 to display all the menu list which is routed and label in nav-data.ts file -->

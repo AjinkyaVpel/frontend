@@ -19,7 +19,7 @@ export class ChargersComponent implements OnInit {
   chargerListData: any;
   selectedItem: any;
   errorMessage!:string;
-  
+  allSelected:any
   
   constructor(private activeRoute:ActivatedRoute,private charger:ChargerService, private myStation:ChargerService,private route:Router, private dialog:MatDialog, private snackBar:MatSnackBar) {}
 
@@ -141,5 +141,10 @@ export class ChargersComponent implements OnInit {
       const filterValue = (event.target as HTMLInputElement).value;
       this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  
+  toggleBulkSelection() {
+    this.dataSource.data.forEach((row: any) => {
+      row.selected = !row.selected;
+    });
+  }
+ 
 }
