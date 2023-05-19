@@ -8,6 +8,7 @@ import { StationService } from '../apiService/station.service';
 import { ManageStationService } from '../apiService/manage-station.service';
 import { Station } from './station';
 
+
 @Component({
   selector: 'app-manage-station',
   templateUrl: './manageStation.component.html',
@@ -23,7 +24,7 @@ export class ManageStationComponent {
     this.getStationInfo();
   }
 
-constructor(private manageStation:ManageStationService,  private dialog:MatDialog, private activeRoute:ActivatedRoute, private route: Router, private stationService:StationService){}
+constructor(private manageStation:ManageStationService, private dialog:MatDialog, private activeRoute:ActivatedRoute, private route: Router, private stationService:StationService){}
 
   getStationInfo() {                                      // this function calling getMyStation() which is defined
     this.manageStation.getMyStationList().subscribe({        // in myStation service which will get all station and will      
@@ -119,4 +120,11 @@ constructor(private manageStation:ManageStationService,  private dialog:MatDialo
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 }
+
+  onEditStation(data:any){
+    const dialogRef = this.dialog.open(AddStationComponent,{
+     data
+      
+  }
+)}
 }

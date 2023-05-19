@@ -63,8 +63,7 @@ export class ConnectorsComponent {
 
   onUpdateConnector(data:any){
     const dialogRef = this.dialog.open(AddConnectorComponent,{
-      data,
-      
+      data, 
     })
 
     dialogRef.afterClosed().subscribe({

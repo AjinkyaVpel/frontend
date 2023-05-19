@@ -177,16 +177,7 @@ table {
     font-size: 14px;
     margin-bottom: 0px;
 }
-.delete-station{
-    display: flex;
-    padding: 12px 10px 0px 10px;
-    cursor: pointer;
-}
-.delete-station h4{
-    margin-left: 18px;
-    font-size: 14px;
-    margin-bottom: 0px;
-}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 

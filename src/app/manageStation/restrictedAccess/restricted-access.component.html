@@ -1,0 +1,40 @@
+<h1>Restricted Access</h1>
+<form>
+
+  <mat-form-field> 
+  <mat-select [(value)]="selectedField" >
+  <mat-option value="email">Email</mat-option>
+  <mat-option value="number">Number</mat-option>
+  </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="selectedField==='email'" class="inline-form-field">
+    
+    <mat-label>Enter Email Id (separated by spaces)</mat-label>
+    <input matInput type="text" [formControl]="emailInput" (keyup.enter)="addEmail()" placeholder="E.g., abc@gmail.com rab@gmail.com">
+    <button mat-button (click)="addEmail()">Add</button>
+    <table>
+      <tr *ngFor="let email of emailInputArray; let i=index">
+        <td>{{email}}</td>
+        <td><button mat-button (click)="removeEmail(i)">X</button></td>
+      </tr>
+    </table>
+  </mat-form-field>
+  
+<mat-form-field *ngIf="selectedField==='number'" class="inline-form-field">
+  <mat-label>Enter Mobile Numbers (separated by spaces)</mat-label>
+  <input matInput type="text" [formControl]="mobileNumbersInput" (keyup.enter)="addMobileNumbers()" placeholder="E.g., 1234567890 9876543210">
+  <button mat-button (click)="addMobileNumbers()">Add</button>
+  <table>
+    <tr *ngFor="let number of mobileNumbersArray; let i=index">
+      <td>{{number}}</td>
+      <td><button mat-button (click)="removeNumber(i)">X</button></td>
+    </tr>
+  </table>
+</mat-form-field>
+
+<div mat-dailog-actions>
+  <button mat-raised-button color="primary" (click)="updateRestrictionList()">Submit</button>
+  <button mat-raised-button color="basic" (click)="closePopup()">Close</button>    
+</div>
+</form>

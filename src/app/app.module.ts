@@ -15,6 +15,7 @@ import { DownloadsComponent } from './downloads/downloads.component';
 import { SupportStatusComponent } from './supportStatus/supportStatus.component';
 import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
 import { HeaderComponent } from './header/header.component';
+import { RestrictedAccessComponent } from './manageStation/restrictedAccess/restricted-access.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSelectModule} from '@angular/material/select';
@@ -53,11 +54,15 @@ import { AddConnectorComponent } from './connectors/add-connector/add-connector.
 import { MatIconModule } from '@angular/material/icon';
 import { ControlAccessComponent } from './manageStation/controlAccess/control-access.component';
 import { SearchPipe } from './chargers/search.pipe';
+
 import * as CanvasJSAngularChart from '../assets/canvasjs.angular.component';
 import { LiveDataComponent } from './dashboard/live-data/live-data.component';
 import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
 import { MultiChartComponent } from './dashboard/multi-chart/multi-chart.component';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
+
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -90,7 +95,9 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     CanvasJSChart,
     LiveDataComponent,
     PieChartComponent,
-    MultiChartComponent
+    MultiChartComponent,
+    RestrictedAccessComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -118,6 +125,7 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     MatSnackBarModule,
     NgxMaterialTimepickerModule,
     MatIconModule,
+    MatButtonModule
     
   ],
   providers: [],
