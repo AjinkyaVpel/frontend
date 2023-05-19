@@ -1,9 +1,8 @@
 <div mat-dialog-title>
     <h2>Add Station</h2>
 </div>
-
 <form [formGroup]="addStation" (ngSubmit)="onFormSubmit()"> <!--[formGroup]="empForm" (ngSubmit)="onFormSubmit()"-->
-    <div mat-dialog-content>
+    <div mat-dialog-content >
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>Station Name</mat-label>
@@ -123,7 +122,9 @@
 
     <div mat-dialog-actions class="action">
         <button mat-raised-button class="form-button" type="button" mat-dialog-close="false">Cancel</button>
-        <button mat-raised-button class="form-button" type="submit">Submit</button>
+        <button *ngIf="submit" mat-raised-button class="form-button" type="submit">Submit</button>
+        <button *ngIf="update" mat-raised-button class="form-button" type="submit">Update</button>
+        <!-- <button mat-raised-button class="form-button" type="submit">{{data.stationId ? "Update" : "Add"}}</button> -->
     </div>
 
 </form>
