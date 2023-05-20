@@ -1,6 +1,7 @@
 .pie-chart{
-    margin-top: -1000px;
-    margin-left: 1000px;
+    position: relative;
+    margin-top: -500px;
+    margin-left: 700px;
     width: 500px;
     height: 500px;
 }
