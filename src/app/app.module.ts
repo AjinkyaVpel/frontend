@@ -125,7 +125,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatSnackBarModule,
     NgxMaterialTimepickerModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+  
     
   ],
   providers: [],
