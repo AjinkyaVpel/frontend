@@ -4,6 +4,7 @@
 }
 .dashboard-groups{
     margin-top: -10px;
+    
 }
 mat-card-title{
     font-size: 22px;
@@ -12,6 +13,7 @@ mat-card-title{
 .dashboard-overview-card{
     align-items: center;
     text-align: center;
+    
 }
 
 
@@ -53,7 +55,7 @@ mat-card-title{
     grid-gap: 2px;
     grid-row-gap: 11px;
     padding: 0px 20px;
-    
+   
 }
 
 .chart-container{
@@ -84,9 +86,15 @@ mat-card-title{
 .piechart-image{
     height: 14rem;
     width: 18rem;
+    max-width: 100%;
+    height: auto;
 }
 
-
+@media screen and (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
 /* map-graph container CSS */
 .graph-container{
     display: flex;
@@ -96,7 +104,7 @@ mat-card-title{
 }
 .graph-container mat-card{
     margin-right: 10px;
-    width: 34rem;
+    width: 50rem;
     border-radius: 15px;
 }
 
@@ -104,6 +112,7 @@ mat-card-title{
 .earning-booking-container{
     display: flex;
     justify-content: space-evenly;
+    
 }
 
 /* Earning Css picked from the profile component ------------ */
@@ -123,14 +132,14 @@ mat-card-title{
     text-align: left;
     margin-right: 70px;
     padding: 5px 10px;
-
+    
 }
 .right-label{
     /* border: 1px solid black; */
     text-align: left;
     margin-left: 23px;
     padding: 5px 10px;
- 
+     
 }
 /* ---------------------------------------------- */
 
@@ -144,5 +153,6 @@ mat-card-title{
 /* dasboard booking calender CSS */
 .booking-calendar{
     width: 210px;
-    height: 255px;
+    height: 270px;
 }
+
