@@ -9,20 +9,34 @@
   </mat-form-field>
 
   <mat-form-field *ngIf="selectedField==='email'" class="inline-form-field">
-    
-    <mat-label>Enter Email Id (separated by spaces)</mat-label>
-    <input matInput type="text" [formControl]="emailInput" (keyup.enter)="addEmail()" placeholder="E.g., abc@gmail.com rab@gmail.com">
-    <button mat-button (click)="addEmail()">Add</button>
-    <table>
-      <tr *ngFor="let email of emailInputArray; let i=index">
-        <td>{{email}}</td>
-        <td><button mat-button (click)="removeEmail(i)">X</button></td>
-      </tr>
-    </table>
+    <mat-label>Enter Email Id (separated by comma ',')</mat-label>
+    <div class="email-input-container">
+      <input matInput type="text" (keyup.enter)="addEmail()" placeholder="E.g.,abc@gmail.com,rab@gmail.com">
+      <button mat-raised-button color="primary"  (click)="addEmail()">Add</button>
+    </div>
   </mat-form-field>
   
+  
+  <div>
+  <table  *ngIf="emailInputArray.length > 0">
+    <tr style="font-weight: bold;color: green;">Added into the list:</tr>
+    <tr *ngFor="let email of emailInputArray; let i=index">
+      <td style="color: green;">{{email}}</td>
+      <td><button mat-button (click)="removeEmail(i)">X</button></td>
+    </tr>
+  </table>
+</div>
+<div>
+  <table  *ngIf="emailInvalidInputArray.length > 0">
+    <tr style="font-weight: bold;color: red;">Not valid email address:</tr>
+    <tr *ngFor="let notValid of emailInvalidInputArray; let i=index">
+      <td style="color: red;">{{notValid}}</td>
+      <td><button mat-button (click)="removeInvalidEmail(i)">X</button></td>
+    </tr>
+  </table>
+</div>
 <mat-form-field *ngIf="selectedField==='number'" class="inline-form-field">
-  <mat-label>Enter Mobile Numbers (separated by spaces)</mat-label>
+  <mat-label>Enter Mobile Numbers (separated by " ; ")</mat-label>
   <input matInput type="text" [formControl]="mobileNumbersInput" (keyup.enter)="addMobileNumbers()" placeholder="E.g., 1234567890 9876543210">
   <button mat-button (click)="addMobileNumbers()">Add</button>
   <table>

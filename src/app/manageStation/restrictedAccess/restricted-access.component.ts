@@ -1,7 +1,7 @@
-
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -11,27 +11,23 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./restricted-access.component.css']
 })
 export class RestrictedAccessComponent implements OnInit {
-  // dataaray=[];
-  // email!:any;
-  // phone!:any;
-  // array=new Array();
 
   selectedMethod!: string;
   email!: string;
   phoneNumber!: string;
   mobileNumbersInput: FormControl=new FormControl(); 
   mobileNumbersArray: string[] = [];
-  emailInput: FormControl=new FormControl();
+  emailInput: FormControl=new FormControl('',[Validators.required]);
   emailInputArray:string[]=[];
+  emailInvalidInputArray:string[]=[];
   selectedField:string='email';
+  
 
   constructor(private ref: MatDialogRef<RestrictedAccessComponent>, private builder: FormBuilder) {
 
   }
   ngOnInit(): void {
    
-    // this.array=new Array()
-    // this.dataaray.push();
   }
 
   closePopup() {
@@ -65,15 +61,28 @@ export class RestrictedAccessComponent implements OnInit {
     this.mobileNumbersArray.splice(index,1);  
   }
   addEmail() {
-    
-    const emails = this.emailInput.value.split(';').map((mail:string) => mail.trim());
+    const emails = this.emailInput.value.split(',').map((mail: string) => mail.trim());
     for (const email of emails) {
-      if (email !== '') {
+      if (email !== '' && this.validateEmail(email)) {
         this.emailInputArray.push(email);
+      }else{
+        if(email !== ''){
+        this.emailInvalidInputArray.push(email);
+        }
       }
     }
-    console.log(this.emailInputArray) 
+    console.log(this.emailInputArray);
     this.emailInput.reset();
+    
+  }
+  
+  validateEmail(email: string): boolean {
+    // Use a regular expression to validate email format
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  }
+   removeInvalidEmail(index:number){
+    this.emailInvalidInputArray.splice(index,1);  
   }
   removeEmail(index:number){
     this.emailInputArray.splice(index,1);  
