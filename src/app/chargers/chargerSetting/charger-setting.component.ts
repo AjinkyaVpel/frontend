@@ -7,7 +7,7 @@ import { Charger } from '../charger';
 @Component({
   selector: 'app-charger-setting',
   templateUrl: './chargerSetting.component.html',
-  styleUrls: ['./charger-Setting.component.css']
+  styleUrls: ['./charger-setting.component.css']
 })
 export class ChargerSettingComponent {
   chargerSetting:any;
