@@ -140,6 +140,7 @@ table {
     border: none;
     cursor: pointer;
     font-size: 15px;
+    
 }
 .filter-button:hover{
     background-color: #4ba5d3;
@@ -184,3 +185,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+
+
+

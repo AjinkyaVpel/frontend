@@ -17,7 +17,6 @@ export class BookingComponent implements OnInit {
   bookingList!: Booking[];
   selectedValue!:string;
   selectedStatus!:string;
- 
   
 
   constructor(private router:Router,private activeRoute: ActivatedRoute, private bookingApi: BookingService) { }

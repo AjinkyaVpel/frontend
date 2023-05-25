@@ -1,9 +1,10 @@
+
 .tab-content{
     margin-top:15px;
-    
 }
 .dashboard-groups{
     margin-top: -10px;
+    
 }
 mat-card-title{
     font-size: 22px;
@@ -12,6 +13,7 @@ mat-card-title{
 .dashboard-overview-card{
     align-items: center;
     text-align: center;
+    flex-basis: 100%;
 }
 
 
@@ -48,25 +50,25 @@ mat-card-title{
 /* grid css for 5 cards  */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(3, 1fr));
     grid-template-rows: repeat(2, auto);
     grid-gap: 2px;
     grid-row-gap: 11px;
     padding: 0px 20px;
 }
+
 .chart-container{
     /* used for expanding the grid for  2 rows */
     grid-row-start: 1;     
     grid-row-end: span 2;
     grid-column-start: 3;
-
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     cursor: pointer;
-
+     margin-left: -200px;
     /* glass effect CSS */
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -80,30 +82,105 @@ mat-card-title{
 }
 /* pie chart image (going to remove once the pie chart is inserted)*/
 .piechart-image{
-    height: 14rem;
+    /* height: 14rem; */
     width: 18rem;
+    max-width: 60%;
+    height: auto;
 }
-
+.container-fluid{
+    width: 70%;
+    margin-left: 10px;
+    overflow: hidden;
+}
+.chart1{
+    width: 100%;
+}
+.chart2{
+    margin-left: 70px;
+    
+}
+.chart3{
+    width: 90%;
+    margin-left: 85px;
+}
+.col-md{
+    width: 80%;
+    overflow: hidden;
+}
+@media only screen and (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: 1fr; /* Display cards in a single column */
+                                                                         
+    }
+  }
+  
+  @media only screen and (min-width: 601px) and (max-width: 960px) {
+    .grid-container {
+      grid-template-columns: 1fr 1fr; /* Display cards in two columns */
+    }
+  }
+  
+  @media only screen and (min-width: 961px) {
+    .grid-container {
+      grid-template-columns: 1fr 1fr 1fr; /* Display cards in three columns */
+    }
+  }
 
 /* map-graph container CSS */
 .graph-container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-top:20px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    grid-gap: 20px;
+    
+}
+.container-fluid{
+    width: 100%;
+}
+.col-lg-6{
+    width: 100%;
+    
+}
+.row{
+    margin-top: 30px;
 }
 .graph-container mat-card{
     margin-right: 10px;
-    width: 34rem;
+    width: 50rem;
     border-radius: 15px;
 }
+@media (min-width: 600px) {
+    .dashboard-overview-card {
+        flex-basis: 48%;
+    }
+}
 
+@media (min-width: 1500px) {
+    .dashboard-overview-card {
+        flex-basis: 50%;
+    }
+}
 /* earning booking container css */
 .earning-booking-container{
     display: flex;
     justify-content: space-evenly;
+    margin-top: 20px;
+    
 }
-
+@media screen and (min-width: 768px) {
+    .earning-booking-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+}
+@media screen and (min-width: 992px) {
+        .dashboard-overview-card {
+          flex-basis: 30%;
+        }
+      }
 /* Earning Css picked from the profile component ------------ */
 .infomation-display-format{
     display:flex;
@@ -121,14 +198,14 @@ mat-card-title{
     text-align: left;
     margin-right: 70px;
     padding: 5px 10px;
-
+     
 }
 .right-label{
     /* border: 1px solid black; */
     text-align: left;
     margin-left: 23px;
     padding: 5px 10px;
- 
+     
 }
 /* ---------------------------------------------- */
 
@@ -142,5 +219,6 @@ mat-card-title{
 /* dasboard booking calender CSS */
 .booking-calendar{
     width: 210px;
-    height: 255px;
+    height: 270px;
 }
+

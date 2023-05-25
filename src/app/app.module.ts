@@ -62,7 +62,7 @@ import { MultiChartComponent } from './dashboard/multi-chart/multi-chart.compone
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 import { MatButtonModule } from '@angular/material/button';
-
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -126,8 +126,8 @@ import { MatButtonModule } from '@angular/material/button';
     NgxMaterialTimepickerModule,
     MatIconModule,
     MatButtonModule,
-  
-    
+    FlexLayoutModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
