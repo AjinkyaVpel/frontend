@@ -32,3 +32,9 @@ button{
 .validationTable{
     font-weight: bold;
 }
+
+
+.success{
+    background-color: #0ef46a; /* Example background color */
+    color: black; /* Example text color */
+  }
