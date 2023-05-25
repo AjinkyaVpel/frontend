@@ -1,9 +1,9 @@
-.live-Data{
+/* .live-Data{
     position: relative;
-    width: 600px;
+    width: 70%;
     height: 400px;
     margin-top: 30px;
-    margin-left: 40px;
+    margin-left: -200px;
     margin-bottom: 130px;
     padding: 10px;
     background: white;
@@ -12,4 +12,36 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    grid-row-start: 1;     
+    grid-row-end: span 2;
+    grid-column-start: 3;
 }
+.container-fluid {
+    width: 70%;
+    margin-left: 300px;
+  }
+  
+  .row {
+    display: grid;
+    flex-wrap: wrap;
+  }
+  
+  .col-lg-12 {
+    width: 100%;
+  }
+  */
+  @media (max-width: 100%) {
+    .col-lg-12 {
+      width: 100vw;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  
+  @media (max-width: 50%) {
+    .live-Data {
+      width: 100vw;
+      padding: 0;
+      margin: 0;
+    }
+  } 
