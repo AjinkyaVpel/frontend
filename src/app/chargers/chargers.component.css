@@ -1,10 +1,11 @@
 
 
-// back to myStation button CSS 
+
 .myStation-back-button{
     padding: 20px 20px;
    
 }
+
 .myStation-back-button h4{
     color: #4ba5d3;
     font-size: 20px;
@@ -16,7 +17,7 @@
 
 
 
-// charging station heading CSS 
+
 .charging-station-heading{
     margin-top: 10px;
     margin-left: 10px;
@@ -24,16 +25,16 @@
     font-size: 18px;
 }
 
-// Charging Station Filter CSS 
+
 .filter-charger{
     padding: 0px 10px;
 }
-// filter section button 
+
 .filter-button-section{
     text-align: center;
     justify-content: space-between;
 }
-// filter button CSS 
+
 .filter-button{
     padding: 3px 7px;
     margin: 0px 5px;
