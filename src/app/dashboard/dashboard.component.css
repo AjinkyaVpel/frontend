@@ -14,6 +14,7 @@ mat-card-title{
     align-items: center;
     text-align: center;
     flex-basis: 100%;
+    grid-gap:10px;
 }
 
 
@@ -54,7 +55,7 @@ mat-card-title{
     grid-template-rows: repeat(2, auto);
     grid-gap: 2px;
     grid-row-gap: 11px;
-    padding: 0px 20px;
+    padding: 0px 10px;
 }
 
 .chart-container{
@@ -66,9 +67,7 @@ mat-card-title{
     flex-direction: column;
     text-align: center;
     align-items: center;
-    justify-content: space-between;
     cursor: pointer;
-     margin-left: -200px;
     /* glass effect CSS */
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -96,16 +95,15 @@ mat-card-title{
     width: 100%;
 }
 .chart2{
-    margin-left: 70px;
+    margin-left: 7px;
     
 }
 .chart3{
-    width: 90%;
-    margin-left: 85px;
+    width: 100%;
+    margin-left: 7px;
 }
 .col-md{
     width: 80%;
-    overflow: hidden;
 }
 @media only screen and (max-width: 600px) {
     .grid-container {
@@ -141,7 +139,6 @@ mat-card-title{
 }
 .col-lg-6{
     width: 100%;
-    
 }
 .row{
     margin-top: 30px;
@@ -165,14 +162,16 @@ mat-card-title{
 /* earning booking container css */
 .earning-booking-container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-top: 20px;
+    margin-left: 20px;
     
 }
 @media screen and (min-width: 768px) {
     .earning-booking-container {
       display: flex;
       flex-wrap: wrap;
+      
       justify-content: space-between;
     }
 }
@@ -211,9 +210,9 @@ mat-card-title{
 
 /* css for booking calender  */
 .booking-card-calender{
-    width: 20rem;
+    width: 15rem;
     padding: 10px 20px;
-    
+    margin-top: -20px;
 }
 
 /* dasboard booking calender CSS */
