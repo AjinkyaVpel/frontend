@@ -54,7 +54,7 @@ export class ControlAccessComponent {
   openPopup(){
     this.dailog.open(RestrictedAccessComponent,
       {width:'60%',enterAnimationDuration:'500ms',height:'400px',data:{
-        email:[]
+        stationId:this.stationId
       }})
   }
   

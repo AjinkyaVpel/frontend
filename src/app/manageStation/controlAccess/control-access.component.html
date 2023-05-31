@@ -3,9 +3,7 @@
     <mat-card>
         <mat-card-content>
             <span class="example-spacer"></span>
-            <button mat-raised-button (click)="openPopup()">
-                <h5>Restricted Access</h5>
-            </button>
+            <button mat-raised-button color="primary" (click)="openPopup()">Restricted Access</button>
         </mat-card-content>
       </mat-card> 
 </div>
@@ -23,7 +21,7 @@
                     <h5>Manage</h5>
                 </button>
             </div>
-            <input [placeholder]="myStationData.stationAddressLineOne+'  '+myStationData.stationAddressLineTwo"/><br>
+            <input [placeholder]="myStationData.stationAddressLineOne+' '+myStationData.stationAddressLineTwo"/><br>
             <label>Address</label><br>
             <input [placeholder]="myStationData.stationArea" disabled /><br>
             <div class="location-name">
