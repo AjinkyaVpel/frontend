@@ -18,7 +18,7 @@ export class ChargerSettingComponent {
   chargerFormData: any;
   connector: any;
   chargerUpdateData:Charger | undefined;
-
+  
   constructor(private activeRoute: ActivatedRoute,private formbuilder:FormBuilder,private charger:ChargerService,) {
     this.chargerSetting = this.formbuilder.group({
       chargerId: '',

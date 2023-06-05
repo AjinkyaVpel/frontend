@@ -12,10 +12,9 @@
 <button (click)="displayCard=true">Show button</button> -->
 
                     <!-- 1st section for 5 mat-cards (including chart card) -->
-
                     <div *ngIf="displayCard" class="grid-container cards-collection-container">
                         <!-- charging session (1st row 1st column) -->
-
+                         
                         <mat-card class="dashboard-overview-card">
                             <mat-card-header>
                                 <mat-card-title>Charging Session</mat-card-title>
@@ -33,13 +32,13 @@
                             <mat-card-actions align="end">
                             </mat-card-actions>
                         </mat-card>
-
                         <!-- chart container card -->
                         <div class="chart-container">
                             <h2>Charts</h2>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/India_religion_pie_graph.svg/1200px-India_religion_pie_graph.svg.png"
                                 alt="chart image" class="piechart-image" />
                       </div>
+                      
                         <!-- Total revenue card (2nd row 1st column) -->
                         <mat-card class="dashboard-overview-card">
                             <mat-card-header>
@@ -90,8 +89,12 @@
                             </div>
                         </div>
                     </div>
+                    
                     <!-- 3rd section for earning and booking  -->
                     <div class="earning-booking-container">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md">
                         <mat-card class="dashboard-overview-card">
                             <mat-card-header>
                                 <mat-card-title>Earnings</mat-card-title>
@@ -114,6 +117,8 @@
                                 </div>
                             </mat-card-actions>
                         </mat-card>
+                        </div>
+                        <div class="col-md">
                         <mat-card class="dashboard-overview-card">
                             <mat-card-header>
                                 <mat-card-title>Booking</mat-card-title>
@@ -137,6 +142,7 @@
                                 <!-- </div> -->
                             </mat-card-actions>
                         </mat-card>
+                        </div>
                         <div class="booking-card-calender">
                             <mat-radio-group [(ngModel)]="selectedOption">
                                 <mat-radio-button value="daily">Daily</mat-radio-button>
@@ -160,7 +166,8 @@
 
                         </div>
                     </div>
-
+</div>
+</div>
                 </div>
                 <!-- <div class="box">
                     <app-live-data></app-live-data>
