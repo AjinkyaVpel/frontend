@@ -25,9 +25,7 @@ export class ChargersComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'chargerName', 'chargerserialNumber','connectorStatus','total','activeConnector','inactiveconnector','chargerStatus', 'menu'];
   dataSource!: MatTableDataSource<any>;
-  totalConnectors: number = 0;
-  activeConnectors: number = 0;
-  inactiveConnectors: number = 0;
+ 
                                  
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -48,14 +46,25 @@ export class ChargersComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
         
         // counting the connectors
-        this.dataSource.data = res.map((charger: {connectors: any [];}) => ({
-          ...charger,
-          totalConnectors: charger.connectors.length,
-          activeConnectors: charger.connectors.filter((connectors: {active:boolean; }) => connectors.active == true).length,
-          inactiveConnectors: charger.connectors.filter((connectors: {active:boolean; }) => connectors.active == false).length
+        // this.dataSource.data = res.map((charger: {connectors: any [];}) => ({
+        //   ...charger,
+        //   totalConnectors: charger.connectors.length,
+        //   activeConnectors: charger.connectors.filter((connectors: {active:boolean; }) => connectors.active == true).length,
+        //   inactiveConnectors: charger.connectors.filter((connectors: {active:boolean; }) => connectors.active == false).length
 
-        }));
-        
+        // }));
+        this.dataSource.data = res.map((charger: { connectors: any[] }) => {
+          const totalConnectors = charger.connectors.length;
+          const activeConnectors = charger.connectors.filter(connector => connector.active).length;
+          const inactiveConnectors = charger.connectors.filter(connector => !connector.active).length;
+          
+          return {
+            ...charger,
+            totalConnectors,
+            activeConnectors,
+            inactiveConnectors,
+          };
+        })
       },
       error: (err:any) => {
         this.openSnackBar(err.error.error.message)

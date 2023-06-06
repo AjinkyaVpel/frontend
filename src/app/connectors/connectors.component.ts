@@ -49,8 +49,8 @@ export class ConnectorsComponent {
         this.dataSource.data = res.map((charger: {connectors: any [];}) => ({
           ...charger,
           totalConnectors: charger.connectors.length,
-          activeConnectors: charger.connectors.filter((connectors: {active:boolean; }) => connectors.active == true).length,
-          inactiveConnectors: charger.connectors.filter((connectors: {active:boolean; }) => connectors.active == false).length
+          activeConnectors: charger.connectors.filter(connector  => connector.active).length,
+          inactiveConnectors: charger.connectors.filter(connector => !connector.active).length
 
         }));
         
