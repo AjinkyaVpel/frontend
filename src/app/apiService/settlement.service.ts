@@ -11,7 +11,6 @@ export class SettlementService {
   //Get all settlement details
 
   getSettlement(hostId:any){
-    console.log(hostId)
      return this.http.get(`http://192.168.0.243:8095/manageHost/getSettlementByHostId?hostId=${hostId}`)
   }
 }

@@ -22,7 +22,6 @@
 .profile-header-container button{
     display: flex;
     align-items: center;
-
     display: flex;
     margin-right: 10px;
     padding: 7px 10px;
@@ -58,14 +57,14 @@
 .profile-middle-container .div1{
     text-align: left;
     justify-content: left;
-    padding: 10px 50px;
+    padding: 15px 50px;
 }
 .profile-middle-container .div2{
-    padding: 10px 0px;
+    padding: 8px 0px;
 }
 .ans-title{
     /* border: 1px solid black; */
-    width: 100px;
+   
     padding: 4px 10px;
     color: black;
     background-color: #91b9ce;
