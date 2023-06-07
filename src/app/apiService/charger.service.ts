@@ -23,7 +23,7 @@ export class ChargerService {
 
   // update the charger details using the chargerId 
   updateCharger(chargerId:any,stationId:any,data: any){
-    return this.http.put(`http://192.168.0.243:8096/manageCharger/udpateCharger?chargerId=${chargerId}&stationId=${stationId}`,data);
+    return this.http.put(`http://192.168.0.44:8096/manageCharger/udpateCharger?chargerId=${chargerId}&stationId=${stationId}`,data);
   }
   //Delete the charger by using the chargerId
   deleteChargerById(id: any) {
