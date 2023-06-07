@@ -15,18 +15,9 @@ import { MatSelect } from '@angular/material/select';
 export class BookingComponent implements OnInit {
   hostId!: string;
   bookingList!: Booking[];
+  selectedValue!:string;
   selectedStatus!:string;
   
-  openSearch: boolean = false;
-  displayedColumns: string[] = ['hostId','stationName', 'chargerId', 'bookingSocket', 'bookingDate', 'bookingTime', 'bookingCancellationReason', 'bookingStatus', 'bookingAmount'];
-  dataSource!: MatTableDataSource<any>;
- 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatSelect)
-  select!: MatSelect;
-
-
 
   constructor(private router:Router,private activeRoute: ActivatedRoute, private bookingApi: BookingService) { }
   ngOnInit(): void {
@@ -56,10 +47,15 @@ export class BookingComponent implements OnInit {
     })
   }
 
+  openSearch: boolean = false;
+  displayedColumns: string[] = ['hostId','stationName', 'chargerId', 'bookingSocket', 'bookingDate', 'bookingTime', 'bookingCancellationReason', 'bookingStatus', 'bookingAmount'];
+  dataSource!: MatTableDataSource<any>;
  
-  
 
-
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatSelect)
+  select!: MatSelect;
   openSearchBar() {
     this.openSearch = true;
   }
@@ -68,9 +64,13 @@ export class BookingComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+ applyFilters(){
+  const selectedValue = this.select.value;  
+  this.dataSource.filter = selectedValue.trim().toLowerCase();
+ }
 
- statusFilter(){
-   this.selectedStatus = this.select.value; 
+ applyNewFilters(){
+  const selectedValue = this.select.value;  
   this.dataSource.filter = this.selectedStatus.trim().toLowerCase();
  }
  

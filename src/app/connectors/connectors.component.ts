@@ -4,6 +4,7 @@ import { DeleteConnectorComponent } from './delete-connector/delete-connector.co
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConnectorService } from '../apiService/connector.service';
+import { DeleteConnectorService } from '../apiService/delete-connector.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { AddConnectorComponent } from './add-connector/add-connector.component';
@@ -20,7 +21,7 @@ export class ConnectorsComponent {
   displayedColumns: string[] = [ 'connectorNumber', 'connectorType','connectorSocket','connectorStatus','connectorOutputPower', 'menu'];
   dataSource!: MatTableDataSource<any>;
 
-  constructor(private activeRoute: ActivatedRoute,private connector:ConnectorService,  private route:Router,private dialog:MatDialog){}
+  constructor(private activeRoute: ActivatedRoute,private connector:ConnectorService,  private route:Router,private dialog:MatDialog, private deleteService:DeleteConnectorService, ){}
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
