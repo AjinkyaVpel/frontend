@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AddStationComponent } from './addStation/addStation.component';
 import { OpenDialogComponent } from './openDialog/openDialog.component';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StationService } from '../apiService/station.service';
@@ -17,8 +19,9 @@ import { Station } from './station';
 export class ManageStationComponent {
   stationData!:Station[];
   dataSource: any;
-  paginator: any;
-  sort: any;
+ 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
   
   ngOnInit(): void {
     this.getStationInfo();
@@ -36,6 +39,8 @@ constructor(private manageStation:ManageStationService, private dialog:MatDialog
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
 
+
+        
         //count data of charger from database
         // this.dataSource.data = res.map((station:{ chargers: any[]; }) => ({
         //   ...station,
@@ -43,6 +48,16 @@ constructor(private manageStation:ManageStationService, private dialog:MatDialog
         //   availableChargers: station.chargers.filter((chargers: { active: boolean; }) => chargers.active == true).length,
         //   inuseChargers: station.chargers.filter((chargers: { active: boolean; }) => chargers.active == false).length,
         //   outOffOrderChargers: station.chargers.filter((chargers: { active: boolean; }) => chargers.active == false).length
+
+       
+        // count data of charger from database
+        this.dataSource.data = res.map((station:{ chargers: any[]; }) => ({
+          ...station,
+          totalNoOfChargers: station.chargers.length,
+          availableChargers: station.chargers.filter((chargers: { active: boolean; }) => chargers.active == true).length,
+          inuseChargers: station.chargers.filter((chargers: { active: boolean; }) => chargers.active == false).length,
+          outOffOrderChargers: station.chargers.filter((chargers: { active: boolean; }) => chargers.active == false).length
+
 
         // }));
 
@@ -138,8 +153,7 @@ constructor(private manageStation:ManageStationService, private dialog:MatDialog
 
   onEditStation(data:any){
     const dialogRef = this.dialog.open(AddStationComponent,{
-     data
-      
+     data   
   }
 )}
 }

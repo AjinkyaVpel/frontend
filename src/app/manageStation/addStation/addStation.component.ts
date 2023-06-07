@@ -13,6 +13,7 @@ import { Station } from '../station';
 export class AddStationComponent {
   addStation:FormGroup;
   stationData:any;
+  updateStationId!:string;
   submit:boolean=true;
   update:boolean=false;
   amenities: Array<any> = [
@@ -37,6 +38,7 @@ export class AddStationComponent {
   ]
   constructor(private formBuilder: FormBuilder,private manageStation:ManageStationService,private dialogRef: MatDialogRef<AddStationComponent>, @Inject(MAT_DIALOG_DATA) public data: any,private snackBar:MatSnackBar) {
     this.addStation = this.formBuilder.group({
+     
       stationName: '',
       stationArea: '',
       stationHostId:'',
@@ -60,7 +62,9 @@ export class AddStationComponent {
 
   }
   ngOnInit():void{
+    
     if(this.data.stationId){
+      this.updateStationId=this.data.stationId;
       this.update=true;
       this.submit=false;
     }
@@ -98,11 +102,13 @@ export class AddStationComponent {
 
 
   onFormSubmit(){
-    if(this.data.stationId){
-      this.manageStation.onEditStation(this.data.stationId,this.addStation.value,).subscribe((result) =>{
+    if(this.updateStationId){
+      
+      this.manageStation.onEditStation(this.updateStationId,this.addStation.value,).subscribe((result) =>{
         window.location.reload();
       })
-    }else{         
+    }else{  
+           
       this.manageStation.addStationToList(this.addStation.value);
       this.openSnackBar("Station added successfully","Done")
       this.dialogRef.close(true);
