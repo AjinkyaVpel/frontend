@@ -58,7 +58,8 @@ constructor(private manageStation:ManageStationService, private dialog:MatDialog
           outOffOrderChargers: station.chargers.filter((chargers: { active: boolean; }) => chargers.active == false).length
 
 
-        // }));
+        
+      }));
 
       
       this.dataSource.data = res.map((station: { chargers: any[] }) => {
