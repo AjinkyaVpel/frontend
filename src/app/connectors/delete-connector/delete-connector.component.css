@@ -1,5 +1,5 @@
 .dialog-box{
-    width: 450px;
+    width: 350px;
     height: 150px;
     text-align: center;
     overflow: hidden;
@@ -9,12 +9,19 @@
 button{
     color: black;
     width: 100px;
-    height: 30px;
-    overflow: hidden;
+    height: fit-content;
+    justify-content: space-between;
+    margin: 5px;
 }
 .mat-raisd-button  {
     display: table-cell;
     max-width: 600px;
     text-align: center;
     
+  }
+  .delete{
+    background-color: orangered;
+  }
+  .delete-btn{
+   background-color: lightskyblue;
   }
