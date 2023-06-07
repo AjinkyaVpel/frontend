@@ -139,8 +139,7 @@ export class RestrictedAccessComponent implements OnInit {
 
 
   updateRestrictionList() {
-    
-    if (this.selectedField === 'email'&& this.userIdList) {console.log('called');
+     if (this.selectedField === 'email'&& this.userIdList) {console.log('called');
       this.restrictedAccessApi.setUserRestrictionToStation(this.stationId,this.userIdList).subscribe
       (res=>{
           this.openSnackBar(res);

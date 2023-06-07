@@ -61,6 +61,7 @@ import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
 import { MultiChartComponent } from './dashboard/multi-chart/multi-chart.component';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
+
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
@@ -126,7 +127,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     NgxMaterialTimepickerModule,
     MatIconModule,
     MatButtonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+  
 
   ],
   providers: [],
