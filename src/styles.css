@@ -42,17 +42,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     display: flex;
     margin-right: 10px;
     padding: 5px 10px;
-    background-color: rgb(26, 131, 167);
+    /* background-color: rgb(26, 131, 167); */
     color: black;
     border-radius: 7px;
     cursor: pointer;
     border: none;
     height: 2.1rem;
 }
-.table-header-card mat-card-content button:hover{
-    color: rgb(26, 131, 167);
-    background-color: black;
+
+/* .table-header-card mat-card-content button{
+    
+    --mdc-protected-button-container-color:#4ba5d3 !important;
+    --mdc-protected-button-label-text-color: black !important;
+} */
+
+.mat-mdc-raised-button.mat-primary {
+    --mdc-protected-button-container-color:#4ba5d3 !important;
+    --mdc-protected-button-label-text-color: black !important;
 }
+/* .table-header-card mat-card-content button:hover{
+    --mdc-protected-button-container-color:#1A83A7 !important;
+    --mdc-protected-button-label-text-color: black !important;
+} */
+
+.mat-mdc-raised-button.mat-primary:hover{
+    --mdc-protected-button-container-color:#1A83A7 !important;
+    --mdc-protected-button-label-text-color: black !important;
+}
+
 /* for mat icons */
 .table-header-card mat-card-content button mat-icon{
     font-size: 22px;

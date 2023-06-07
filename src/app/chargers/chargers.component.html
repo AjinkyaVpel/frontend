@@ -5,8 +5,8 @@
 
     <mat-card>
         <mat-card-content>
-            <button mat-raised-button [matMenuTriggerFor]="bulkmenu" >
-                <h5>Bulk</h5>
+            <button mat-raised-button  color="primary"  [matMenuTriggerFor]="bulkmenu" >
+                Bulk
                 <mat-icon>expand_more</mat-icon>
             </button>
             <mat-menu #bulkmenu="matMenu" class="filter-charger">
@@ -24,10 +24,11 @@
                 </div>
             </mat-menu>    
             <input placeholder="Search"  class="searchbar" #input  (keyup)="applyFilter($event)" >
-            <button mat-raised-button (click)="addChargerDialog()" class="btn">
+            <button mat-raised-button  color="primary"  (click)="addChargerDialog()" >
               <mat-icon aria-hidden="false" aria-label="Example download icon" fontIcon="add"></mat-icon>
-              <h5>Add Charger</h5>
+              Add Charger
           </button>
+         
         </mat-card-content>
     
     </mat-card> 
