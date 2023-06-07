@@ -63,7 +63,7 @@ export class ChargerSettingComponent {
     this.charger.updateCharger(this.chargerId,this.stationId,this.chargerSetting.value).subscribe((result: any)=>{
       console.log(result);
       this.updateChargerForm=result;
-      window.location.reload();
+      
     })
   }
 }

@@ -4,11 +4,12 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SettlementService } from '../apiService/settlement.service';
 import { ActivatedRoute } from '@angular/router';
+import { Settlement } from './settlement';
 import { FormBuilder } from '@angular/forms';
 import { MatSelect } from '@angular/material/select';
 
 @Component({
-  selector: 'app-settlements', 
+  selector: 'app-settlements',
   templateUrl: './settlements.component.html',
   styleUrls: ['./settlements.component.css']
 })
@@ -19,7 +20,7 @@ export class SettlementsComponent {
   pending:boolean = false;
   rejected:boolean = false;
   dataSource!: MatTableDataSource<any>;
-  
+  settlementData!:Settlement[];
   hostId!:string;
   selectedStatus!: string;
 selectedValue !: string;
@@ -45,8 +46,11 @@ selectedValue !: string;
   }
   getSettlementUsingId(hostId:any){
   this.settlementApi.getSettlement(hostId).subscribe({
-    next: (res:any) => {   
-      this.dataSource = new MatTableDataSource(res);
+    next: (res:any) => {
+      this.settlementData=res;
+     // console.warn(res);
+      
+      this.dataSource = new MatTableDataSource(this.settlementData);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
    },

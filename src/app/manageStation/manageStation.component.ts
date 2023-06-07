@@ -6,6 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { StationService } from '../apiService/station.service';
 import { ManageStationService } from '../apiService/manage-station.service';
 import { Station } from './station';
 
@@ -26,7 +27,7 @@ export class ManageStationComponent {
     this.getStationInfo();
   }
 
-constructor(private manageStation:ManageStationService, private dialog:MatDialog, private activeRoute:ActivatedRoute, private route: Router){}
+constructor(private manageStation:ManageStationService, private dialog:MatDialog, private activeRoute:ActivatedRoute, private route: Router, private stationService:StationService){}
 
   getStationInfo() {                                      // this function calling getMyStation() which is defined
     this.manageStation.getMyStationList().subscribe({        // in myStation service which will get all station and will      
