@@ -28,6 +28,7 @@ export class RestrictedAccessComponent implements OnInit {
   selectedField:string='email';
   stationId!:string;
   
+  
 
   constructor(private ref: MatDialogRef<RestrictedAccessComponent>, private builder: FormBuilder, private restrictedAccessApi:RestrictedAccessService, @Inject(MAT_DIALOG_DATA) public data: any,private snackBar:MatSnackBar) {
 
@@ -49,6 +50,17 @@ export class RestrictedAccessComponent implements OnInit {
     });
   }
  
+  resetForms(){
+    console.log('called')
+    this.emailInvalidInputArray.length=0;
+    this.emailInputArray.length=0;
+    this.mobileInvalidNumbersArray.length=0;
+    this.mobileNumbersArray.length=0;
+    this.userIdList.length=0;
+    this.mobileNumbersInput.reset();
+    this.emailInput.reset();
+
+  }
   addEmail() {
     const emails = this.emailInput.value.split(',').map((mail: string) => mail.trim());
     for (const email of emails) {
@@ -96,19 +108,36 @@ export class RestrictedAccessComponent implements OnInit {
   }
 
 
-
   addMobileNumbers() {
+   
     const numbers = this.mobileNumbersInput.value.split(',').map((number: string) => number.trim());
     for (const number of numbers) {
       if (number !== '' && this.validateNumber(number)) {
-        this.mobileNumbersArray.push(number);
+      this.restrictedAccessApi.getUserByContactNumber(number).subscribe((result) => {
+        this.restrictedAccessApi.getIsUserPresent(this.stationId,result).subscribe(res=>{
+          if(!res&&result){
+            this.userIdList.push(result);
+            this.mobileNumbersArray.push(number);
+          }
+          else if(res){
+            this.mobileInvalidNumbersArray.push(number);
+          }
+        
+        },err=>{
+          console.log(err)
+        })
+
+      },(err)=>{
+        console.log(err)
+        this.mobileInvalidNumbersArray.push(number);
+      }) 
       }else{
         if(number !== ''){
-        this.mobileInvalidNumbersArray.push(number);
+          this.mobileInvalidNumbersArray.push(number);
         }
       }
     }
-    console.log(this.mobileNumbersArray);
+   
     this.mobileNumbersInput.reset();
     
   }
@@ -140,18 +169,16 @@ export class RestrictedAccessComponent implements OnInit {
 
   updateRestrictionList() {
     
-    if (this.selectedField === 'email'&& this.userIdList) {console.log('called');
+    if (this.userIdList.length>0) {
       this.restrictedAccessApi.setUserRestrictionToStation(this.stationId,this.userIdList).subscribe
       (res=>{
           this.openSnackBar(res);
+          window.location.reload();
       },err=>{
-        this.openSnackBar(err.error);
+        console.log(err.error);
       })
-
-    
-    } else if (this.selectedField === 'number') {
-      // Handle phone number submission
-      console.log('Phone Number:', this.phoneNumber);
+    }else{
+      this.openSnackBar("add at least on user")
     }
   }
   

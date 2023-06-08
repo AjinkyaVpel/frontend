@@ -1,7 +1,7 @@
 <h1>Restricted Access</h1>
 <form>
   <mat-form-field>
-    <mat-select [(value)]="selectedField">
+    <mat-select [(value)]="selectedField" (selectionChange)="resetForms()">
       <mat-option value="email">Email</mat-option>
       <mat-option value="number">Number</mat-option>
     </mat-select>
@@ -16,27 +16,10 @@
     </div>
   </mat-form-field>
 
-  <div>
-    <table *ngIf="emailInputArray.length > 0">
-      <tr style="font-weight: bold;color: green;">Added into the list:</tr>
-      <tr *ngFor="let email of emailInputArray; let i=index">
-        <td style="color: green;">{{email}}</td>
-        <td><button mat-button (click)="removeEmail(i)">X</button></td>
-      </tr>
-    </table>
-  </div>
-  <div>
-    <table *ngIf="emailInvalidInputArray.length > 0">
-      <tr style="font-weight: bold;color: red;">This are not our customers or already exist in the restriction list:</tr>
-      <tr *ngFor="let notValid of emailInvalidInputArray; let i=index">
-        <td style="color: red;">{{notValid}}</td>
-        <td><button mat-button (click)="removeInvalidEmail(i)">X</button></td>
-      </tr>
-    </table>
-  </div>
+ 
 
 
-    <mat-form-field *ngIf="selectedField==='number'" class="inline-form-field">
+    <mat-form-field *ngIf="selectedField==='number'"  class="inline-form-field">
       <mat-label>Enter mobile number(separated by comma ',')</mat-label>
       <div class="number-input-container">
         <input matInput type="text" [formControl]="mobileNumbersInput" (keyup.enter)="addMobileNumbers()"
@@ -44,9 +27,29 @@
         <button mat-raised-button color="primary" (click)="addMobileNumbers()">Add</button>
       </div>
     </mat-form-field>
+
+    <div>
+      <table *ngIf="emailInputArray.length > 0">
+        <tr style="font-weight: bold;color: green;">Emails added into the list:</tr>
+        <tr *ngFor="let email of emailInputArray; let i=index">
+          <td style="color: green;">{{email}}</td>
+          <td><button mat-button (click)="removeEmail(i)">X</button></td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table *ngIf="emailInvalidInputArray.length > 0">
+        <tr style="font-weight: bold;color: red;">This are not our customers or already exist in the restriction list:</tr>
+        <tr *ngFor="let notValid of emailInvalidInputArray; let i=index">
+          <td style="color: red;">{{notValid}}</td>
+          <td><button mat-button (click)="removeInvalidEmail(i)">X</button></td>
+        </tr>
+      </table>
+    </div>
+
 <div>
     <table *ngIf="mobileNumbersArray.length > 0">
-      <tr style="font-weight: bold;color: green;">Added into the list:</tr>
+      <tr style="font-weight: bold;color: green;">Numbers added into the list:</tr>
       <tr *ngFor="let number of mobileNumbersArray; let i=index">
         <td style="color: green;">{{number}}</td>
         <td><button mat-button (click)="removeNumber(i)">X</button></td>
@@ -55,7 +58,7 @@
     </div>
     <div>
       <table *ngIf="mobileInvalidNumbersArray.length > 0">
-        <tr style="font-weight: bold;color: red;">Not valid email address:</tr>
+        <tr style="font-weight: bold;color: red;">This are not our customers or already exist in the restriction list:</tr>
         <tr *ngFor="let notValid of mobileInvalidNumbersArray; let i=index">
           <td style="color: red;">{{notValid}}</td>
           <td><button mat-button (click)="removeInvalidNumber(i)">X</button></td>

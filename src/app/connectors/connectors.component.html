@@ -2,72 +2,80 @@
 <h4>Charger Name: </h4>
 <div class="table-header-card tab-content">
   <mat-card>
-      <mat-card-content>
-          <span class="example-spacer"></span>
-          <button mat-raised-button  color="primary" (click)="openDialogBox()">
-              <mat-icon aria-hidden="false" aria-label="Example download icon" fontIcon="add"></mat-icon>
-              Add
-          </button>
-      </mat-card-content>
-    </mat-card> 
+    <mat-card-content>
+      <span class="example-spacer"></span>
+      <button mat-raised-button color="primary" (click)="openDialogBox()">
+        <mat-icon aria-hidden="false" aria-label="Example download icon" fontIcon="add"></mat-icon>
+        Add
+      </button>
+    </mat-card-content>
+  </mat-card>
 </div>
 
 <div class="table-content-card">
-    <mat-card>
+  <mat-card>
     <mat-card-content>
-        
-<!-- using mat-table for display list of charger list for particular station-->
-<table mat-table [dataSource]="dataSource" matSort>
-  
-    <ng-container matColumnDef="connectorNumber">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1" >Number Of Connector </th> <!--(click)="openChargerList()"-->
-      <td mat-cell *matCellDef="let row" style="cursor: pointer;"> {{row.connectorNumber}} </td>
-    </ng-container>
-            
-    <ng-container matColumnDef="connectorType">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1"> Connector Type </th>
-      <td mat-cell *matCellDef="let row"> {{row.connectorType}} </td>
-    </ng-container>
-    
-    <ng-container matColumnDef="connectorSocket">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1"> Connector Socket </th>
-        <td mat-cell *matCellDef="let row"> {{row.connectorSocket}} </td>
-      </ng-container>
-    
-    <ng-container matColumnDef="connectorStatus">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1">Connector Status </th>
-      <td mat-cell *matCellDef="let row" [ngStyle]="{'color': row.connectorStatus === 'Connected' ? 'green' : 'red' }" class="station-status"> {{row.connectorStatus}} </td>
-    </ng-container>
-    
-    <ng-container matColumnDef="connectorOutputPower">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1">Output Power </th>
-        <td mat-cell *matCellDef="let row"> {{row.connectorOutputPower}} </td>
-      </ng-container>
-         
-    <ng-container matColumnDef="menu">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header  class="menu-col">Action</th>
-        <td mat-cell *matCellDef="let row">
-            <mat-icon class="vertical-menu-icon" style="color: rgb(21, 99, 112); margin-right: 20px;" (click)="onUpdateConnector(row)">edit</mat-icon> 
-            <mat-icon class="vertical-menu-icon" style="color: red;" (click)="onDeleteConnector(row.connectorId)">delete</mat-icon>
-        </td>
-    </ng-container>
-  
-  <tr mat-header-row *matHeaderRowDef="[ 'connectorNumber', 'connectorType','connectorSocket','connectorStatus','connectorOutputPower','menu']"></tr> <!-- display these column in the 1st row -->
-  <tr mat-row *matRowDef="let row; columns: [ 'connectorNumber', 'connectorType','connectorSocket','connectorStatus','connectorOutputPower', 'menu']"></tr> <!--display value -->
-  
-  </table>
-  
-  <mat-paginator [pageSizeOptions]="[10]" aria-label="Select page of users"></mat-paginator>
 
-        </mat-card-content>
-    </mat-card>
-       
-    <div class="myStation-back-button">
-      <h4 routerLink="/manageStation">Back To Station</h4>
+      <!-- using mat-table for display list of charger list for particular station-->
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="connectorNumber">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1">Number Of Connector </th>
+          <!--(click)="openChargerList()"-->
+          <td mat-cell *matCellDef="let row" style="cursor: pointer;"> {{row.connectorNumber}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="connectorType">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1"> Connector Type </th>
+          <td mat-cell *matCellDef="let row"> {{row.connectorType}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="connectorSocket">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1"> Connector Socket </th>
+          <td mat-cell *matCellDef="let row"> {{row.connectorSocket}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="connectorStatus">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1">Connector Status </th>
+          <td mat-cell *matCellDef="let row"
+            [ngStyle]="{'color': row.connectorStatus === 'Connected' ? 'green' : 'red' }" class="station-status">
+            {{row.connectorStatus}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="connectorOutputPower">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1">Output Power </th>
+          <td mat-cell *matCellDef="let row"> {{row.connectorOutputPower}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="menu">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="menu-col">Action</th>
+          <td mat-cell *matCellDef="let row">
+            <mat-icon class="vertical-menu-icon" style="color: rgb(21, 99, 112); margin-right: 20px;"
+              (click)="onUpdateConnector(row)">edit</mat-icon>
+            <mat-icon class="vertical-menu-icon" style="color: red;"
+              (click)="onDeleteConnector(row.connectorId)">delete</mat-icon>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row
+          *matHeaderRowDef="[ 'connectorNumber', 'connectorType','connectorSocket','connectorStatus','connectorOutputPower','menu']">
+        </tr> <!-- display these column in the 1st row -->
+        <tr mat-row
+          *matRowDef="let row; columns: [ 'connectorNumber', 'connectorType','connectorSocket','connectorStatus','connectorOutputPower', 'menu']">
+        </tr> <!--display value -->
+
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[10]" aria-label="Select page of users"></mat-paginator>
+
+    </mat-card-content>
+  </mat-card>
+
+  <div class="myStation-back-button">
+    <h4 routerLink="/manageStation">Back To Station</h4>
   </div>
-    
-    <div class="back-button">
-        <button routerLink="/manageStation/chargers/{{stationId}}">Back</button>
-    </div>
-</div>
 
+  <div class="back-button">
+    <button routerLink="/manageStation/chargers/{{stationId}}">Back</button>
+  </div>
+</div>

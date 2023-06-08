@@ -204,3 +204,37 @@
     border: none;
     background-color: black;
 }
+
+.ans-title{
+    /* border: 1px solid black; */
+   width:100% ;
+    padding: 4px 10px;
+    color: black;
+    background-color: #91b9ce;
+    border-radius: 5px;
+}
+
+.restrictionTableSection h2{
+        font-size: 23px;
+        color: rgb(26, 131, 167);
+}
+
+.restrictionTableSection{
+        width: 80%;
+        padding: 0px 40px;
+        margin-left:10%
+}
+
+.empty-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 18px;
+    color: #888;
+    padding: 16px;
+  }
+
