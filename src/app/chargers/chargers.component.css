@@ -14,18 +14,12 @@
     right: 5%;
     cursor: pointer;
 }
-
-
-
-
 .charging-station-heading{
     margin-top: 10px;
     margin-left: 10px;
     margin-bottom: 0px;
     font-size: 18px;
 }
-
-
 .filter-charger{
     padding: 0px 10px;
 }
@@ -47,7 +41,5 @@
 .filter-button:hover{
     background-color: #4ba5d3;
 }
-.searchbar{
-    margin-left: 1200px;
 
-}
+ 

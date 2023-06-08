@@ -51,17 +51,6 @@ constructor(private manageStation:ManageStationService, private dialog:MatDialog
 
        
         // count data of charger from database
-        this.dataSource.data = res.map((station:{ chargers: any[]; }) => ({
-          ...station,
-          totalNoOfChargers: station.chargers.length,
-          availableChargers: station.chargers.filter((chargers: { active: boolean; }) => chargers.active == true).length,
-          inuseChargers: station.chargers.filter((chargers: { active: boolean; }) => chargers.active == false).length,
-          outOffOrderChargers: station.chargers.filter((chargers: { active: boolean; }) => chargers.active == false).length
-
-
-        
-      }));
-
       
       this.dataSource.data = res.map((station: { chargers: any[] }) => {
         const totalNoOfChargers = station.chargers.length;

@@ -36,7 +36,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     display: flex;
     margin: -10px 10px;
     align-items: center;
-    
+    gap: 10px;
 }
 .table-header-card mat-card-content button{
     display: flex;
@@ -86,14 +86,14 @@ table {
 
 /* searchbar CSS */
 .searchbar{
-    width: 13rem;
-    margin-left: 100px;
-    margin-right: 10px;
+    width: 10rem;
+    margin-right: auto;
     padding: 6px;
     font-size: 14px;
     border-radius: 5px;
     border: 1px solid rgb(26, 131, 167);
     text-align: center;
+    justify-content: space-between;
 }
 
 /* mat dropdown menu css */
