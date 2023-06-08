@@ -20,7 +20,7 @@ export class RestrictedAccessService {
   }
 
   getUserByContactNumber(number: string) {
-    return this.http.get(`http://192.168.0.41:8097/manageUser/getByContactNo?userContactNo=${number}`, { responseType: 'text' });
+    return this.http.get(`http://192.168.0.243:8097/manageUser/getByContactNo?userContactNo=${number}`, { responseType: 'text' });
   }
 
   getIsUserPresent(stationId:string,userId:string){
@@ -34,17 +34,17 @@ export class RestrictedAccessService {
 
   // get list of users that are given access to the station
   getRestrictedUsersByStationId(stationId:string){
-    return this.http.get(`http://192.168.0.41:8096/manageStation/getRestrictedUsers?stationId=${stationId}`,{responseType:'text'});
+    return this.http.get(`http://192.168.0.243:8096/manageStation/getRestrictedUsers?stationId=${stationId}`,{responseType:'text'});
 
   }
   
 
   getUsersDetailsByListOfIds(userIdList:string[]){
-    return this.http.post(`http://192.168.0.41:8097/manageUser/getUserDetailsByUserIds`,userIdList);
+    return this.http.post(`http://192.168.0.243:8097/manageUser/getUserDetailsByUserIds`,userIdList);
   }
 
   deleteUserFromRestrictedAccess(stationId:string,userId:string){
-    return this.http.delete(`http://192.168.0.41:8096/manageStation/deleteUserFromRestrictionList?stationId=${stationId}&userId=${userId}`,{responseType:'text'})
+    return this.http.delete(`http://192.168.0.243:8096/manageStation/deleteUserFromRestrictionList?stationId=${stationId}&userId=${userId}`,{responseType:'text'})
   }
 
 }
