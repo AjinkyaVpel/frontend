@@ -51,13 +51,12 @@ export class ChargersComponent implements OnInit {
         //   totalConnectors: charger.connectors.length,
         //   activeConnectors: charger.connectors.filter((connectors: {active:boolean; }) => connectors.active == true).length,
         //   inactiveConnectors: charger.connectors.filter((connectors: {active:boolean; }) => connectors.active == false).length
-
+          
         // }));
         this.dataSource.data = res.map((charger: { connectors: any[] }) => {
           const totalConnectors = charger.connectors.length;
-          const activeConnectors = charger.connectors.filter(connector => connector.active).length;
-          const inactiveConnectors = charger.connectors.filter(connector => !connector.active).length;
-          
+          const activeConnectors = charger.connectors.filter(connectors => connectors.active).length;
+          const inactiveConnectors = charger.connectors.filter(connectors => !connectors.active).length;
           return {
             ...charger,
             totalConnectors,
@@ -65,6 +64,7 @@ export class ChargersComponent implements OnInit {
             inactiveConnectors,
           };
         })
+       
       },
       error: (err:any) => {
         this.openSnackBar(err.error.error.message)
