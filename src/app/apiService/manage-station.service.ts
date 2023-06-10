@@ -21,7 +21,7 @@ export class ManageStationService {
   //give complete list of station
   getMyStationList() {
     //return this.http.get('assets/json/stationInfo.json');
-    return this.http.get('http://192.168.0.243:8096/manageStation/getStations');
+    return this.http.get(`http://192.168.0.243:8096/manageStation/getStations`);
   }
 
   // not working as patch service of this is not created
@@ -31,13 +31,12 @@ export class ManageStationService {
 
   // give complete list of station using stationId
   getStationById(id: string) {
-    //console.log(this.http.get<Station>(`http://192.168.0.243:8080/vst1/manageStation/getStationByStationId?stationId=${id}`));
     return this.http.get<Station>(`http://192.168.0.243:8096/manageStation/getStation?stationId=${id}`);
   }
 
   //for adding the station in stationlist
   addStationToList(data: any) {
-    return this.http.post('http://192.168.0.243:8096/manageStation/addStation', data).subscribe(
+    return this.http.post(`http://192.168.0.243:8096/manageStation/addStation`, data).subscribe(
       (response) => {
         console.log('Response', response);
       },
