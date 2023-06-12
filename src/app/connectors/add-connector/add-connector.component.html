@@ -5,12 +5,22 @@
     <div mat-dialog-content>
         <div class="row">
             <mat-form-field appearance="outline">
-                <mat-label>Connector Output Power</mat-label>
-                <input matInput type="email" placeholder="Ex: 18.5542818" formControlName="connectorOutputPower">
-            </mat-form-field>
+                <mat-label>Number of connector</mat-label>
+                <input matInput type="text" placeholder="Ex: 1" formControlName="connectorNumber">
+                <mat-error *ngIf="hasError('connectorNumber', 'required')">This field is required</mat-error>
+                <mat-error *ngIf="hasError('connectorNumber', 'pattern')">Please enter a numeric value</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Connector Output Power (kw)</mat-label>
+                <input matInput type="text" placeholder="Ex: 50 kw" formControlName="connectorOutputPower" 
+                       pattern="^\d+(\s+kw)?$">
+                <mat-error *ngIf="hasError('connectorOutputPower', 'required')">This field is required</mat-error>
+                <mat-error *ngIf="hasError('connectorOutputPower', 'pattern')">Please enter a valid value</mat-error>
+              </mat-form-field>       
+
             <mat-form-field appearance="outline">
                 <mat-label>Connector Charges</mat-label>
-                <input matInput type="text" placeholder="Ex: 73.923676" formControlName="connectorCharges">
+                <input matInput type="text" placeholder="Ex: 18 rs" formControlName="connectorCharges">
             </mat-form-field>
 
         </div>

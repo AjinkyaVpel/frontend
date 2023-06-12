@@ -1,5 +1,6 @@
 <div mat-dialog-title>
-    <h2>Add Station</h2>
+    <h2 *ngIf="!update">Add Station</h2>
+    <h2 *ngIf="update">Update Station</h2>
 </div>
 <form [formGroup]="addStation" (ngSubmit)="onFormSubmit()"> <!--[formGroup]="empForm" (ngSubmit)="onFormSubmit()"-->
     <div mat-dialog-content >

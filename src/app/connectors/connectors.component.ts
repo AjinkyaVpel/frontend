@@ -13,30 +13,39 @@ import { AddConnectorComponent } from './add-connector/add-connector.component';
   styleUrls: ['./connectors.component.css']
 })
 export class ConnectorsComponent {
-  stationId: any;
-  chargerId: any;
+  stationId!:string;
+  chargerId!: string;
+  chargerName!:string;
+  errorMessage!:string;
   openForm:boolean = false;
   connctorId:any
   displayedColumns: string[] = [ 'connectorNumber', 'connectorType','connectorSocket','connectorStatus','connectorOutputPower', 'menu'];
   dataSource!: MatTableDataSource<any>;
 
-  constructor(private activeRoute: ActivatedRoute,private connector:ConnectorService,  private route:Router,private dialog:MatDialog){}
+  constructor(private activeRoute: ActivatedRoute,private connectorApi:ConnectorService,  private route:Router,private dialog:MatDialog){}
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
 
   ngOnInit(): void {
-        this.stationId = this.activeRoute.snapshot.paramMap.get('stationId');
-        this.chargerId = this.activeRoute.snapshot.paramMap.get('chargerId');
-        console.warn(this.stationId);
-        console.warn(this.chargerId);
-        this.getConnectorUsingIds(this.stationId,this.chargerId);
+    this.activeRoute.params.subscribe(params => {
+      this.stationId =params['stationId']; 
+      this.chargerId=params['chargerId']; 
+    })
+    this.activeRoute.queryParams.subscribe(params => {
+      this.chargerName = params['chargerName'];
+      // Access more data properties as needed
+    });
+
+       
+        
+    this.getConnectorUsingIds(this.stationId,this.chargerId);   
        
   }
 
-  getConnectorUsingIds(stationById: any,chargerById: any){
-    this.connector.getConnector(stationById,chargerById).subscribe({
+  getConnectorUsingIds(stationById: string,chargerById: string){
+    this.connectorApi.getConnector(stationById,chargerById).subscribe({
       next: (res:any) => {
         console.warn(res);
         
@@ -54,8 +63,8 @@ export class ConnectorsComponent {
         }));
         
       },
-      error: (err) => {
-        console.log(err)
+      error: (err:any) => {
+        this.errorMessage=err.error.error.message;
       }
     })
   }
@@ -101,7 +110,7 @@ export class ConnectorsComponent {
     dialogRef.afterClosed().subscribe((dialogResult: any) => {
       if (dialogResult) {
 
-        this.connector.deleteConnectorById(connectorId).subscribe((result: any) => {
+        this.connectorApi.deleteConnectorById(connectorId).subscribe((result: any) => {
           console.log(result)
          
 

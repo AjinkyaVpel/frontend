@@ -9,7 +9,7 @@ export class ConnectorService {
   constructor(private http:HttpClient) { }
 
   // get all connectors details
-  getConnector(stationId: any,chargerId: any){
+  getConnector(stationId: string,chargerId: string){
     return this.http.get(`http://192.168.0.243:8096/manageConnector/getConnectors?stationId=${stationId}&chargerId=${chargerId}`)
   }
 
@@ -31,13 +31,11 @@ export class ConnectorService {
   }
    
   // updating connnector data
-  updatingConnector(connectorId:any,data:any){
-    alert(connectorId)
+  updateConnector(connectorId:any,data:any){
     return this.http.put(`http://192.168.0.243:8096/manageConnector/updateConnector?connectorId=${connectorId}`,data)
   }
   //Delete the connector by using connectorId
   deleteConnectorById(id:any){
-    alert(id)
     console.log(id)
     return this.http.delete(`http://192.168.0.243:8096/manageConnector/deleteConnector?connectorId=${id}`);
   
