@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ChargerService } from 'src/app/apiService/charger.service';
@@ -39,7 +39,7 @@ export class AddChargerComponent {
     
     
     this.addStation = this.formBuilder.group({
-      chargerName: '',
+      chargerName: ['', Validators.required],
       chargerNumber:'',
       chargerInputVoltage: '',
       chargerOutputVoltage:'',
@@ -81,11 +81,15 @@ export class AddChargerComponent {
   }
 
   onFormSubmit() {
-      this.chargerService.addChargerToList(this.addStation.value, this.stationId);
-      this.openSnackBar("Charger added successfully","Done")
-      this.dialogRef.close(true);
-      window.location.reload();
+    if (this.addStation.invalid) {
+      // Form is invalid, display error messages or handle the case accordingly
+      return;
+    }
 
+    this.chargerService.addChargerToList(this.addStation.value, this.stationId);
+    this.openSnackBar("Charger added successfully", "Done");
+    this.dialogRef.close(true);
+    window.location.reload();
   }
 
 }

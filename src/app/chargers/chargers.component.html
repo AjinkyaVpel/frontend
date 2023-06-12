@@ -1,4 +1,5 @@
-<h1>Charger List</h1>
+<h1>Charger's List</h1>
+<h2>Station Name: {{stationName}}</h2>
 <h2 style="color: red;">{{errorMessage}}</h2>
 <!-- table header section for button and filters -->
 <div class="table-header-card tab-content">
@@ -28,10 +29,8 @@
           <mat-icon aria-hidden="false" aria-label="Example download icon" fontIcon="add"></mat-icon>
           Add Charger
         </button>
-
     </mat-card-content>
-
-  </mat-card>
+ </mat-card>
 
 </div>
 
@@ -44,14 +43,14 @@
 
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="2"> Sr No </th>
-          <td mat-cell *matCellDef="let row; let i=index;"><mat-checkbox [(ngModel)]="row.selected"></mat-checkbox> {{i
-            + 1}} </td>
+          <td mat-cell *matCellDef="let row; let i=index;"><mat-checkbox [(ngModel)]="row.selected"></mat-checkbox> {{ paginator.pageIndex * paginator.pageSize + i + 1 }} </td>
         </ng-container>
 
         <ng-container matColumnDef="chargerName">
           <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="2">Charger </th>
           <!--(click)="openChargerList()"-->
-          <td mat-cell *matCellDef="let row" style="cursor: pointer;" (click)="openConnector(row.chargerId)">
+          <input [(ngModel)]="chargerName" placeholder="Charger Name">
+          <td mat-cell *matCellDef="let row" style="cursor: pointer;" (click)="openConnector(row)">
             {{row.chargerName}} </td>
         </ng-container>
 
@@ -121,7 +120,11 @@
 
       </table>
 
-      <mat-paginator [pageSizeOptions]="[10]" aria-label="Select page of users"></mat-paginator>
+      <mat-paginator [length]="100"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      aria-label="Select page">
+</mat-paginator>
 
     </mat-card-content>
   </mat-card>
@@ -133,4 +136,5 @@
   <div class="back-button">
     <button routerLink="/dashboard">Back</button>
   </div>
+
 </div>

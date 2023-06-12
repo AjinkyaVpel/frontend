@@ -8,20 +8,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ChargerService } from '../apiService/charger.service';
 import { DeleteDialogComponent } from './deleteDialog/delete-dialog.component';
 import { AddChargerComponent } from './addCharger/addCharger.component';
+import { Charger } from './charger';
 @Component({
   selector: 'app-chargers',
   templateUrl: './chargers.component.html',
   styleUrls: ['./chargers.component.css']
 })
 export class ChargersComponent implements OnInit {
-  stationId: any;
-  stationName: any;
+  stationId!: string;
+  stationName!: string;
   chargerListData: any;
   selectedItem: any;
   errorMessage!:string;
   allSelected:any
+  chargerName!: string;
+
   
-  constructor(private activeRoute:ActivatedRoute,private charger:ChargerService, private myStation:ChargerService,private route:Router, private dialog:MatDialog, private snackBar:MatSnackBar) {}
+  constructor(private activeRoute:ActivatedRoute,private chargerApi:ChargerService, private myStation:ChargerService,private route:Router, private dialog:MatDialog, private snackBar:MatSnackBar) {}
 
   displayedColumns: string[] = ['id', 'chargerName', 'chargerserialNumber','connectorStatus','total','activeConnector','inactiveconnector','chargerStatus', 'menu'];
   dataSource!: MatTableDataSource<any>;
@@ -33,12 +36,19 @@ export class ChargersComponent implements OnInit {
   ngOnInit(): void {
     this.activeRoute.params.subscribe(params => {
       this.stationId =params['stationId'];    
-      this.getChargerListById(this.stationId);      //to get the charger list of particular station using charger service
+      this.getChargerListById(this.stationId);     
+       //to get the charger list of particular station using charger service
      })
+
+     this.activeRoute.queryParams.subscribe(params => {
+       this.stationName = params['stationName'];
+      // Access more data properties as needed
+      console.log(this.stationName); 
+    });
   }
 
-  getChargerListById(id: any) {
-    this.charger.getChargerAllList(id).subscribe({
+  getChargerListById(id: string) {
+    this.chargerApi.getChargerAllList(id).subscribe({
       next: (res:any) => {
         console.log(res);
         this.dataSource = new MatTableDataSource(res);
@@ -74,9 +84,14 @@ export class ChargersComponent implements OnInit {
   }
 
   // redirecting to connector page 
-  openConnector(chargerId: any){
-    this.route.navigate([`manageStation/chargers/${this.stationId}/connector`,chargerId]);
+  openConnector(chargerData: Charger){
+    const data = {
+      chargerName: chargerData.chargerName,
+      // Add more data properties as needed
+    };
+    this.route.navigate([`manageStation/chargers/${this.stationId}/connector/${chargerData.chargerId}`],{ queryParams: data });
   }
+ 
 
   // open charger setting page
   openChargerSetting(data: any){
