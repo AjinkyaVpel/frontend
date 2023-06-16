@@ -96,16 +96,16 @@
                   &nbsp;&nbsp; <mat-icon>delete</mat-icon>&nbsp;
                 </button> -->
               <div class="edit-station" (click)="onEditStation(row)">
-                <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
+                <mat-icon aria-hidden="false" style="color: orange"  fontIcon="edit"></mat-icon>
                 <h4>Edit</h4>
               </div>
 
               <div class="delete-station" (click)="onDelete(row.stationId)">
-                <mat-icon aria-hidden="false" style="color: orange" fontIcon="delete"></mat-icon>
+                <mat-icon aria-hidden="false" style="color: red" fontIcon="delete"></mat-icon>
                 <h4>Delete</h4>
               </div>
               <div class="myStation-menu-setting" (click)="onClickedSetting(row.stationId)">
-                <mat-icon>settings</mat-icon>
+                <mat-icon  style="color: grey" >settings</mat-icon>
                 <h4>Access Contol</h4>
               </div>
             </mat-menu>

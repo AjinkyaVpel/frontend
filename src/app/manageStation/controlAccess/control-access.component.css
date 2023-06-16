@@ -1,3 +1,139 @@
+h2 {
+    font-size: 32px;
+    color:  #3f51b5;
+  }
+
+.profile-header-container{
+    display: flex;
+    padding: 30px 50px;
+    align-items: center;
+
+    /* glass effect */
+    background:#c7cdee;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile-header-container img{
+    height: 6rem;
+    width: 6rem;
+    margin-right: 20px;
+}
+.profile-header-container h2{
+    font-size: 30px;
+}
+.profile-header-container button{
+    display: flex;
+    align-items: center;
+    display: flex;
+    margin-right: 10px;
+    padding: 7px 10px;
+    background-color: #3f51b5;
+    color: white;
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    height: 2.1rem;
+}
+.profile-header-container button h5{
+    font-size: 17px;
+    text-align: center;
+    margin-top: 9px;
+    margin-left: 10px;
+}
+.profile-header-container button:hover{
+    background-color: #3f51b5;
+    color: white;
+}
+/* profile page middle section css */
+.infomation-display-format{
+    display:flex;
+    font-size: 19px;
+    padding: 0px 10px;
+    /* border: 1px solid black; */
+}
+.profile-middle-container{
+    padding: 50px 10px;
+    justify-content: left;
+}
+.profile-middle-container .div1{
+    text-align: left;
+    justify-content: left;
+    padding: 15px 50px;
+}
+.profile-middle-container .div2{
+    padding: 8px 0px;
+}
+.ans-title{
+    /* border: 1px solid black; */
+   
+    padding: 4px 10px;
+    color: black;
+    background-color: #E2E8F0;
+    border-radius: 5px;
+}
+/* profile footer CSS */
+.profile-footer-container{
+    display: flex;
+    padding: 0px 10px 0px 0px;
+}
+.profile-footer-container button{
+    display: flex;
+    align-items: center;
+
+    display: flex;
+    margin-right: 10px;
+    padding: 7px 10px;
+    background-color: 3f51b5;
+    color: black;
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    height: 2.1rem;
+}
+.profile-footer-container button:hover{
+    color: white !important;
+    background-color: red;
+}
+.profile-footer-container h5{
+    font-size: 12px;
+    text-align: center;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+.profile-footer-container:hover h5{
+    color: white;
+}
+/* back button CSS */
+.back-button{
+    /* border: 1px solid black; */
+    margin: 20px 10px 10px 10px;
+}
+.back-button button{
+    display: flex;
+    align-items: center;
+    display: flex;
+    position: relative;
+    padding: 15px;
+    color:  #3f51b5;
+    border: 1px solid  #3f51b5;
+    border-radius: 7px;
+    cursor: pointer;
+    height: 2.1rem;
+    font-size: 20px;
+    margin-left: 43%;
+}
+.back-button button:hover {
+    color: white !important;
+    border: none;
+    background-color: #C7D2FE;
+}
+
+
+
 .manage-station{
     margin-top: 50px;
 }
@@ -13,7 +149,7 @@
 }
 .location-setting h2{
     font-size: 23px;
-    color: rgb(26, 131, 167);
+    color:#3f51b5;
 }
 .location-name{
     display: flex;
@@ -35,7 +171,6 @@
 .control-access-button h5{
     margin:2px 0px 0px 5px;
     font-size: 14px;
-    color: rgb(26, 131, 167);
 }
 
 /* input */
@@ -44,7 +179,7 @@
     width: 100%;
     border-radius: 5px;
     border: none;
-    background-color: rgb(140, 190, 207);
+    background-color: #E2E8F0;
     margin-top: 10px;
     margin-bottom: 10px;
     color: black;
@@ -66,7 +201,7 @@
     /* border: 1px solid black; */
     width: 45%;
     padding: 5px 10px 0px 10px;
-    background-color: rgb(173, 213, 228);
+    background-color: #E2E8F0;
     border-radius: 10px;
 
 }
@@ -78,7 +213,7 @@
     width: 44%;
     padding: 20px;
     align-items: center;
-    background-color: rgb(173, 213, 228);
+    background-color: #E2E8F0;
     border-radius: 10px;
     
 }
@@ -99,13 +234,12 @@
     background-color: rgb(224, 224, 224);
 }
 .station-button:hover{
-    color: rgb(26, 131, 167);
+    color: #3f51b5;
 }
 .station-button h5{
     margin:2px 0px 0px 5px;
     font-size: 14px;
 }
-
 
 /* Station Info CSS */
 .stationSetting{
@@ -114,7 +248,7 @@
 }
 .stationSetting-info h2{
     font-size: 23px;
-    color: rgb(26, 131, 167);
+    color: #3f51b5;
 }
 .station-name{
     display: flex;
@@ -125,7 +259,7 @@
     width: 100%;
     border-radius: 5px;
     border: none;
-    background-color: rgb(140, 190, 207);
+    background-color:#E2E8F0;
     margin-top: 10px;
     margin-bottom: 10px;
     color: black;
@@ -139,7 +273,7 @@
 .stationSetting-type{
     display: flex;
     margin-top: 10px;
-    background-color: rgb(140, 190, 207);
+    background-color:#E2E8F0;
     border-radius: 5px;
     padding: 0px 7px;
 }
@@ -202,7 +336,7 @@
 .back-button button:hover{
     color: #4ba5d3;
     border: none;
-    background-color: black;
+    
 }
 
 .ans-title{

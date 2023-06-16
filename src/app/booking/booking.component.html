@@ -4,7 +4,9 @@
             <mat-card-content>
              <input matInput placeholder="Search columns" class="searchbar" (keyup)="applyFilter($event)" #input >   
             </mat-card-content>
+            
         </mat-card> 
+        
     
 <!-- booking table  -->
 
@@ -58,7 +60,7 @@
               <mat-option value="cancelled">Cancelled</mat-option>
               <mat-option value="in progress">In-Progress</mat-option>             
             </mat-select></th>
-            <td mat-cell *matCellDef="let row" [ngStyle]="{'color': row.bookingStatus === 'completed' ? 'green' : 'red'}"> {{row.bookingStatus}} </td>
+            <td mat-cell *matCellDef="let row" [ngStyle]="{'color': row.bookingStatus === 'completed' ? 'green' : 'red'}"> {{row.bookingStatus |titlecase}} </td>
           </ng-container>
 
           <ng-container matColumnDef="bookingAmount">

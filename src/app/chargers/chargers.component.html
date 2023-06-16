@@ -1,5 +1,5 @@
 <h2>Charger's List</h2>
-<h3>Station Name: {{stationName}}</h3>
+<h3>{{stationName}}</h3>
 <h3 style="color: red;">{{errorMessage}}</h3>
 <!-- table header section for button and filters -->
 <div class="table-header-card tab-content">
@@ -98,11 +98,11 @@
               &nbsp;&nbsp;<mat-slide-toggle>Stop-Start</mat-slide-toggle>&nbsp;<br>
               &nbsp;&nbsp;<mat-slide-toggle>Inactive-Active</mat-slide-toggle>&nbsp;&nbsp;&nbsp;
               <div class="delete-station" (click)="onRemove(row.chargerId)">
-                <mat-icon aria-hidden="false" fontIcon="delete" style="color: orange;"></mat-icon>
+                <mat-icon aria-hidden="false" fontIcon="delete" style="color: red"></mat-icon>
                 <h4>Delete Charger</h4>
               </div>
               <div class="myStation-menu-setting" (click)="openChargerSetting(row)">
-                <mat-icon>settings</mat-icon>
+                <mat-icon style="color: grey">settings</mat-icon>
                 <h4> Charger Setting</h4>
               </div>
             </mat-menu>
