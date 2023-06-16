@@ -19,8 +19,8 @@ interface SideNavToggle{
       transition(':enter',[
         animate('1000ms',
         keyframes([
-          style({transform: 'rotate(0deg)',offset: '0'}),
-          style({transform: 'rotate(2turn)',offset: '1'})
+          style({transform: 'rotate(180deg)',offset: '0'}),
+          style({transform: 'rotate(1turn)',offset: '1'})
         ])
         )
       ])
@@ -44,7 +44,6 @@ export class SidenavComponent implements OnInit {
 
   // collapse and expansion of sidenav bar
   toggleCollapse(){
-  
      this.collapsed = true;
     // this.collapsed=!this.collapsed;
      this.onToggleSideNav.emit({collapsed: this.collapsed,screenWidth: this.screenWidth})

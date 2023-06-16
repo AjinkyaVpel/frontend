@@ -1,12 +1,13 @@
 .head{
     width:calc(100% - 5rem);
+    height: 80px;
     margin-left: 5rem;
     z-index: 2;
     transition: all 0.3s ease;
-    background-color: rgb(32, 32, 32);
+    /* background-color:#3730A3; */
+    background-image: linear-gradient(to right, #3730A3 , #0d0a36);
     padding: 0.4rem 2rem 0.4rem 1.5rem;
-    border-radius: 0rem 0rem 0.5rem 0.5rem;
-
+    border-radius: 0rem 0rem 0.8rem 0.8rem;
     position:fixed;
     top: 0;
 }
@@ -39,8 +40,11 @@
     margin-right: 10px;
 }
 mat-toolbar{
-    background-color: rgb(32, 32, 32) ;
+    /* background-color:#3730A3; */
+
+    background-image: linear-gradient(to right, #3730A3 , #0d0a36);
 }
+
 .profile-menu-button{
     background-color: rgb(32, 32, 32) ;
     color: rgb(26, 131, 167);
@@ -71,7 +75,13 @@ mat-toolbar{
     color: rgb(219, 219, 219);
 }
 .notification-icon mat-icon:hover{
-    color:rgb(26, 131, 167)
+    color:#C7D2FE
 }
 
-
+.profile-dropdown span{
+color: #3f51b5;
+}
+    
+.profile-menu-button{
+    background-color:white;
+}

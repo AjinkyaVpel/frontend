@@ -1,4 +1,4 @@
-<h1>Stations</h1>
+<h2 >Stations</h2>
 <!-- Add Button in M-Station -->
 <!-- table header section for button and filters -->
 <div class="table-header-card tab-content">
@@ -7,7 +7,7 @@
       <span class="example-spacer"></span>
       <input placeholder="Search" class="searchbar" #input (keyup)="applyfilter($event)">
       <button mat-raised-button color="primary" (click)="addStationDialog()">
-        <mat-icon aria-hidden="false" aria-label="Example download icon" fontIcon="add"></mat-icon>Add Station</button>
+        <mat-icon aria-hidden="false" style aria-label="Example download icon" fontIcon="add"></mat-icon>Add Station</button>
     </mat-card-content>
   </mat-card>
 </div>
@@ -106,7 +106,7 @@
               </div>
               <div class="myStation-menu-setting" (click)="onClickedSetting(row.stationId)">
                 <mat-icon>settings</mat-icon>
-                <h4>Contol Access</h4>
+                <h4>Access Contol</h4>
               </div>
             </mat-menu>
           </td>
