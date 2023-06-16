@@ -55,14 +55,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { ControlAccessComponent } from './manageStation/controlAccess/control-access.component';
 import { SearchPipe } from './chargers/search.pipe';
 
+
+
 import * as CanvasJSAngularChart from '../assets/canvasjs.angular.component';
 import { LiveDataComponent } from './dashboard/live-data/live-data.component';
 import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
 import { MultiChartComponent } from './dashboard/multi-chart/multi-chart.component';
+import { MatButtonModule } from '@angular/material/button';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
-import { FlexLayoutModule } from "@angular/flex-layout";
-import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -125,10 +127,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatSnackBarModule,
     NgxMaterialTimepickerModule,
     MatIconModule,
-    MatButtonModule
-  
-
-
+   MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

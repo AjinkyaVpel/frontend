@@ -1,4 +1,4 @@
-<h1 class="form-heading">Add Connector</h1>
+<h1 class="form-heading">{{data.connectorId ? "Update Connector" : "Add Connector"}}</h1>
 
 <!-- add Connector form -->
 <form [formGroup]="addConnector" (ngSubmit)="onFormSubmit()">
@@ -53,8 +53,8 @@
     </div>
 
     <div mat-dialog-actions class="action">
-        <button mat-raised-button class="form-button" type="button" mat-dialog-close="false">Cancel</button>
-        <button mat-raised-button class="form-button" type="submit">{{data.connectorId ? "Update" : "Add"}}</button>
+        <button mat-raised-button color="basic"  type="button" mat-dialog-close="false">Cancel</button>
+        <button mat-raised-button color="primary"  type="submit">{{data.connectorId ? "Update" : "Add"}}</button>
     </div>
 
 </form>

@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ManageStationService } from 'src/app/apiService/manage-station.service';
@@ -36,6 +36,7 @@ export class AddStationComponent {
     "Private",
     "Public"
   ]
+  linkPattern = /^https:\/\/goo\.gl\/maps\/[A-Za-z0-9]+$/;
   constructor(private formBuilder: FormBuilder,private manageStation:ManageStationService,private dialogRef: MatDialogRef<AddStationComponent>, @Inject(MAT_DIALOG_DATA) public data: any,private snackBar:MatSnackBar) {
     this.addStation = this.formBuilder.group({
      
@@ -45,13 +46,13 @@ export class AddStationComponent {
       stationVendorId: '',
       stationAddressLineOne:'',
       stationAddressLineTwo:'',
-      stationZipCode:'',
+      stationZipCode:['', [Validators.required, this.validatePincode]],
       stationCity:'',
-      stationLatitude: '',
-      stationLongitude: '',
-      stationLocationURL: '',
-      stationParkingArea: '',
-      stationContactNumber: '',
+      stationLatitude: new FormControl('', [Validators.required, Validators.pattern('^-?([1-8]?[0-9]\.[0-9]{1,6}|90\.[0-9]{1,6})$')]),
+      stationLongitude: new FormControl('', [Validators.required, Validators.pattern('^-?((1[0-7]|[1-9])?[0-9]\.[0-9]{1,6}|180\.[0-9]{1,6})$')]),
+      stationLocationURL: ['', [Validators.pattern('^https:\/\/goo\.gl\/maps\/[A-Za-z0-9]+$')]],
+      stationParkingArea: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      stationContactNumber: ['+91', [Validators.required, Validators.pattern(/^\+91\d{10}$/)]],
       stationStatus: '',
       stationPowerStandard: '',
       stationWorkingTime: '',
@@ -86,6 +87,22 @@ export class AddStationComponent {
       
     });
   }
+  
+  hasError(controlName: string, errorName: string): boolean {
+  const control = this.addStation.get(controlName);
+  return !!(control?.errors && control?.errors[errorName] && control?.touched);
+}
+
+validatePincode(control: FormControl) {
+  const pincodeRegex = /^[1-9][0-9]{5}$/; // Regular expression for pincode validation
+  const valid = pincodeRegex.test(control.value);
+  return valid ? null : { invalidPinCode: true };
+}
+
+  
+  
+  
+  
 
   // onFormSubmit() {
   //     this.manageStation.addStationToList(this.addStation.value);

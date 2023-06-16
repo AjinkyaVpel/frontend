@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
 
 import { SettingRoutingModule } from './setting-routing.module';
 import { SettingsComponent } from './settings.component';
@@ -17,7 +18,9 @@ import { FormsModule } from '@angular/forms';
     SettingsComponent,
     SecuritySettingComponent,
     PaymentSettingComponent,
-    NotificationSettingComponent
+    NotificationSettingComponent,
+
+  
   ],
   imports: [
     CommonModule,
@@ -26,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+   MatCardModule
   ]
 })
 export class SettingModule { }

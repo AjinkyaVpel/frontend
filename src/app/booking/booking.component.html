@@ -1,14 +1,11 @@
-<h1>Bookings</h1>
+<h2>Bookings</h2>
 <div class="rfids-content">
-    <div class="table-header-card tab-content">
-        <!-- card for filter button -->
         <mat-card>
             <mat-card-content>
-                <!-- <h3>Booking</h3> -->
-                <input matInput placeholder="Search by" (keyup)="applyFilter($event)" #input>
+             <input matInput placeholder="Search columns" class="searchbar" (keyup)="applyFilter($event)" #input >   
             </mat-card-content>
         </mat-card> 
-    </div>
+    
 <!-- booking table  -->
 
 <div class="table-content-card">

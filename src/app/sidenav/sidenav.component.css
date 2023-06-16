@@ -1,5 +1,5 @@
 .sidenav{
-    background: #4ba5d3;
+    background: white;
     transition: all 0.3s ease;
     position: fixed;
     z-index:1;
@@ -18,7 +18,7 @@
 }
 /* sidenav A button */
 .logo{
-    background-color: #fff;
+    background-color: #C7D2FE;
     text-align: center;
     width:3rem;
     min-width: 3rem;
@@ -28,13 +28,14 @@
     font-weight: 900;
     cursor: pointer;
     border:none;
+    color: #3730A3;
 }
 /* sidenav bar admin text  */
 .admin-text{
     margin-left:1.5rem;
     font-size: 24px;
     font-weight: 700;
-    color:#fff;
+    color: #3730A3;
 }
 .sidenav-btn-close{
     margin-left: auto;
@@ -42,14 +43,14 @@
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background-color: transparent;
+    background-color:  white;
     border: none;
 }
 .sidenav-btn-close i:hover{
    color: rgb(207, 48, 48);
 }
 .fa-times{
-    color: #fff;
+    color:  #3730A3;
     font-size: 24px;
 }
 .sidenav-collapsed{
@@ -75,7 +76,7 @@
     display: flex;
     align-items: center;
     height: 3rem;
-    color: #f3f3f3;
+    color:#3730A3;
     text-decoration: none;
     transition: all 0.3s ease;
     border-radius: 0.70rem;
@@ -87,6 +88,7 @@
     min-width: 2rem;
     margin: 0 0.5rem;
     text-align: center;
+    color:#3730A3
 }
 .sidenav-link-text{
     margin-left: 1.5rem;
@@ -94,23 +96,25 @@
 }
 .sidenav-nav-link:hover{
     background-color: #f3f3f3;
-    color: #000;
+    color:#3730A3;
 }
 
 /* to show which component is active from the all menu */
 .active{
-    background-color: #fff;
+    /* background-color:#C7D2FE; */
+    background-image: linear-gradient(to left, #C7D2FE , white);
+
 }
 /* to show which sublevel menu is active */
 .active-sublevel{
     font-weight: bold;
 }
 .menu-collapse-icon, .sidenav-link-icon, .sidenav-link-text{
-    color: black;
+    color:#3730A3;
 }
 .menu-collapse-icon{
     margin-left: 0.8rem;
-    color: black;
+    color: E0E7FF;
     font-size: 25px;
     width: 2rem ;
 }
@@ -122,7 +126,7 @@
     display: flex;
     align-items: center;
     height: 3rem;
-    color:black;
+    color:#3f51b5;
     text-decoration: none;
     border-radius: 0.625rem;
     transition: all 0.3s ease;
@@ -167,7 +171,7 @@
     width:10px;
 }
 .scrollwrap::-webkit-scrollbar-thumb{
-    background-color: rgb(89, 143, 160);
+    background-color:white;
     border-radius: 20px;
 }
 .scrollwrap{
