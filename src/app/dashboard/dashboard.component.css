@@ -220,7 +220,8 @@ mat-card-title{
     width: 210px;
     height: 270px;
 }
-.stationSetting-map-photo{
-   display: flex;
-   flex-basis: 100%;
+.map{
+    width: 85%;
+    flex-basis: 100%;
+    
 }
