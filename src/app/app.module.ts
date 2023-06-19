@@ -65,6 +65,12 @@ import { MatButtonModule } from '@angular/material/button';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { MatButtonModule } from '@angular/material/button';
+import { NotificationDialogComponent } from './header/notification-dialog/notification-dialog.component';
+import { MatBadgeModule } from '@angular/material/badge';
+
+
 
 @NgModule({
   declarations: [
@@ -98,7 +104,8 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     LiveDataComponent,
     PieChartComponent,
     MultiChartComponent,
-    RestrictedAccessComponent
+    RestrictedAccessComponent,
+    NotificationDialogComponent
     
   ],
   imports: [
@@ -127,7 +134,10 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     MatSnackBarModule,
     NgxMaterialTimepickerModule,
     MatIconModule,
+    MatButtonModule,
+    MatBadgeModule
    MatButtonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

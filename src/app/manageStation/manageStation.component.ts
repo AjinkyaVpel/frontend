@@ -147,7 +147,7 @@ constructor(private manageStation:ManageStationService, private dialog:MatDialog
 
   onEditStation(data:any){
     const dialogRef = this.dialog.open(AddStationComponent,{
-     data   
+     data  
   }
 )}
 }

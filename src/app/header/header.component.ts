@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { NotificationDialogComponent } from './notification-dialog/notification-dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +18,10 @@ export class HeaderComponent {
       }else{
         styleClass = 'head-md-screen'
       }
-      return styleClass; 
+      return styleClass;  
+    }
+    constructor(private dialog: MatDialog) { }
+    openNotificationDialog(): void {
+      this.dialog.open(NotificationDialogComponent);
     }
 }
