@@ -1,21 +1,27 @@
-<h1>Account Settings</h1>
-<div class="account-setting-section">
-    <div class="infomation-display-format">
-        <div class="div1">
-            <label for="name" class="title">Email Id</label><br><br><br>
-            <label for="name" class="title">Password</label>
+<mat-card>
+    <mat-card-header>
+      <h1><mat-card-title>Account Settings</mat-card-title></h1>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="account-setting-section">
+        <div class="infomation-display-format">
+          <div class="div1">
+            <label for="name" class="title">Email :-</label><br><br><br>
+            <label for="name" class="title">Password :-</label>
+          </div>
+          <div class="div2">
+            <label for="name" class="ans-title">Johnwick@gmail.com</label><br><br><br>
+            <label for="name" class="ans-title">John@123</label>
+          </div>
         </div>
-        <div class="div2">
-                <label for="name" class="ans-title">Johnwick@gmail.com</label><br><br><br>
-                <label for="name" class="ans-title">John@123</label>
+        <div class="accountSetting-auth-section">
+          <h4>Two-Factor Authentication</h4>
+          <mat-slide-toggle></mat-slide-toggle>
         </div>
-    </div>
-    <div class="accountSetting-auth-section">
-        <h4>Two - Factor Authenication</h4>
-        <!-- <span class="example-spacer"></span> -->
-        <mat-slide-toggle></mat-slide-toggle>
-    </div>
-</div>
-<div class="back-button">
-    <button routerLink="/dashboard">Back</button>
-</div>
+      </div>   
+    </mat-card-content>
+  </mat-card>
+  <div class="back-button">
+    <button color="primary" mat-raised-button  routerLink="/dashboard">Back</button>
+  </div>
+  

@@ -1,12 +1,13 @@
 .head{
     width:calc(100% - 5rem);
+    height: 80px;
     margin-left: 5rem;
     z-index: 2;
     transition: all 0.3s ease;
-    background-color: rgb(32, 32, 32);
+    /* background-color:#3730A3; */
+    background-image: linear-gradient(to right, #3730A3 , #0d0a36);
     padding: 0.4rem 2rem 0.4rem 1.5rem;
-    border-radius: 0rem 0rem 0.5rem 0.5rem;
-
+    border-radius: 0rem 0rem 0.8rem 0.8rem;
     position:fixed;
     top: 0;
 }
@@ -38,12 +39,13 @@
     cursor: pointer;
     margin-right: 10px;
 }
-mat-toolbar{
-    background-color: rgb(32, 32, 32) ;
+.mat-toolbar{
+    /* background-color:#3730A3; */
+    background-image: linear-gradient(to right, #3730A3 , #0d0a36);
 }
+
 .profile-menu-button{
     background-color: rgb(32, 32, 32) ;
-    color: rgb(26, 131, 167);
     font-size: 15px;
     font-weight: bold;
     border: none;
@@ -51,27 +53,30 @@ mat-toolbar{
     cursor: pointer;
 }
 
-.profile-menu-button span{
+/* .profile-menu-button span{
     margin-left:5px;
     margin-top: -10px;
-}
-.profile-menu-button mat-icon{
-    color: rgb(88, 171, 199);
-    padding-top: 5px;
-}
+} */
+
 .profile-dropdown-button:hover{
-    background-color: rgb(148, 184, 196);
+    background-color:#C7D2FE;
     border-radius: 8px;
 }
 
 /* notification icon in navbar CSS */
-.notification-icon mat-icon{
+.notification-icon .mat-icon{
     margin-right: 30px;
     cursor: pointer;
     color: rgb(219, 219, 219);
 }
-.notification-icon mat-icon:hover{
-    color:rgb(26, 131, 167)
+.notification-icon .mat-icon:hover{
+    color:white ;
 }
 
-
+.profile-dropdown span{
+color: #3f51b5;
+}
+    
+.profile-menu-button{
+    background-color:white;
+}

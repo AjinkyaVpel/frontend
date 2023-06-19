@@ -55,14 +55,14 @@ constructor(private manageStation:ManageStationService, private dialog:MatDialog
       this.dataSource.data = res.map((station: { chargers: any[] }) => {
         const totalNoOfChargers = station.chargers.length;
         const availableChargers = station.chargers.filter(charger => charger.active).length;
-        const inuseChargers = station.chargers.filter(charger => !charger.active).length;
+        const inUseChargers = station.chargers.filter(charger => !charger.active).length;
         const outOffOrderChargers = station.chargers.filter(charger => !charger.active).length;
         
         return {
           ...station,
           totalNoOfChargers,
           availableChargers,
-          inuseChargers,
+          inUseChargers,
           outOffOrderChargers
         };
       })
@@ -90,8 +90,12 @@ constructor(private manageStation:ManageStationService, private dialog:MatDialog
     this.route.navigate(['manageStation/controlAccess/', stationId]);  //the id of that specific station
   }
 
-  openChargerList(id: any) {
-    this.route.navigate(['manageStation/chargers', id]);
+  openChargerList(stationData:any) {
+    const data = {
+      stationName: stationData.stationName,
+      // Add more data properties as needed
+    };
+    this.route.navigate(['manageStation/chargers', stationData.stationId], { queryParams: data });
   }
   addStationDialog() {
     const dialogRef = this.dialog.open(AddStationComponent)

@@ -17,7 +17,7 @@ body {
     margin-top: 2.5rem;
     font-weight: bold;
     font-size: 30px;
-    color: #3a83a8;
+    color:  #3f51b5;
 }
 .ng-star-inserted span{
     color:black;
@@ -43,31 +43,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin-right: 10px;
     padding: 5px 10px;
     /* background-color: rgb(26, 131, 167); */
-    color: black;
+    color:  #3f51b5;
     border-radius: 7px;
     cursor: pointer;
     border: none;
     height: 2.1rem;
 }
 
-/* .table-header-card mat-card-content button{
-    
-    --mdc-protected-button-container-color:#4ba5d3 !important;
-    --mdc-protected-button-label-text-color: black !important;
-} */
-
 .mat-mdc-raised-button.mat-primary {
-    --mdc-protected-button-container-color:#4ba5d3 !important;
-    --mdc-protected-button-label-text-color: black !important;
+    --mdc-protected-button-container-color: #3f51b5 !important;
+    --mdc-protected-button-label-text-color: white !important;
+    
 }
-/* .table-header-card mat-card-content button:hover{
-    --mdc-protected-button-container-color:#1A83A7 !important;
-    --mdc-protected-button-label-text-color: black !important;
-} */
 
 .mat-mdc-raised-button.mat-primary:hover{
-    --mdc-protected-button-container-color:#1A83A7 !important;
-    --mdc-protected-button-label-text-color: black !important;
+    --mdc-protected-button-container-color:#C7D2FE !important;
+    --mdc-protected-button-label-text-color:  #3f51b5!important;
 }
 
 /* for mat icons */
@@ -108,7 +99,7 @@ table {
     padding: 6px;
     font-size: 14px;
     border-radius: 5px;
-    border: 1px solid rgb(26, 131, 167);
+    border: 1px solid  #3f51b5;
     text-align: center;
     justify-content: space-between;
 }
@@ -128,23 +119,21 @@ table {
 .back-button button{
     display: flex;
     align-items: center;
-
     display: flex;
     position: relative;
     padding: 15px;
-    color: #4ba5d3;
-    border: 1px solid #4ba5d3;
+    color:  #3f51b5;
+    border: 1px solid  #3f51b5;
     border-radius: 7px;
     cursor: pointer;
     height: 2.1rem;
-
     font-size: 20px;
     margin-left: 43%;
 }
 .back-button button:hover{
-    color: #4ba5d3;
+    color:  #3f51b5;
     border: none;
-    background-color: black;
+    background-color: #C7D2FE;
 }
 
 /*filter search menu button */
@@ -216,6 +205,35 @@ table {
     font-size: 14px;
     margin-bottom: 0px;
 }
+
+.mat-primary .mdc-button__label{
+
+    color: #fff !important;
+}
+
+.mat-mdc-raised-button.mat-primary:hover .mdc-button__label{
+    color: #3f51b5 !important;
+}
+.mat-mdc-button-touch-target{
+    border: none !important;
+    height: 0px !important;
+
+}
+.mdc-button:focus{
+    outline:none;
+ }
+
+ .mat-basic .mdc-button__label{
+    color: #3f51b5 !important; 
+ }
+ .mat-basic .span{
+    color: #3f51b5 !important; 
+ }
+
+ .mat-basic .mat-icon{
+    color: #3f51b5 !important;
+ } 
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 

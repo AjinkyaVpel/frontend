@@ -1,16 +1,26 @@
-<h1 class="form-heading">Add Connector</h1>
+<h1 class="form-heading">{{data.connectorId ? "Update Connector" : "Add Connector"}}</h1>
 
 <!-- add Connector form -->
 <form [formGroup]="addConnector" (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content>
         <div class="row">
             <mat-form-field appearance="outline">
-                <mat-label>Connector Output Power</mat-label>
-                <input matInput type="email" placeholder="Ex: 18.5542818" formControlName="connectorOutputPower">
-            </mat-form-field>
+                <mat-label>Number of connector</mat-label>
+                <input matInput type="text" placeholder="Ex: 1" formControlName="connectorNumber">
+                <mat-error *ngIf="hasError('connectorNumber', 'required')">This field is required</mat-error>
+                <mat-error *ngIf="hasError('connectorNumber', 'pattern')">Please enter a numeric value</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Connector Output Power (kw)</mat-label>
+                <input matInput type="text" placeholder="Ex: 50 kw" formControlName="connectorOutputPower" 
+                       pattern="^\d+(\s+kw)?$">
+                <mat-error *ngIf="hasError('connectorOutputPower', 'required')">This field is required</mat-error>
+                <mat-error *ngIf="hasError('connectorOutputPower', 'pattern')">Please enter a valid value</mat-error>
+              </mat-form-field>       
+
             <mat-form-field appearance="outline">
                 <mat-label>Connector Charges</mat-label>
-                <input matInput type="text" placeholder="Ex: 73.923676" formControlName="connectorCharges">
+                <input matInput type="text" placeholder="Ex: 18 rs" formControlName="connectorCharges">
             </mat-form-field>
 
         </div>
@@ -43,8 +53,8 @@
     </div>
 
     <div mat-dialog-actions class="action">
-        <button mat-raised-button class="form-button" type="button" mat-dialog-close="false">Cancel</button>
-        <button mat-raised-button class="form-button" type="submit">{{data.connectorId ? "Update" : "Add"}}</button>
+        <button mat-raised-button color="basic"  type="button" mat-dialog-close="false">Cancel</button>
+        <button mat-raised-button color="primary"  type="submit">{{data.connectorId ? "Update" : "Add"}}</button>
     </div>
 
 </form>

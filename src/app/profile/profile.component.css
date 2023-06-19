@@ -1,16 +1,23 @@
+h2 {
+    font-size: 32px;
+    padding-top: 50px;
+    color:  #3f51b5;
+  }
+
 .profile-header-container{
     display: flex;
     padding: 30px 50px;
     align-items: center;
 
     /* glass effect */
-    background: #4ba5d3;
+    background:#c7cdee;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 .profile-header-container img{
     height: 6rem;
     width: 6rem;
@@ -18,29 +25,6 @@
 }
 .profile-header-container h2{
     font-size: 30px;
-}
-.profile-header-container button{
-    display: flex;
-    align-items: center;
-    display: flex;
-    margin-right: 10px;
-    padding: 7px 10px;
-    background-color: rgb(240, 240, 240);
-    color: black;
-    border-radius: 7px;
-    cursor: pointer;
-    border: none;
-    height: 2.1rem;
-}
-.profile-header-container button h5{
-    font-size: 17px;
-    text-align: center;
-    margin-top: 9px;
-    margin-left: 10px;
-}
-.profile-header-container button:hover{
-    background-color: black;
-    color: white;
 }
 
 /* profile page middle section css */
@@ -64,10 +48,9 @@
 }
 .ans-title{
     /* border: 1px solid black; */
-   
     padding: 4px 10px;
     color: black;
-    background-color: #91b9ce;
+    background-color: #E2E8F0;
     border-radius: 5px;
 }
 /* profile footer CSS */
@@ -78,19 +61,18 @@
 .profile-footer-container button{
     display: flex;
     align-items: center;
-
     display: flex;
     margin-right: 10px;
     padding: 7px 10px;
-    background-color: #4ba5d3;
-    color: black;
+    background-color: 3f51b5;
+    color: white !important;
     border-radius: 7px;
     cursor: pointer;
     border: none;
     height: 2.1rem;
 }
 .profile-footer-container button:hover{
-    color: white;
+    color: white !important;
     background-color: red;
 }
 .profile-footer-container h5{
@@ -99,7 +81,9 @@
     margin-top: 12px;
     margin-left: 10px;
 }
-
+.profile-footer-container:hover h5{
+    color: white;
+}
 /* back button CSS */
 .back-button{
     /* border: 1px solid black; */
@@ -108,21 +92,20 @@
 .back-button button{
     display: flex;
     align-items: center;
-
     display: flex;
-    margin-right: 10px;
+    position: relative;
     padding: 15px;
-    background-color: #4ba5d3;
-    color: black;
+    color:  #3f51b5;
+    border: 1px solid  #3f51b5;
     border-radius: 7px;
     cursor: pointer;
-    border: none;
     height: 2.1rem;
+    font-size: 20px;
+    margin-left: 43%;
+}
+.back-button button:hover {
+    color: white !important;
+    border: none;
+    background-color: #C7D2FE;
+}
 
-    font-size: 18px;
-    margin-left: 47%;
-}
-.back-button button:hover{
-    color: #4ba5d3;
-    background-color: black;
-}

@@ -40,12 +40,12 @@ mat-card-title{
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .cards-collection-container mat-card:hover{
-    background-color: lightblue;
+    background-color:#E0E7FF;
 }
 .cards-collection-container mat-card-subtitle{
     margin-top: 28px;
     font-size: 32px;
-    color: rgb(26, 131, 167);
+    color: #3f51b5;
 }
 
 /* grid css for 5 cards  */
