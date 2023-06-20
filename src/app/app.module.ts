@@ -62,15 +62,11 @@ import { LiveDataComponent } from './dashboard/live-data/live-data.component';
 import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
 import { MultiChartComponent } from './dashboard/multi-chart/multi-chart.component';
 import { MatButtonModule } from '@angular/material/button';
-var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
-
-
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { MatButtonModule } from '@angular/material/button';
 import { NotificationDialogComponent } from './header/notification-dialog/notification-dialog.component';
 import { MatBadgeModule } from '@angular/material/badge';
 
-
+var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 @NgModule({
   declarations: [
@@ -135,7 +131,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     NgxMaterialTimepickerModule,
     MatIconModule,
     MatButtonModule,
-    MatBadgeModule
+    MatBadgeModule,
    MatButtonModule
 
   ],
