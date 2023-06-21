@@ -1,18 +1,24 @@
 import { Component, OnInit, } from '@angular/core';
-
+import { trigger, state, style, animate, transition } from '@angular/animations';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  
 })
 export class DashboardComponent implements OnInit {
     displayCard:boolean=true;
     selectedOption: string = 'daily';
     months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];  //used in dropdown for selecting month to show booking data of that particular month
-  
-    
+    counterValue: number = 0;
+  deviceValue: number=0;
+  revenueValue:number=0;
+  energyValue:number=0;
   ngOnInit(){
-      
+    this.startCounter();
+    this.TotalDeviceCounter()
+    this.RevenueCounter();
+    this.TotalEnergyCounter()
   }
   // displayHide(){
   //   this.displayCard=false;
@@ -26,5 +32,65 @@ export class DashboardComponent implements OnInit {
 
     mapFrame.src = newSrc;
   }
+  startCounter() {
+    const targetValue = 11; // The target value you want to animate towards
+    const duration = 1700; // The total duration of the animation in milliseconds
+    const increment = 1; // The amount to increment the counter in each step
+    const delay = duration / (targetValue / increment);
+
+    const interval = setInterval(() => {
+      this.counterValue += increment;
+
+      if (this.counterValue >= targetValue) {
+        clearInterval(interval);
+        this.counterValue = targetValue;
+      }
+    }, delay);
+  }
+  TotalDeviceCounter() {
+    const targetValue = 100; // The target value you want to animate towards
+    const duration = 1700; // The total duration of the animation in milliseconds
+    const increment = 1; // The amount to increment the counter in each step
+    const delay = duration / (targetValue / increment);
+
+    const interval = setInterval(() => {
+      this.deviceValue += increment;
+
+      if (this.deviceValue >= targetValue) {
+        clearInterval(interval);
+        this.deviceValue = targetValue;
+      }
+    }, delay);
+  }
   
+  RevenueCounter() {
+    const targetValue = 930.80; // The target value you want to animate towards
+    const duration = 2000; // The total duration of the animation in milliseconds
+    const increment = 2; // The amount to increment the counter in each step
+    const delay = duration / (targetValue / increment);
+
+    const interval = setInterval(() => {
+      this.revenueValue += increment;
+
+      if (this.revenueValue >= targetValue) {
+        clearInterval(interval);
+        this.revenueValue = targetValue;
+      }
+    }, delay);
+  }
+  TotalEnergyCounter() {
+    const targetValue = 110.1; // The target value you want to animate towards
+    const duration = 1500; // The total duration of the animation in milliseconds
+    const increment = 1; // The amount to increment the counter in each step
+    const delay = duration / (targetValue / increment);
+
+    const interval = setInterval(() => {
+      this.energyValue += increment;
+
+      if (this.energyValue >= targetValue) {
+        clearInterval(interval);
+        this.energyValue = targetValue;
+      }
+    }, delay);
+  }
 }

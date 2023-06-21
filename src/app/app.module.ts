@@ -54,21 +54,15 @@ import { AddConnectorComponent } from './connectors/add-connector/add-connector.
 import { MatIconModule } from '@angular/material/icon';
 import { ControlAccessComponent } from './manageStation/controlAccess/control-access.component';
 import { SearchPipe } from './chargers/search.pipe';
-
-
-
 import * as CanvasJSAngularChart from '../assets/canvasjs.angular.component';
 import { LiveDataComponent } from './dashboard/live-data/live-data.component';
 import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
 import { MultiChartComponent } from './dashboard/multi-chart/multi-chart.component';
 import { MatButtonModule } from '@angular/material/button';
-var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
-
-
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { MatButtonModule } from '@angular/material/button';
 import { NotificationDialogComponent } from './header/notification-dialog/notification-dialog.component';
 import { MatBadgeModule } from '@angular/material/badge';
+var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 
 
@@ -135,7 +129,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     NgxMaterialTimepickerModule,
     MatIconModule,
     MatButtonModule,
-    MatBadgeModule
+    MatBadgeModule,
    MatButtonModule
 
   ],
