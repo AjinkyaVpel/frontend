@@ -53,7 +53,7 @@ export class ManageStationService {
 
   // updating connnector data
   onEditStation(stationId:any,data:any){
-    
+    console.log(data)
     return this.http.put(`http://192.168.0.243:8096/manageStation/updateStation?stationId=${stationId}`,data)
   }
 

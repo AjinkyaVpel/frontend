@@ -43,7 +43,7 @@
     /* background-color:#3730A3; */
     background-image: linear-gradient(to right, #3730A3 , #0d0a36);
 }
-
+/* 
 .profile-menu-button{
     background-color: rgb(32, 32, 32) ;
     font-size: 15px;
@@ -51,7 +51,7 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
-}
+} */
 
 /* .profile-menu-button span{
     margin-left:5px;
@@ -60,7 +60,7 @@
 
 .profile-dropdown-button:hover{
     background-color:#C7D2FE;
-    border-radius: 8px;
+    /* border-radius: 8px; */
 }
 
 /* notification icon in navbar CSS */

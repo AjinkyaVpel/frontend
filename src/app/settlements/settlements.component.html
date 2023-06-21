@@ -1,4 +1,4 @@
-<h2>Settlement</h2>
+<h2>Settlements</h2>
 <div class="table-header-card tab-content">
     <mat-card>
         <mat-card-content>
@@ -58,7 +58,7 @@
   
     <ng-container matColumnDef="srNo" >
         <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="2"> Sr No </th>
-        <td mat-cell *matCellDef="let row; let i=index;"> {{i + 1}} </td>
+        <td mat-cell *matCellDef="let row; let i=index;"> {{ paginator.pageIndex * paginator.pageSize + i + 1 }} </td>
       </ng-container>
 
     <ng-container matColumnDef="settlementId">
@@ -98,8 +98,11 @@
   </table>
   
      </mat-card-content>
-     
-  <mat-paginator [pageSizeOptions]="[4]" aria-label="Select page of users"></mat-paginator>
+     <mat-paginator [length]="100"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      aria-label="Select page">
+</mat-paginator>
   
     </mat-card>
    </div>
