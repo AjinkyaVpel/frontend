@@ -14,7 +14,7 @@
                 <mat-label>Connector Output Power (kw)</mat-label>
                 <input matInput type="text" placeholder="Ex: 50" formControlName="connectorOutputPower">
                 <mat-error *ngIf="hasError('connectorOutputPower', 'required')">This field is required</mat-error>
-                <mat-error *ngIf="hasError('connectorOutputPower', 'pattern')">Please enter a valid value</mat-error>
+                <mat-error *ngIf="hasError('connectorOutputPower', 'pattern')">Please enter a numeric value</mat-error>
               </mat-form-field>       
 
             <mat-form-field appearance="outline">

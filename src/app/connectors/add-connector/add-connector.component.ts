@@ -34,7 +34,7 @@ export class AddConnectorComponent implements OnInit {
       connectorType: '',
       connectorSocket: '',
       connectorStatus: '',
-      connectorOutputPower: ['', [Validators.required, Validators.pattern(/^\d{3}$/)]],
+      connectorOutputPower: ['', [Validators.required, Validators.pattern(/^\d{1,3}$/)]],
       connectorCharges: '',
     })
   }
