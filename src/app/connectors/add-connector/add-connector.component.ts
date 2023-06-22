@@ -34,7 +34,7 @@ export class AddConnectorComponent implements OnInit {
       connectorType: '',
       connectorSocket: '',
       connectorStatus: '',
-      connectorOutputPower: ['', Validators.required],
+      connectorOutputPower: ['', [Validators.required, Validators.pattern(/^\d{3}$/)]],
       connectorCharges: '',
     })
   }
@@ -60,16 +60,17 @@ export class AddConnectorComponent implements OnInit {
   
 
   onFormSubmit() {
-    if (this.addConnector.invalid) {
-      // Form is invalid, display error messages or handle the case accordingly
-      return;
-    }
+    // if (this.addConnector.invalid) {
+    //   // Form is invalid, display error messages or handle the case accordingly
+    //   return;
+    // }
   
     if (this.data.connectorId) {
       this.connectors.updateConnector(this.data.connectorId, this.addConnector.value).subscribe((result) => {
         console.warn(result);
       });
     } else {
+    
       this.connectors.addConnector(this.addConnector.value, this.stationId, this.chargerId);
       this.dialogRef.close(true);
       this.getConnectorDetails(this.stationId, this.chargerId);
