@@ -13,7 +13,8 @@ export class Station {
     stationLocationURL!: string;
     stationParkingArea!: string;
     stationContactNumber!: string;
-    stationWorkingTime!: string;
+    stationOpeningTime!: string;
+    stationClosingTime!: string;
     chargerNumber!: number;
     stationParkingType!: string;
     stationAmenity: string[] = [];

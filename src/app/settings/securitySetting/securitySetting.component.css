@@ -33,18 +33,41 @@
 /* footer button CSS */
 .footer-button{
     display: flex;
-    padding: 20px 8px 0px 8px;
+    padding: 0px 350px 0px 350px;
 
 }
 .footer-button button{
-    padding: 10px 15px;
-    color: #4ba5d3;
-    border: 1px solid #4ba5d3;
+    display: flex;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #3730A3;
+    align-items: center;
+    color: white;
     border-radius: 7px;
     cursor: pointer;
-}
-.footer-button button:hover{
-    color: #4ba5d3;
     border: none;
-    background-color: black;
+    height: 2.1rem;}
+
+.footer-button button:hover{
+    color:  #3f51b5;
+    border: none;
+    background-color: #C7D2FE;
 }
+.account-body{
+    position: relative;
+    width: calc(100% - 5rem);
+    height: 330vh;
+    /* margin-left:5rem; */
+    z-index: 0;
+    position: relative;
+    top: 0;
+    transition: all 0.5s ease;
+    background: #f4f7fa;
+    padding: 3rem;
+}
+.mat-card {
+    max-width: 400px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the mat-card horizontally */
+  }
+

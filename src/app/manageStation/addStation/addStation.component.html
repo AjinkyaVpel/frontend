@@ -57,7 +57,7 @@
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>Station Latitude</mat-label>
-                <input matInput type="email" placeholder="Ex: 18.5542818" formControlName="stationLatitude">
+                <input matInput type="text" placeholder="Ex: 18.5542818" formControlName="stationLatitude">
                 <mat-error *ngIf="addStation.get('stationLatitude')?.hasError('required')">Latitude is required</mat-error>
                 <mat-error *ngIf="addStation.get('stationLatitude')?.hasError('pattern')">Invalid latitude</mat-error>
             </mat-form-field>
@@ -107,8 +107,12 @@
                   </mat-select>
             </mat-form-field>
             <mat-form-field appearance="outline">
-                <mat-label>Station Working Time</mat-label>
-                <input matInput type="text" placeholder="Ex: 9:00 AM - 10:00 PM" formControlName="stationWorkingTime">
+                <mat-label>Station Opening Time</mat-label>
+                <input matInput type="text" placeholder="Ex: 9:00 AM" formControlName="stationOpeningTime">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Station Closing Time</mat-label>
+                <input matInput type="text" placeholder="Ex: 10:00 PM" formControlName="stationClosingTime">
             </mat-form-field>
         </div>
 

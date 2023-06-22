@@ -48,14 +48,15 @@ export class AddStationComponent {
       stationAddressLineTwo:'',
       stationZipCode:['', [Validators.required, this.validatePincode]],
       stationCity:'',
-      stationLatitude: new FormControl('', [Validators.required, Validators.pattern('^-?([1-8]?[0-9]\.[0-9]{1,6}|90\.[0-9]{1,6})$')]),
-      stationLongitude: new FormControl('', [Validators.required, Validators.pattern('^-?((1[0-7]|[1-9])?[0-9]\.[0-9]{1,6}|180\.[0-9]{1,6})$')]),
-      stationLocationURL: ['', [Validators.pattern('^https:\/\/goo\.gl\/maps\/[A-Za-z0-9]+$')]],
+      stationLatitude: ['', [Validators.required, Validators.min(-90), Validators.max(90), Validators.pattern(/^[-+]?([1-8]?\d(\.\d{1,15})?|90(\.0{1,15})?)$/)]],
+      stationLongitude: ['', [Validators.required, Validators.min(-180), Validators.max(180), Validators.pattern(/^-?((1?[0-7]?|[0-9]?[0-9])[0-9](\.\d{1,15})?|180(\.0{1,15})?)$/)]],
+      ystationLocationURL: ['', [Validators.pattern('^https:\/\/goo\.gl\/maps\/[A-Za-z0-9]+$')]],
       stationParkingArea: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
       stationContactNumber: ['+91', [Validators.required, Validators.pattern(/^\+91\d{10}$/)]],
       stationStatus: '',
       stationPowerStandard: '',
-      stationWorkingTime: '',
+      stationOpeningTime:'',
+      stationClosingTime:'',
       stationParkingType: '',
       stationAmenity: this.formBuilder.array([])
     })
@@ -70,7 +71,7 @@ export class AddStationComponent {
       this.submit=false;
     }
   this.addStation.patchValue(this.data);  
-  
+  console.log(this.addStation);
  
 }
   onCheckboxChange(event:any){
@@ -99,24 +100,9 @@ validatePincode(control: FormControl) {
   return valid ? null : { invalidPinCode: true };
 }
 
-  
-  
-  
-  
-
-  // onFormSubmit() {
-  //     this.manageStation.addStationToList(this.addStation.value);
-  //     this.openSnackBar("Station added successfully","Done")
-  //     this.dialogRef.close(true);
-  //     window.location.reload();
-
-  // }
-
   getStationDetails(stationId:string){
     this.stationData= this.manageStation.getStationById(stationId);
   }
-
-
 
   onFormSubmit(){
     if(this.updateStationId){
