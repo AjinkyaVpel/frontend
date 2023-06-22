@@ -1,4 +1,8 @@
-
+h1{
+    font-size: 32px;
+    padding-top: 50px;
+    padding-bottom: 10 px;
+}
 .tab-content{
     margin-top:15px;
 }
@@ -225,3 +229,8 @@ mat-card-title{
     flex-basis: 100%;
     
 }
+.icon {
+    position: absolute;
+    top: 0px; /* Adjust the top positioning as needed */
+    left: 230px; /* Adjust the left positioning as needed */
+  }

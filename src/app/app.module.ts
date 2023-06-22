@@ -62,6 +62,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { NotificationDialogComponent } from './header/notification-dialog/notification-dialog.component';
 import { MatBadgeModule } from '@angular/material/badge';
+import { ChargingSessionComponent } from './dashboard/charging-session/charging-session.component';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 
@@ -99,7 +100,8 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     PieChartComponent,
     MultiChartComponent,
     RestrictedAccessComponent,
-    NotificationDialogComponent
+    NotificationDialogComponent,
+    ChargingSessionComponent
     
   ],
   imports: [

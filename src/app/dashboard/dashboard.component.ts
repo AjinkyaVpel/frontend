@@ -1,5 +1,6 @@
 import { Component, OnInit, } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -14,6 +15,7 @@ export class DashboardComponent implements OnInit {
   deviceValue: number=0;
   revenueValue:number=0;
   energyValue:number=0;
+  constructor( private router:Router){}
   ngOnInit(){
     this.startCounter();
     this.TotalDeviceCounter()
@@ -92,5 +94,11 @@ export class DashboardComponent implements OnInit {
         this.energyValue = targetValue;
       }
     }, delay);
+  }
+  redirectToChargingSession(): void {
+    // Perform any necessary logic before redirection, if needed
+
+    // Redirect to the charging session page
+    this.router.navigate(['/charging-session']); // Replace '/charging-session' with the actual route path of your charging session page
   }
 }
