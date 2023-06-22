@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PathLocationStrategy, LocationStrategy } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -96,6 +97,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }]
 })
 export class AppRoutingModule { }
