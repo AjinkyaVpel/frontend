@@ -19,7 +19,8 @@ export class ConnectorService {
   }
 
   // adding connectors data
-  addConnector(data: any,stationId: any,chargerId: any){
+  addConnector(data: any,stationId: string,chargerId: string){
+    
     return  this.http.post(`http://192.168.0.243:8096/manageConnector/addConnector?stationId=${stationId}&chargerId=${chargerId}`,data).subscribe(
       (response)=>{
         console.log('Response',response);

@@ -65,7 +65,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { ChargingSessionComponent } from './dashboard/charging-session/charging-session.component';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
-
+var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 @NgModule({
   declarations: [

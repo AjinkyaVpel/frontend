@@ -1,18 +1,30 @@
-<h1>Security Setting</h1>
-<div class="securitySetting-section">
-    <h2>Change Password</h2>
-    <h4>Make sure you remember the password to log in</h4>
-    <form class="password-form">
-        <label class="accountSetting-label">Old Password:</label><br>
-        <input placeholder="**********" class="accountSetting-input"><br>
-        <label class="accountSetting-label">New Password:</label><br>
-        <input placeholder="**********"><br>
-        <label class="accountSetting-label">Comfirm Password:</label><br>
-        <input placeholder="**********">
-    </form>
-    <div class="footer-button">
-        <button color="basic"  mat-raised-button >Cancel</button>
+<div class="account-body">
+<mat-card>
+    <mat-card-header>
+     <h1> <mat-card-title>Security Settings</mat-card-title></h1>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="securitySetting-section">
+      <h2> Change Password </h2>
+        Make sure you remember the password to log in
+        <form class="password-form">
+          <label class="accountSetting-label">Old Password:</label><br>
+          <input placeholder="**********" class="accountSetting-input"><br>
+          <label class="accountSetting-label">New Password:</label><br>
+          <input placeholder="**********"><br>
+          <label class="accountSetting-label">Confirm Password:</label><br>
+          <input placeholder="**********">
+        </form>
+      </div>
+      <div class="footer-button">
+        <button  mat-raised-button color="basic"  type="button" >Cancel</button>
         <span class="example-spacer"></span>
-        <button color="primary"  mat-raised-button>Update</button>
-    </div>
+        <button mat-raised-button color="primary">Update</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+ 
+  <div class="back-button">
+    <button color="primary" mat-raised-button routerLink="/dashboard">Back</button>
+  </div>
 </div>
