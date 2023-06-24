@@ -10,24 +10,28 @@
                 <div class="tab-content">
                     <!-- <button class="danger" (click)="displayCard=false">Hide button</button>
 <button (click)="displayCard=true">Show button</button> -->
-
+                    
                     <!-- 1st section for 5 mat-cards (including chart card) -->
                     <div *ngIf="displayCard" class="grid-container cards-collection-container">
                         <!-- charging session (1st row 1st column) -->
                          
-                        <mat-card class="dashboard-overview-card">
+                        <mat-card class="dashboard-overview-card" >
                             <mat-card-header>
                                 <mat-card-title>Charging Session</mat-card-title>
-                                <mat-card-subtitle>6</mat-card-subtitle>
+                                <mat-card-subtitle>{{ counterValue }}</mat-card-subtitle>
                             </mat-card-header>
                             <mat-card-actions align="end">
+                                <button mat-icon-button (click)="redirectToChargingSession()" class="icon">
+                                    <mat-icon >launch</mat-icon> <!-- Replace 'charging_station' with your desired icon name -->
+                                  </button>
                             </mat-card-actions>
                         </mat-card>
+                        
                         <!-- total devices (1st row  2nd column) -->
                         <mat-card class="dashboard-overview-card">
                             <mat-card-header>
                                 <mat-card-title>Total Devices</mat-card-title>
-                                <mat-card-subtitle>100</mat-card-subtitle>
+                                <mat-card-subtitle>{{deviceValue}}</mat-card-subtitle>
                             </mat-card-header>
                             <mat-card-actions align="end">
                             </mat-card-actions>
@@ -43,7 +47,7 @@
                         <mat-card class="dashboard-overview-card">
                             <mat-card-header>
                                 <mat-card-title>Total Revenue</mat-card-title>
-                                <mat-card-subtitle>930.80 </mat-card-subtitle>
+                                <mat-card-subtitle>{{revenueValue}}</mat-card-subtitle>
                             </mat-card-header>
                             <mat-card-actions align="end">
                             </mat-card-actions>
@@ -52,7 +56,7 @@
                         <mat-card class="dashboard-overview-card">
                             <mat-card-header>
                                 <mat-card-title>Total Energy Delivered</mat-card-title>
-                                <mat-card-subtitle>0 kWh</mat-card-subtitle>
+                                <mat-card-subtitle> {{energyValue}}kWh</mat-card-subtitle>
                             </mat-card-header>
                             <mat-card-actions align="end">
                             </mat-card-actions>

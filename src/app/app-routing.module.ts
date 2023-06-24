@@ -18,6 +18,7 @@ import { ChargerSettingComponent } from './chargers/chargerSetting/charger-setti
 import { ConnectorsComponent } from './connectors/connectors.component';
 import { ControlAccessComponent } from './manageStation/controlAccess/control-access.component';
 import { RestrictedAccessComponent } from './manageStation/restrictedAccess/restricted-access.component';
+import { ChargingSessionComponent } from './dashboard/charging-session/charging-session.component';
 
 const routes: Routes = [
   {
@@ -93,6 +94,10 @@ const routes: Routes = [
     path:'settings',
     loadChildren: () => import('./settings/setting.module').then(m => m.SettingModule)
   },
+  {
+    path:'charging-session',
+    component: ChargingSessionComponent
+  }
 ];
 
 @NgModule({

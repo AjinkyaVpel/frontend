@@ -6,16 +6,7 @@
             <div class="search-dropdown" *ngIf="openSearch">
                 <input placeholder="Enter Transcation Id" class="searchbar" [matMenuTriggerFor]="menu"/>
                 <mat-menu #menu="matMenu" class="search-menu">
-                    <button mat-menu-item class="profile-dropdown-button">
-                        Starting Date
-                        <mat-datepicker-toggle matSuffix [for]="datepicker" class="filter-datepicker"></mat-datepicker-toggle>
-                        <mat-datepicker #datepicker></mat-datepicker>
-                    </button>
-                    <button mat-menu-item class="profile-dropdown-button ">
-                        End Date
-                        <mat-datepicker-toggle matSuffix [for]="datepicker" class="filter-datepicker"></mat-datepicker-toggle>
-                        <mat-datepicker #datepicker></mat-datepicker>
-                    </button>
+                   
                     <section class="checkbox-section">
                         <h4>Settlement Status</h4>
                         <mat-checkbox>Completed</mat-checkbox><br>
