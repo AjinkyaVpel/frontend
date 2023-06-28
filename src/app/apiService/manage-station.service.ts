@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Station } from '../manageStation/station';
+import { StationLocation } from '../manageStation/station-location';
 
 @Injectable({
   providedIn: 'root'
@@ -57,5 +58,8 @@ export class ManageStationService {
     return this.http.put(`http://192.168.0.243:8096/manageStation/updateStation?stationId=${stationId}`,data)
   }
 
+  getStationLocationByHostId(hostId:string){ 
+    return this.http.get<StationLocation[]>(`http://192.168.0.243:8096/manageStation/getHostStation?stationHostId=${hostId}`);  
+  }
 }
 
