@@ -63,6 +63,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { NotificationDialogComponent } from './header/notification-dialog/notification-dialog.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { ChargingSessionComponent } from './dashboard/charging-session/charging-session.component';
+import { NotificationComponent } from './notification/notification.component';
+import { AddNotificationComponent } from './notification/add-notification/add-notification.component';
+import { DeleteNotificationComponent } from './notification/delete-notification/delete-notification.component';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
@@ -101,7 +104,10 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     MultiChartComponent,
     RestrictedAccessComponent,
     NotificationDialogComponent,
-    ChargingSessionComponent
+    ChargingSessionComponent,
+    NotificationComponent,
+    AddNotificationComponent,
+    DeleteNotificationComponent
     
   ],
   imports: [
