@@ -1,3 +1,5 @@
+    <h2 style="color: #3730A3; margin-left: 10px;" *ngIf="!update">Add Notification</h2>
+    <h2 style="color: #3730A3; margin-left: 10px;" *ngIf="update">Update Notification</h2>
 <form [formGroup]="addNotification"  (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content>
        

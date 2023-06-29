@@ -1,27 +1,33 @@
 .dialog-box{
-    width: 350px;
-    height: 150px;
-    text-align: center;
-    overflow: hidden;
-    box-sizing: border-box;
-    
+  width: 350px;
+  height: 150px;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-bottom: 5px;
 }
 button{
-    color: black;
-    width: 100px;
-    height: 30px;
-    justify-content: space-between;
-    margin: 5px;
+  color: black;
+  width: 100px;
+  height: fit-content;
+  justify-content: space-between;
+  margin: 5px;
 }
 .mat-raisd-button  {
-    display: table-cell;
-    max-width: 600px;
-    text-align: center;
-    
-  }
-  .delete{
-    background-color: orangered;
-  }
-  .delete-btn{
-   background-color: lightskyblue;
-  }
+  display: table-cell;
+  max-width: 600px;
+  text-align: center;
+  
+}
+.delete{
+  background-color: orangered;
+  width: 70px;
+  height: 30px;
+  border: none;
+  
+}
+.delete-btn{
+ background-color: lightskyblue;
+ width: 70px;
+ height: 30px;
+}

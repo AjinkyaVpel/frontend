@@ -83,7 +83,7 @@ constructor( private dialog:MatDialog, private notificationApi:NotificationServi
     });
   }
   onUpdateNotification(data:any){
-    const dialogRef = this.dialog.open(AddNotificationComponent,{
+    const dialogRef = this.dialog.open(AddNotificationComponent ,{
       data, 
     })
 

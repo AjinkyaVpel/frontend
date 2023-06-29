@@ -13,6 +13,7 @@ import { NotificationService } from 'src/app/apiService/notification.service';
 })
 export class AddNotificationComponent {
   addNotification: FormGroup ;
+  update:boolean=false;
   notificationType =[
     "Push",
     "Pop-Up",
@@ -25,7 +26,9 @@ export class AddNotificationComponent {
     })
   }
   ngOnInit(){
-    
+    if(this.data.notificationId){
+    this.update=true;
+    }
     this.addNotification.patchValue(this.data);  
   }
   openSnackBar(message: any,action: any = 'ok') {
