@@ -11,6 +11,13 @@ export interface DialogData {
   styleUrls: ['./openDialog.component.css']
 })
 export class OpenDialogComponent {
+    //display key group for roles management
+    supportDisplayKey:boolean=true;
+    vendorDisplayKey:boolean=true;
+    hostDisplayKey:boolean=true;
+    adminDisplayKey:boolean=true;
+    superAdminDisplayKey:boolean=true;
+    //display key group ends
   dialogData:DialogData | undefined;
   title:string="";
   message:string= '';

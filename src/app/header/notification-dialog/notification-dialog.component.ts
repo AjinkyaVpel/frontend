@@ -7,6 +7,12 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./notification-dialog.component.css']
 })
 export class NotificationDialogComponent {
-
+  //display key group for roles management
+  supportDisplayKey:boolean=true;
+  vendorDisplayKey:boolean=true;
+  hostDisplayKey:boolean=true;
+  adminDisplayKey:boolean=true;
+  superAdminDisplayKey:boolean=true;
+  //display key group ends
   
 }

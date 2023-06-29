@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-
+  //display key group for roles management
+  supportDisplayKey:boolean=true;
+  vendorDisplayKey:boolean=true;
+  hostDisplayKey:boolean=true;
+  adminDisplayKey:boolean=true;
+  superAdminDisplayKey:boolean=true;
+  //display key group ends
 }

@@ -13,10 +13,18 @@ import { MatSelect } from '@angular/material/select';
   styleUrls: ['./booking.component.css']
 })
 export class BookingComponent implements OnInit {
+    //display key group for roles management
+    supportDisplayKey:boolean=true;
+    vendorDisplayKey:boolean=true;
+    hostDisplayKey:boolean=true;
+    adminDisplayKey:boolean=true;
+    superAdminDisplayKey:boolean=true;
+    //display key group ends
+
+
   hostId!: string;
   bookingList!: Booking[];
   selectedStatus!:string;
-  
   openSearch: boolean = false;
   displayedColumns: string[] = ['hostId','stationName', 'chargerId', 'bookingSocket', 'bookingDate', 'bookingTime', 'bookingCancellationReason', 'bookingStatus', 'bookingAmount'];
   dataSource!: MatTableDataSource<any>;

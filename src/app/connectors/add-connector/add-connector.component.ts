@@ -11,7 +11,13 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./add-connector.component.css']
 })
 export class AddConnectorComponent implements OnInit {
-
+  //display key group for roles management
+  supportDisplayKey:boolean=true;
+  vendorDisplayKey:boolean=true;
+  hostDisplayKey:boolean=true;
+  adminDisplayKey:boolean=true;
+  superAdminDisplayKey:boolean=true;
+  //display key group ends
   addConnector:FormGroup;
   connectorId: any;
   stationId: any;

@@ -13,6 +13,13 @@ import { AddConnectorComponent } from './add-connector/add-connector.component';
   styleUrls: ['./connectors.component.css']
 })
 export class ConnectorsComponent {
+    //display key group for roles management
+    supportDisplayKey:boolean=true;
+    vendorDisplayKey:boolean=true;
+    hostDisplayKey:boolean=true;
+    adminDisplayKey:boolean=true;
+    superAdminDisplayKey:boolean=true;
+    //display key group ends
   stationId!:string;
   chargerId!: string;
   chargerName!:string;

@@ -10,6 +10,14 @@ import { Charger } from '../charger';
   styleUrls: ['./charger-setting.component.css']
 })
 export class ChargerSettingComponent {
+    //display key group for roles management
+    supportDisplayKey:boolean=true;
+    vendorDisplayKey:boolean=true;
+    hostDisplayKey:boolean=true;
+    adminDisplayKey:boolean=true;
+    superAdminDisplayKey:boolean=true;
+    //display key group ends
+    
   chargerSetting:any;
   chargerId: any;
   stationId: any;

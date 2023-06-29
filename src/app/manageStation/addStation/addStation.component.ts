@@ -11,6 +11,13 @@ import { ManageStationService } from 'src/app/apiService/manage-station.service'
   styleUrls: ['./addStation.component.css']
 })
 export class AddStationComponent {
+  //display key group for roles management
+  supportDisplayKey:boolean=true;
+  vendorDisplayKey:boolean=true;
+  hostDisplayKey:boolean=true;
+  adminDisplayKey:boolean=true;
+  superAdminDisplayKey:boolean=true;
+  //display key group ends
   addStation:FormGroup;
   stationData:any;
   updateStationId!:string;

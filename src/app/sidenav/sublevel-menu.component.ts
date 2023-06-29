@@ -73,6 +73,15 @@ export class SublevelMenuComponent {
 
   constructor(private router:Router) {}
 
+  //display key group for roles management
+  supportDisplayKey:boolean=true;
+  vendorDisplayKey:boolean=true;
+  hostDisplayKey:boolean=true;
+  adminDisplayKey:boolean=true;
+  superAdminDisplayKey:boolean=true;
+  //display key group ends
+
+
   @Input() data: INavbarData = {
     routeLink: '',
     icon: '',

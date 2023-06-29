@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./paymentSetting.component.css']
 })
 export class PaymentSettingComponent {
-
+  //display key group for roles management
+  supportDisplayKey:boolean=true;
+  vendorDisplayKey:boolean=true;
+  hostDisplayKey:boolean=true;
+  adminDisplayKey:boolean=true;
+  superAdminDisplayKey:boolean=true;
+  //display key group ends
 }

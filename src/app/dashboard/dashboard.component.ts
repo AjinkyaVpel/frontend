@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { StationLocation } from '../manageStation/station-location';
 import * as mapboxgl from 'mapbox-gl';
 import { ManageStationService } from '../apiService/manage-station.service';
-
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +13,14 @@ import { ManageStationService } from '../apiService/manage-station.service';
   
 })
 export class DashboardComponent implements OnInit {
+    //display key group for roles management
+    supportDisplayKey:boolean=true;
+    vendorDisplayKey:boolean=true;
+    hostDisplayKey:boolean=true;
+    adminDisplayKey:boolean=true;
+    superAdminDisplayKey:boolean=true;
+    //display key group ends
+    
     displayCard:boolean=true;
     selectedOption: string = 'daily';
     months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];  //used in dropdown for selecting month to show booking data of that particular month
@@ -132,14 +140,14 @@ hostId:string="HST20230518045359411";
   getMap(stations:StationLocation[]){
     // Set your Mapbox access token
       // mapboxgl.accessToken = '';
-      this.myAccessToken='pk.eyJ1IjoicHJhdGlrcGluZ2FsZSIsImEiOiJjbGplNGZjd3kwbnd5M2tzY2NrNTBwdXFjIn0.NuFcu1dFjDQ7idcAzNHItA';
+      this.myAccessToken=environment.mapBoxPublicKey;
       // Initialize the map
       const map = new mapboxgl.Map({
         accessToken:this.myAccessToken,
         container: 'map-container', // ID of the map container element
-        style: 'mapbox://styles/mapbox/satellite-streets-v12', // Mapbox style URL
-        center: [79.777049 ,21.944963], // Initial map center coordinates
-        zoom: 3, // Initial zoom level
+        style: environment.mapBoxMapStyle, // Mapbox style URL
+        center: [environment.mapBoxCenterLong, environment.mapBoxCenterLat], // Initial map center coordinates
+        zoom: 5, // Initial zoom level
       });
       stations.forEach(station => {
         let status = station.stationStatus.toLowerCase();

@@ -15,6 +15,13 @@ import { Charger } from './charger';
   styleUrls: ['./chargers.component.css']
 })
 export class ChargersComponent implements OnInit {
+    //display key group for roles management
+    supportDisplayKey:boolean=true;
+    vendorDisplayKey:boolean=true;
+    hostDisplayKey:boolean=true;
+    adminDisplayKey:boolean=true;
+    superAdminDisplayKey:boolean=true;
+    //display key group ends
   stationId!: string;
   stationName!: string;
   chargerListData: any;

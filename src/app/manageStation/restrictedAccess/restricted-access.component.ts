@@ -13,7 +13,13 @@ import { RestrictedAccessService } from 'src/app/apiService/restricted-access.se
   styleUrls: ['./restricted-access.component.css']
 })
 export class RestrictedAccessComponent implements OnInit {
-
+  //display key group for roles management
+  supportDisplayKey:boolean=true;
+  vendorDisplayKey:boolean=true;
+  hostDisplayKey:boolean=true;
+  adminDisplayKey:boolean=true;
+  superAdminDisplayKey:boolean=true;
+  //display key group ends
   
   email!: string;
   phoneNumber!: string;

@@ -13,6 +13,13 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./addCharger.component.css']
 })
 export class AddChargerComponent {
+    //display key group for roles management
+    supportDisplayKey:boolean=true;
+    vendorDisplayKey:boolean=true;
+    hostDisplayKey:boolean=true;
+    adminDisplayKey:boolean=true;
+    superAdminDisplayKey:boolean=true;
+    //display key group ends
   addStation:FormGroup ;
   stationId:string='';
   amenities: Array<any> = [

@@ -9,7 +9,13 @@ import { Component } from '@angular/core';
 export class LiveDataComponent {
   constructor(private http : HttpClient) {  
   }
- 
+   //display key group for roles management
+   supportDisplayKey:boolean=true;
+   vendorDisplayKey:boolean=true;
+   hostDisplayKey:boolean=true;
+   adminDisplayKey:boolean=true;
+   superAdminDisplayKey:boolean=true;
+   //display key group ends
   dataPoints:any[] = [];
   timeout:any = null;
   xValue:number = 1;

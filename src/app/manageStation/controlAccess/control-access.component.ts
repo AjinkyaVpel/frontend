@@ -18,7 +18,13 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./control-access.component.css']
 })
 export class ControlAccessComponent {
-  
+    //display key group for roles management
+    supportDisplayKey:boolean=true;
+    vendorDisplayKey:boolean=true;
+    hostDisplayKey:boolean=true;
+    adminDisplayKey:boolean=true;
+    superAdminDisplayKey:boolean=true;
+    //display key group ends
   dialogRef: any;
   dialog: any;
   stationId!: string;
