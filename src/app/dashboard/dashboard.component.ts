@@ -4,8 +4,7 @@ import { Router } from '@angular/router';
 import { StationLocation } from '../manageStation/station-location';
 import * as mapboxgl from 'mapbox-gl';
 import { ManageStationService } from '../apiService/manage-station.service';
-import { environment } from 'src/environments/environment';
-
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
