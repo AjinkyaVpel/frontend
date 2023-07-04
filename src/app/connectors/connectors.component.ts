@@ -109,9 +109,6 @@ export class ConnectorsComponent {
 
     });
 
-
-
-
     // listen to response
 
     dialogRef.afterClosed().subscribe((dialogResult: any) => {
@@ -119,8 +116,6 @@ export class ConnectorsComponent {
 
         this.connectorApi.deleteConnectorById(connectorId).subscribe((result: any) => {
           console.log(result)
-         
-
         })
 
       }
@@ -130,9 +125,7 @@ export class ConnectorsComponent {
 
       console.log(dialogResult);
       window.location.reload();
-
-
-    });
+   });
   }
 
   openDialogBox(){

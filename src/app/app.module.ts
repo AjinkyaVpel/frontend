@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -59,10 +61,17 @@ import { LiveDataComponent } from './dashboard/live-data/live-data.component';
 import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
 import { MultiChartComponent } from './dashboard/multi-chart/multi-chart.component';
 import { MatButtonModule } from '@angular/material/button';
-import { FlexLayoutModule } from "@angular/flex-layout";
+
 import { NotificationDialogComponent } from './header/notification-dialog/notification-dialog.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { ChargingSessionComponent } from './dashboard/charging-session/charging-session.component';
+import { ManageFaqComponent } from './manage-faq/manage-faq.component';
+import { AddFaqDailogComponent } from './manage-faq/add-faq-dailog/add-faq-dailog.component';
+import { DeleteFaqComponent } from './manage-faq/delete-faq/delete-faq.component';
+import { ViewFaqDetailsComponent } from './manage-faq/view-faq-details/view-faq-details.component';
+
+
+
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 
@@ -101,7 +110,15 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     MultiChartComponent,
     RestrictedAccessComponent,
     NotificationDialogComponent,
-    ChargingSessionComponent
+    ChargingSessionComponent,
+    ManageFaqComponent,
+    AddFaqDailogComponent,
+    DeleteFaqComponent,
+    ViewFaqDetailsComponent,
+    
+  
+    
+    
     
   ],
   imports: [
@@ -132,11 +149,12 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     MatIconModule,
     MatButtonModule,
     MatBadgeModule,
-   MatButtonModule
+   MatButtonModule,
+   FlexLayoutModule
 
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[]
+  entryComponents:[ViewFaqDetailsComponent]
 })
 export class AppModule { }

@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>{{data.faqId ? "Update FAQ" : "Create FAQ"}}</h2>
+
+<form [formGroup]="faqForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content>
+    <div class="row">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="faqCategory">
+          <mat-option value="General">General</mat-option>
+          <mat-option value="Charger">Charger</mat-option>
+          <mat-option value="Payment and refund">Payment and Refund</mat-option>
+          <mat-option value="Troubleshooting and Maintenance">Troubleshooting and Maintenance</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>faqSeqNumber</mat-label>
+        <input matInput type="text" formControlName="faqSeqNumber">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Questions</mat-label>
+        <textarea matInput formControlName="faqQuestion" rows="3"></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Answers</mat-label>
+        <textarea matInput formControlName="faqAnswer" rows="5"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button color="basic" type="button" mat-dialog-close="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data.faqId ? "Update" : "Add"}}</button>
+  </div>
+</form>

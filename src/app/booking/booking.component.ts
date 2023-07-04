@@ -64,9 +64,6 @@ export class BookingComponent implements OnInit {
     })
   }
 
- 
-  
-
 
   openSearchBar() {
     this.openSearch = true;

@@ -26,13 +26,18 @@
         </div>
         <div class="row">
             <mat-form-field appearance="outline">
-                <mat-label>ChargerOutputAmpere</mat-label>
-                <input matInput type="text" placeholder="Ex: 50A" formControlName="chargerOutputAmpere">
+                <mat-label>ChargerMinInputAmpere</mat-label>
+                <input matInput type="text" placeholder="Ex: 50A" formControlName="chargerMinInputAmpere">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>ChargerMaxInputAmpere</mat-label>
                 <input matInput type="text" placeholder="Ex: 20A" formControlName="chargerMaxInputAmpere">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>ChargerOutputAmpere</mat-label>
+                <input matInput type="text" placeholder="Ex: 20A" formControlName="chargerOutputAmpere">
             </mat-form-field>
 
         </div>
@@ -83,11 +88,11 @@
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>Charger Serial Number</mat-label>
-                <input matInput type="text" placeholder="Ex: CHG1234" formControlName="chargerSerialNumber">
+                <input matInput type="text" placeholder="Ex: CHG1234" formControlName="chargerPointSerialNumber">
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Charger OCPP Protocol</mat-label>
-                <input matInput type="text" placeholder="Ex: Modbus" formControlName="chargerOcppProtocol">
+                <input matInput type="text" placeholder="Ex: OCPP 1.6" formControlName="chargerOCPPProtocol">
             </mat-form-field>
         </div>
         <div class="row">

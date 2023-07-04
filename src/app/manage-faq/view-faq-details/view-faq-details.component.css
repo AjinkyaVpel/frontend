@@ -1,0 +1,56 @@
+/* .mat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 400px;
+    height: 300px;
+    margin: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+   
+  button {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    border: none !important;
+    margin-bottom: 100px;
+  }
+  
+  .mat-card-title,
+  .mat-card-subtitle {
+    margin-bottom: 20px;
+    margin: 8px;
+  }
+  
+  .mat-card-content {
+    margin-top: 18px;
+  }
+   */
+  p {
+    margin: 8px;
+    
+  }
+
+  .mat-card-content p {
+    border: 1px solid black;
+    margin: 18px;
+  }  
+
+  .example-card {
+    max-width: 400px;
+    position: relative;
+  }
+  .example-card .button .button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+ 
+  }
+ 
+  
+
+  
+  
+  
+  
