@@ -60,11 +60,6 @@ export class AddConnectorComponent implements OnInit {
   
 
   onFormSubmit() {
-    // if (this.addConnector.invalid) {
-    //   // Form is invalid, display error messages or handle the case accordingly
-    //   return;
-    // }
-  
     if (this.data.connectorId) {
       this.connectors.updateConnector(this.data.connectorId, this.addConnector.value).subscribe((result) => {
         console.warn(result);

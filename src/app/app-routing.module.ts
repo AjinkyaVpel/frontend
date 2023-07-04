@@ -19,6 +19,8 @@ import { ConnectorsComponent } from './connectors/connectors.component';
 import { ControlAccessComponent } from './manageStation/controlAccess/control-access.component';
 import { RestrictedAccessComponent } from './manageStation/restrictedAccess/restricted-access.component';
 import { ChargingSessionComponent } from './dashboard/charging-session/charging-session.component';
+import { ManageFaqComponent } from './manage-faq/manage-faq.component';
+
 
 const routes: Routes = [
   {
@@ -97,7 +99,12 @@ const routes: Routes = [
   {
     path:'charging-session',
     component: ChargingSessionComponent
+  },
+  {
+    path:'manageFaq',
+    component: ManageFaqComponent
   }
+  
 ];
 
 @NgModule({

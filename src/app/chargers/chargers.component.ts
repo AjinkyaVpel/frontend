@@ -26,7 +26,7 @@ export class ChargersComponent implements OnInit {
   
   constructor(private activeRoute:ActivatedRoute,private chargerApi:ChargerService, private myStation:ChargerService,private route:Router, private dialog:MatDialog, private snackBar:MatSnackBar) {}
 
-  displayedColumns: string[] = ['id', 'chargerName', 'chargerserialNumber','connectorStatus','total','activeConnector','inactiveconnector','chargerStatus', 'menu'];
+  displayedColumns: string[] = ['id', 'chargerName', 'chargerPointSerialNumber','connectorStatus','total','activeConnector','inactiveconnector','chargerStatus', 'menu'];
   dataSource!: MatTableDataSource<any>;
  
                                  

@@ -1,11 +1,11 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject,OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ChargerService } from 'src/app/apiService/charger.service';
 import { ManageStationComponent } from 'src/app/manageStation/manageStation.component';
 import { ActivatedRoute } from '@angular/router';
-import { OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-add-charger',
@@ -44,6 +44,7 @@ export class AddChargerComponent {
       chargerInputVoltage: '',
       chargerOutputVoltage:'',
       chargerOutputAmpere:'',
+      chargerMinInputAmpere:'',
       chargerMaxInputAmpere:'',
       chargerInputFrequency:'',
       chargerOutputFrequency:'',
@@ -51,8 +52,8 @@ export class AddChargerComponent {
       chargerMountType:'',
       chargerNumberOfConnector:'',
       isRFID:'',
-      chargerSerialNumber:'',
-      chargerOcppProtocol:'',
+      chargerPointSerialNumber:'',
+      chargerOCPPProtocol:'',
       chargerConnectorType:'',
       isAppSupport:'',
       isTBCutOff:'',
@@ -89,7 +90,7 @@ export class AddChargerComponent {
     this.chargerService.addChargerToList(this.addStation.value, this.stationId);
     this.openSnackBar("Charger added successfully", "Done");
     this.dialogRef.close(true);
-    window.location.reload();
+    // window.location.reload();
   }
 
 }
