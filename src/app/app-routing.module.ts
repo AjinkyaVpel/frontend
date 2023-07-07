@@ -20,6 +20,7 @@ import { ControlAccessComponent } from './manageStation/controlAccess/control-ac
 import { RestrictedAccessComponent } from './manageStation/restrictedAccess/restricted-access.component';
 import { ChargingSessionComponent } from './dashboard/charging-session/charging-session.component';
 import { ManageFaqComponent } from './manage-faq/manage-faq.component';
+import { ManageUserComponent } from './manage-user/manage-user.component';
 
 
 const routes: Routes = [
@@ -103,6 +104,10 @@ const routes: Routes = [
   {
     path:'manageFaq',
     component: ManageFaqComponent
+  },
+  {
+    path:'manageUser',
+    component: ManageUserComponent
   }
   
 ];

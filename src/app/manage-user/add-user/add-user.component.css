@@ -1,0 +1,7 @@
+.example-full-width {
+    width: 100%;
+    height: auto;
+  }
+  .mdc-dialog__title{
+    padding: 0px 24px 0px 24px;
+}
