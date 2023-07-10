@@ -15,7 +15,7 @@ import { DeleteNotificationComponent } from './delete-notification/delete-notifi
 export class NotificationComponent {
   dataSource!: MatTableDataSource<any>;
   stationId!:string;
-  displayedColumns: string[] = [ 'id','notificationCode', 'notificationType','notificationData','menu'];
+  displayedColumns: string[] = [ 'id','notificationCode','notificationCategory','notificationSubCategory', 'notificationType','notificationSupportedRole','menu'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -37,7 +37,7 @@ constructor( private dialog:MatDialog, private notificationApi:NotificationServi
     } })
     }
   addNotificationDialog() {
-    const dialogRef = this.dialog.open(AddNotificationComponent,{width:'500px'})
+    const dialogRef = this.dialog.open(AddNotificationComponent,{width:'700px'})
   }
   onDeleteNotification(notificationId:any){
     //console.warn("delete");

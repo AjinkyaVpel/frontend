@@ -3,6 +3,7 @@
 <form [formGroup]="addNotification"  (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content>
        
+       
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>Notification Code</mat-label>
@@ -11,6 +12,27 @@
            
         </div>
         <div class="row">
+        
+            <mat-form-field appearance="outline">
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="notificationCategory">
+                    <mat-option *ngFor="let val of notificationCategory" [value]="val">{{val}}
+                    </mat-option>
+                  </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Sub-Category</mat-label>
+                <mat-select formControlName="notificationSubCategory">
+                    <mat-option *ngFor="let val of notificationSubCategory" [value]="val">{{val}}
+                    </mat-option>
+                  </mat-select>
+            </mat-form-field>
+        
+    </div>
+        <div class="row">
+          
             <mat-form-field appearance="outline">
                 <mat-label>Notification Type</mat-label>
                 <mat-select formControlName="notificationType">
@@ -18,15 +40,27 @@
                     </mat-option>
                   </mat-select>
             </mat-form-field>
-        </div>
-        <div class="row">
+            </div>
+            <div class="row">
             <mat-form-field appearance="outline">
-                <mat-label>Notification Data</mat-label>
-                <input matInput type="text" placeholder="Charging Tips" formControlName="notificationData">
+                <mat-label>Supported Role</mat-label>
+                <mat-select formControlName="notificationSupportedRole">
+                    <mat-option *ngFor="let val of notificationSupportedRole" [value]="val">{{val}}
+                    </mat-option>
+                  </mat-select>
             </mat-form-field>
+            
+        </div>
+      
+        <div class="row">
+                         
+                <h2>HTML Input</h2>     
+              
+                <angular-editor [(ngModel)]="htmlContent" formControlName="htmlContent"  [config]="config"></angular-editor>
+              
         </div>
     </div>
-
+    
     <div mat-dialog-actions class="action">
         <button mat-raised-button color="basic"  type="button" mat-dialog-close="false">Cancel</button>
         <button mat-raised-button color="primary"  type="submit">Submit</button>

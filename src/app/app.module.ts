@@ -69,7 +69,7 @@ import { DeleteNotificationComponent } from './notification/delete-notification/
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
-
+import {  AngularEditorModule } from '@kolkov/angular-editor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -138,8 +138,9 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     MatIconModule,
     MatButtonModule,
     MatBadgeModule,
-   MatButtonModule
-
+   MatButtonModule,
+   AngularEditorModule,
+   FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
