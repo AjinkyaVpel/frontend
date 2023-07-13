@@ -37,6 +37,11 @@ export const navbarData:INavbarData[] = [                //array to store the li
         label: 'Downloads'
     },
     {
+        routeLink: 'vehicles',
+        icon: 'fas fa-car',
+        label: 'vehicles'
+    },
+    {
         routeLink: 'settings',
         icon: 'fas fa-cog',
         label: 'Settings',

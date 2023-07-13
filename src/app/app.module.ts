@@ -69,8 +69,10 @@ import { ManageFaqComponent } from './manage-faq/manage-faq.component';
 import { AddFaqDailogComponent } from './manage-faq/add-faq-dailog/add-faq-dailog.component';
 import { DeleteFaqComponent } from './manage-faq/delete-faq/delete-faq.component';
 import { ViewFaqDetailsComponent } from './manage-faq/view-faq-details/view-faq-details.component';
-
-
+import { VehicleComponent } from './vehicle/vehicle.component';
+import { AddVehicleComponent } from './vehicle/add-vehicle/add-vehicle.component';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
@@ -115,7 +117,8 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     AddFaqDailogComponent,
     DeleteFaqComponent,
     ViewFaqDetailsComponent,
-    
+    VehicleComponent,
+    AddVehicleComponent,
   
     
     
@@ -150,8 +153,9 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     MatButtonModule,
     MatBadgeModule,
    MatButtonModule,
-   FlexLayoutModule
-
+   FlexLayoutModule,
+   NgxMatSelectSearchModule,
+   MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent],

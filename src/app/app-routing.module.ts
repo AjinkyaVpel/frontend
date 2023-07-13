@@ -20,6 +20,7 @@ import { ControlAccessComponent } from './manageStation/controlAccess/control-ac
 import { RestrictedAccessComponent } from './manageStation/restrictedAccess/restricted-access.component';
 import { ChargingSessionComponent } from './dashboard/charging-session/charging-session.component';
 import { ManageFaqComponent } from './manage-faq/manage-faq.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
 
 
 const routes: Routes = [
@@ -87,6 +88,10 @@ const routes: Routes = [
   {
     path:'downloads',
     component: DownloadsComponent
+  },
+  {
+    path:'vehicles',
+    component: VehicleComponent
   },
   {
     path:'support-status',
