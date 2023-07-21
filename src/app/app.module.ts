@@ -65,6 +65,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { NotificationDialogComponent } from './header/notification-dialog/notification-dialog.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { ChargingSessionComponent } from './dashboard/charging-session/charging-session.component';
+import { NotificationComponent } from './notification/notification.component';
+import { AddNotificationComponent } from './notification/add-notification/add-notification.component';
+import { DeleteNotificationComponent } from './notification/delete-notification/delete-notification.component';
+var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
+
+var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
+import {  AngularEditorModule } from '@kolkov/angular-editor';
 import { ManageFaqComponent } from './manage-faq/manage-faq.component';
 import { AddFaqDailogComponent } from './manage-faq/add-faq-dailog/add-faq-dailog.component';
 import { DeleteFaqComponent } from './manage-faq/delete-faq/delete-faq.component';
@@ -115,6 +122,9 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     RestrictedAccessComponent,
     NotificationDialogComponent,
     ChargingSessionComponent,
+    NotificationComponent,
+    AddNotificationComponent,
+    DeleteNotificationComponent
     ManageFaqComponent,
     AddFaqDailogComponent,
     DeleteFaqComponent,
@@ -124,6 +134,7 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     LoginComponent,
     SignupComponent,
   
+
     
   ],
   imports: [
@@ -156,9 +167,9 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     MatBadgeModule,
    MatButtonModule,
    FlexLayoutModule,
-   
-   
-
+   AngularEditorModule,
+   FormsModule
+   FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent],
