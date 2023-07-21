@@ -42,7 +42,7 @@ export class AddChargerComponent {
     "Private",
     "Public"
   ]
-  constructor(private activeRoute: ActivatedRoute,private formBuilder: FormBuilder,private chargerService:ChargerService,private dialogRef: MatDialogRef<AddChargerComponent>, @Inject(MAT_DIALOG_DATA) public data: any,private snackBar:MatSnackBar) {
+  constructor(private activeRoute: ActivatedRoute,private formBuilder: FormBuilder,private chargerApi:ChargerService,private dialogRef: MatDialogRef<AddChargerComponent>, @Inject(MAT_DIALOG_DATA) public data: any,private snackBar:MatSnackBar) {
     
     
     this.addStation = this.formBuilder.group({
@@ -55,7 +55,7 @@ export class AddChargerComponent {
       chargerMaxInputAmpere:'',
       chargerInputFrequency:'',
       chargerOutputFrequency:'',
-      chargerIpRating:'',
+      chargerIPRating:'',
       chargerMountType:'',
       chargerNumberOfConnector:'',
       isRFID:'',
@@ -89,15 +89,18 @@ export class AddChargerComponent {
   }
 
   onFormSubmit() {
-    if (this.addStation.invalid) {
-      // Form is invalid, display error messages or handle the case accordingly
-      return;
-    }
-
-    this.chargerService.addChargerToList(this.addStation.value, this.stationId);
-    this.openSnackBar("Charger added successfully", "Done");
+    this.chargerApi.addChargerToList(this.addStation.value, this.stationId).subscribe(
+      (response) => {
+        console.log('Response', response);
+        this.openSnackBar("Charger added successfully", "Done");
+      },
+      (error) => {
+        console.log('Error', error);
+        this.openSnackBar("Something went wrong", "Close");
+      });
+    
     this.dialogRef.close(true);
-    // window.location.reload();
+    window.location.reload();
   }
 
 }

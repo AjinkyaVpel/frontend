@@ -40,10 +40,10 @@
         <td mat-cell *matCellDef="let row"> {{row.faqQuestion}} </td>
       </ng-container>
       
-      <ng-container matColumnDef="faqAnswer">
+      <!-- <ng-container matColumnDef="faqAnswer">
           <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1"> Answer </th>
           <td mat-cell *matCellDef="let row"> {{row.faqAnswer}} </td>
-        </ng-container>
+        </ng-container> -->
   
       <ng-container matColumnDef="menu">
           <th mat-header-cell *matHeaderCellDef mat-sort-header  class="menu-col">Action</th>
@@ -55,8 +55,8 @@
       </ng-container>
 
   
-      <tr mat-header-row *matHeaderRowDef="[ 'faqId','faqCategory','faqSeqNumber', 'faqQuestion','faqAnswer','menu']"></tr> <!-- display these column in the 1st row -->
-      <tr mat-row *matRowDef="let row; columns: [ 'faqId','faqCategory','faqSeqNumber', 'faqQuestion','faqAnswer','menu']"></tr> <!--display value -->
+      <tr mat-header-row *matHeaderRowDef="[ 'faqId','faqCategory','faqSeqNumber', 'faqQuestion','menu']"></tr> <!-- display these column in the 1st row -->
+      <tr mat-row *matRowDef="let row; columns: [ 'faqId','faqCategory','faqSeqNumber', 'faqQuestion','menu']"></tr> <!--display value -->
       </table>
   
     <mat-paginator [length]="100"

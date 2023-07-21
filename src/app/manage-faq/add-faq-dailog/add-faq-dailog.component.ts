@@ -10,21 +10,24 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./add-faq-dailog.component.css']
 })
 export class AddFaqDailogComponent {
- faqForm:FormGroup
+ faqForm:FormGroup;
  faqId!:string;
 constructor(private dialogRef:MatDialogRef<AddFaqDailogComponent>, private formBuilder:FormBuilder,@Inject(MAT_DIALOG_DATA) public data: any, private faqApi:ManageFaqService, private SnackBar:MatSnackBar){
-this.faqForm=this.formBuilder.group({
-  faqCategory:[''],
-  faqSeqNumber:[''],
-  faqQuestion:[''],
-  faqAnswer:[''],
+
+  this.faqForm=this.formBuilder.group({
+  faqCategory:'',
+  faqSeqNumber:'',
+  faqQuestion:'',
+  faqAnswer:'',
   });
 }
 
 ngOnInit(): void {
  
-this.faqForm.patchValue(this.data);
-}
+
+    this.faqForm.patchValue(this.data);
+  }
+
 
 onCancel(){
   this.dialogRef.close();
@@ -40,15 +43,24 @@ openSnackBar(message: any,action: any = 'ok') {
 
 onFormSubmit(){
   if(this.data.faqId){
-    this.faqApi.editFaq(this.data.faqId,this.faqForm.value).subscribe((result) =>{
-      window.location.reload();
+    this.faqApi.editFaq(this.data.faqId,this.faqForm.value).subscribe(res=>{
+      console.log(res);
+      this.openSnackBar("Faq updated successfully","Done")
+    },err=>{
+      console.log(err);
+      this.openSnackBar("Something went wrong","Close")
     });
   }
-  else{
-  this.faqApi.addFaq(this.faqForm.value);
-  this.openSnackBar("Faq added successfully","Done")
+  else if(!this.data.faqId){
+  this.faqApi.addFaq(this.faqForm.value).subscribe(res=>{
+    console.log(res);
+    this.openSnackBar("Faq added successfully","Done")
+  },err=>{
+    console.log(err);
+    this.openSnackBar("Something went wrong","Close")
+  });
+ 
   this.dialogRef.close(true);
-  window.location.reload();
   }
   window.location.reload();
 }
