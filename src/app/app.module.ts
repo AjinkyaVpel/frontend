@@ -37,7 +37,7 @@ import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -67,9 +67,6 @@ import { ChargingSessionComponent } from './dashboard/charging-session/charging-
 import { NotificationComponent } from './notification/notification.component';
 import { AddNotificationComponent } from './notification/add-notification/add-notification.component';
 import { DeleteNotificationComponent } from './notification/delete-notification/delete-notification.component';
-var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
-
-var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 import {  AngularEditorModule } from '@kolkov/angular-editor';
 import { ManageFaqComponent } from './manage-faq/manage-faq.component';
 import { AddFaqDailogComponent } from './manage-faq/add-faq-dailog/add-faq-dailog.component';
@@ -83,8 +80,6 @@ import { ManageUserComponent } from './manage-user/manage-user.component';
 import { AddUserComponent } from './manage-user/add-user/add-user.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-
-
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 

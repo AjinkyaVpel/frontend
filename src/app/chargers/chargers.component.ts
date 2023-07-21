@@ -101,8 +101,8 @@ export class ChargersComponent implements OnInit {
  
 
   // open charger setting page
-  openChargerSetting(data: any){
-    this.route.navigate([`manageStation/chargers/${this.stationId}/chargerSetting/`,data.chargerId]);
+  openChargerSetting(id: string){
+    this.route.navigate([`manageStation/chargers/${this.stationId}/chargerSetting/${id}`]);
   }
   addChargerDialog(){
       const dialogRef = new MatDialogConfig();

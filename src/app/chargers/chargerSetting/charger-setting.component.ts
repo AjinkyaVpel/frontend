@@ -4,8 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ChargerService } from 'src/app/apiService/charger.service';
 import { Charger } from '../charger';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { AddChargerComponent } from '../addCharger/addCharger.component';
-import { MAT_DIALOG_DATA,MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-charger-setting',
@@ -31,7 +29,7 @@ export class ChargerSettingComponent {
   connector: any;
   chargerUpdateData:Charger | undefined;
   
-  constructor(private activeRoute: ActivatedRoute,private formbuilder:FormBuilder,private charger:ChargerService,private snackBar:MatSnackBar,private dialogRef:MatDialogRef<AddChargerComponent>) {
+  constructor(private activeRoute: ActivatedRoute,private formbuilder:FormBuilder,private charger:ChargerService,private snackBar:MatSnackBar) {
     this.chargerForm = this.formbuilder.group({
       chargerName: '',
       chargerNumber:'',
