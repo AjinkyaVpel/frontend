@@ -37,6 +37,14 @@ export const navbarData:INavbarData[] = [                //array to store the li
         label: 'Downloads'
     },
     {
+        routeLink: 'vehicles',
+        icon: 'fas fa-car',
+        label: 'vehicles'
+        routeLink: 'Manage Notification',
+        icon: 'fa fa-bell',
+        label: 'Manage Notification'
+    },
+    {
         routeLink: 'settings',
         icon: 'fas fa-cog',
         label: 'Settings',
@@ -64,6 +72,11 @@ export const navbarData:INavbarData[] = [                //array to store the li
         routeLink: 'manageFaq',
         icon: 'fas fa-question-circle',
         label: 'Manage FAQ'
+    },
+    {
+        routeLink: 'manageUser',
+        icon: 'fas fa-users',
+        label: 'Manage User'
     },
     {
         routeLink: 'support-status',

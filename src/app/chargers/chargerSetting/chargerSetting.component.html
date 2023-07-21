@@ -101,6 +101,25 @@
                 <div class="input-group">
                   <p>Charger Output Frequency</p>
                   <input type="text" placeholder="50Hz" formControlName="chargerOutputFrequency" class="input-field">
+<form [formGroup]="chargerSetting" (ngSubmit)="updateChargerForm()">
+            <div mat-dialog-content>
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Charger Id </mat-label>
+                        <input matInput type="text"  placeholder="CHG1234" formControlName="chargerId"> 
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Charger Name</mat-label>
+                        <input matInput type="text"  placeholder="DC 7.4" formControlName="chargerName">
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Charger Input Voltage</mat-label>
+                        <input matInput type="text" placeholder="220" formControlName="chargerInputVoltage"> 
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Charger Output Voltage</mat-label>
+                        <input matInput type="text" placeholder="12" formControlName="chargerOutputVoltage">
+                      </mat-form-field>
                 </div>
                 </div>
               </div><br>
@@ -199,6 +218,43 @@
               </div><br>
             
                 
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>chargerMinInputAmpere</mat-label>
+                        <input matInput type="text" placeholder="10"  formControlName="chargerMinInputAmpere"> 
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>chargerMaxInputAmpere</mat-label>
+                        <input matInput type="text" placeholder="10"  formControlName="chargerMaxInputAmpere">
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>chargerOutputAmpere</mat-label>
+                        <input matInput type="text" placeholder="50"  formControlName="chargerOutputAmpere"> 
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>chargerInputFrequency</mat-label>
+                        <input matInput type="text" placeholder="50" formControlName="chargerInputFrequency">
+                      </mat-form-field>
+                </div>       
+                
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>chargerOutputFrequency</mat-label>
+                        <input matInput type="text"  formControlName="chargerOutputFrequency"> 
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>chargerIPRating</mat-label>
+                        <input matInput type="text" placeholder="IP65"  formControlName="chargerIPRating">
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>chargerMountType</mat-label>
+                        <input matInput type="text" placeholder="wall mounted" formControlName="chargerMountType"> 
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Charger Serial Number</mat-label>
+                        <input matInput type="text" placeholder="CHG12" formControlName="chargerPointSerialNumber">
+                      </mat-form-field>
+                </div> 
             </div>
              
             <div mat-dialog-actions class="action" >

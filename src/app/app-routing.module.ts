@@ -19,11 +19,30 @@ import { ConnectorsComponent } from './connectors/connectors.component';
 import { ControlAccessComponent } from './manageStation/controlAccess/control-access.component';
 import { RestrictedAccessComponent } from './manageStation/restrictedAccess/restricted-access.component';
 import { ChargingSessionComponent } from './dashboard/charging-session/charging-session.component';
+import { NotificationComponent } from './notification/notification.component';
 import { ManageFaqComponent } from './manage-faq/manage-faq.component';
 import { style } from '@angular/animations';
+import { VehicleComponent } from './vehicle/vehicle.component';
+import { ManageUserComponent } from './manage-user/manage-user.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes = [
+  {
+    path:'',
+   redirectTo:'login',
+   pathMatch:'full'
+  },
+  {
+    path:'login',
+    component: LoginComponent
+  },
+  {
+    path:'signup',
+    component: SignupComponent
+  },
+ 
   {
     path:'',
     redirectTo: 'dashboard',
@@ -90,6 +109,12 @@ const routes: Routes = [
     component: DownloadsComponent
   },
   {
+    path:'vehicles',
+    component: VehicleComponent
+    path:'Manage Notification',
+    component: NotificationComponent
+  },
+  {
     path:'support-status',
     component: SupportStatusComponent
   },
@@ -104,6 +129,10 @@ const routes: Routes = [
   {
     path:'manageFaq',
     component: ManageFaqComponent
+  },
+  {
+    path:'manageUser',
+    component: ManageUserComponent
   }
   
 ];

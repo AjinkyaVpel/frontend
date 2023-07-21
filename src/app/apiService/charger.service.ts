@@ -42,5 +42,6 @@ export class ChargerService {
         console.log('Error', error.status);
       }
     )  //real station api
+    return this.http.post(`http://192.168.0.243:8096/manageCharger/addCharger?stationId=${stationId}`, data,{ responseType: 'text' });
   }
 }

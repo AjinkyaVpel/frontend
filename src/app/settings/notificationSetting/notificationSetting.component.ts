@@ -13,4 +13,11 @@ export class NotificationSettingComponent {
   adminDisplayKey:boolean=true;
   superAdminDisplayKey:boolean=true;
   //display key group ends
+ 
+
+  constructor() {
+   
+  }
+
+  
 }

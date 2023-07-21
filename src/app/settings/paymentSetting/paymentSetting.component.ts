@@ -13,4 +13,8 @@ export class PaymentSettingComponent {
   adminDisplayKey:boolean=true;
   superAdminDisplayKey:boolean=true;
   //display key group ends
+
+
+
+  signup(){}
 }

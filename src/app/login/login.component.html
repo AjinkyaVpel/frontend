@@ -1,0 +1,75 @@
+<div class="login-container">
+  <div class="login-form">
+    <h1 class="login-heading">Login</h1>
+    <form (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="identifier">Phone Number or Email</label>
+        <input
+          type="text"
+          id="identifier"
+          class="form-control"
+          placeholder="Enter your phone number or email"
+          required
+          (input)="detectInputType()"
+          [(ngModel)]="emailOrPhone"
+          [ngModelOptions]="{ standalone: true }"
+          #identifier="ngModel"
+          pattern="^(?:\+?\d{10}|\S+@\S+\.\S+)$"
+        />
+        <div *ngIf="identifier.invalid && (identifier.dirty || identifier.touched)" class="error-message">
+          <div *ngIf="identifier.errors?.['required']" style="color: #007bff;">This field is required.</div>
+          <div *ngIf="isEmail && identifier.errors?.['pattern']">Please enter a valid email address.</div>
+        </div>    
+      </div>
+      <div *ngIf="isEmail === true">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-input">
+            <input
+              type="{{ passwordVisible ? 'text' : 'password' }}"
+              id="password"
+              class="form-control"
+              placeholder="Enter your password"
+              required
+              [(ngModel)]="password"
+              [ngModelOptions]="{ standalone: true }"
+            />
+            <span class="toggle-password" (click)="togglePasswordVisibility()">
+              <i class="far fa-eye" [ngClass]="{ 'fa-eye-slash': passwordVisible, 'fa-eye': !passwordVisible }"></i>
+            </span>
+          </div>
+        </div>
+        <button type="submit" class="btn-login">Login</button>
+      </div>
+      <div *ngIf="isEmail === false && emailOrPhone && !showOtpField">
+        <button type="button" class="btn-request-otp" (click)="requestOtp()">Request OTP</button>
+      </div>
+      <div *ngIf="isEmail === false && showOtpField">
+        <div class="form-group">
+          <label for="otp">OTP</label>
+          <input
+            type="text"
+            id="otp"
+            class="form-control"
+            placeholder="Enter the OTP"
+            required
+            [(ngModel)]="otp"
+            [ngModelOptions]="{ standalone: true }"
+            minlength="4"
+            maxlength="6"
+          />
+        </div>
+        <button type="submit" class="btn-login">Login with OTP</button>
+      </div>
+    </form>
+    <div class="social-login-options">
+      <p class="or">Or Continue With</p>
+      <div class="social-buttons">
+        <a href="#" class="social-icon google"><i class="fab fa-google"></i></a>
+        <a href="#" class="social-icon microsoft"><i class="fab fa-microsoft"></i></a>
+        <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+    <p class="signup-link">Don't have an account? <a routerLink="/signup">Sign up</a></p>
+  </div>
+</div>
