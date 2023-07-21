@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ChargerService } from 'src/app/apiService/charger.service';
 import { Charger } from '../charger';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { AddChargerComponent } from '../addCharger/addCharger.component';
+import { MAT_DIALOG_DATA,MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-charger-setting',
   templateUrl: './chargerSetting.component.html',
   styleUrls: ['./charger-setting.component.css']
+  
 })
 export class ChargerSettingComponent {
     //display key group for roles management
@@ -18,7 +22,7 @@ export class ChargerSettingComponent {
     superAdminDisplayKey:boolean=true;
     //display key group ends
     
-  chargerSetting:any;
+  chargerForm:FormGroup;
   chargerId: any;
   stationId: any;
   isChecked = false;
@@ -27,10 +31,10 @@ export class ChargerSettingComponent {
   connector: any;
   chargerUpdateData:Charger | undefined;
   
-  constructor(private activeRoute: ActivatedRoute,private formbuilder:FormBuilder,private charger:ChargerService,) {
-    this.chargerSetting = this.formbuilder.group({
-      chargerId: '',
+  constructor(private activeRoute: ActivatedRoute,private formbuilder:FormBuilder,private charger:ChargerService,private snackBar:MatSnackBar,private dialogRef:MatDialogRef<AddChargerComponent>) {
+    this.chargerForm = this.formbuilder.group({
       chargerName: '',
+      chargerNumber:'',
       chargerInputVoltage: '',
       chargerOutputVoltage: '',
       chargerMinInputAmpere: '',
@@ -40,7 +44,24 @@ export class ChargerSettingComponent {
       chargerOutputFrequency: '',
       chargerIPRating: '',
       chargerMountType: '',
-      chargerSerialNumber: ''
+      chargerSerialNumber: '',
+      chargePointModel:'',
+      chargePointVendor:'',
+      chargerPointSerialNumber:'',
+      chargeBoxSerialNumber:'',
+      chargerOCPPProtocol:'',
+      chargerConnectorType:'',
+      chargerNumberOfConnector:'',
+      meterType:'',
+      firmwareVersion:'',
+      chargerStatus:'',
+      isRFID:'',
+      isAppSupport:'',
+      isTBCutOff:'',
+      isAntitheft:'',
+      isLEDDisplay:'',
+      isLEDIndications:'',
+      isSmart: ''
     })
   }
   
@@ -49,30 +70,47 @@ export class ChargerSettingComponent {
       this.stationId = this.activeRoute.snapshot.paramMap.get('stationId')
       this.chargerId = this.activeRoute.snapshot.paramMap.get('chargerId');
       this.chargerDetailsUsingId(this.chargerId);     
-      this.connector.getConnector(this.stationId,this.chargerId).subscribe((res: any)=>{
-        console.warn(res);
+      // this.connector.getConnector(this.stationId,this.chargerId).subscribe((res: any)=>{
+      //   console.warn(res);
         
-      }) 
+      // }) 
   }
 
   chargerDetailsUsingId(id: any){
     this.charger.getChargerById(id).subscribe((result: any)=>{      
       this.chargerFormData = result;
-      this.chargerSetting.patchValue(this.chargerFormData)
+      this.chargerForm.patchValue(this.chargerFormData)
       
     })
   }
-
+  openSnackBar(message: any,action: any = 'ok') {
+    this.snackBar.open(message,action, {
+      duration: 3000,
+      verticalPosition: 'bottom',
+      panelClass: ['warning']
+      
+    });
+  }
   closeUpdateCharger(){
     this.isChecked = false;
   }
 
   updateChargerForm(){
-    this.charger.updateCharger(this.chargerId,this.stationId,this.chargerSetting.value).subscribe((result: any)=>{
-      console.log(result);
-      this.updateChargerForm=result;
-      window.location.reload();
-      
-    })
+    this.charger.updateCharger(this.chargerId,this.stationId,this.chargerForm.value).subscribe((res:any)=>{
+     if(res.status=='success'){
+      this.openSnackBar("Charger updated successfully", "Done");
+      }else if(res.status=='failed'){
+
+      }
+    },(err:any)=>{
+      console.log(err);
+      this.openSnackBar("Something went wrong", "Done");
+    });
+    window.location.reload();
+  }
+
+
+  toggleSlideToggle() {
+    this.isChecked = !this.isChecked;
   }
 }

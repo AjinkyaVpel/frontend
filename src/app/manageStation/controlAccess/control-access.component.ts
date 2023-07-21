@@ -15,7 +15,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-control-access',
   templateUrl: './control-access.component.html',
-  styleUrls: ['./control-access.component.css']
+  styleUrls: ['./control-access.component.css'],
+ 
 })
 export class ControlAccessComponent {
     //display key group for roles management

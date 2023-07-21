@@ -103,6 +103,37 @@
            
         </div>
         <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>charger Point Model</mat-label>
+                <input matInput type="text" placeholder="T2AC"  formControlName="chargerPointModel">
+              </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline" >
+                <mat-label>charger Point Vendor</mat-label>
+                <input matInput type="text" placeholder="VIRTUOSO"  formControlName="chargerPointVendor">
+              </mat-form-field>
+              </div>
+              <div class="row">
+              <mat-form-field appearance="outline" >
+                <mat-label>charger Point Serial Number </mat-label>
+                <input matInput type="text" placeholder="VPEL"  formControlName="chargerPointSerialNumber"/>
+                </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline" >
+                      <mat-label>charge Box Serial Number</mat-label>
+                      <input matInput type="text" placeholder="VPEL"  formControlName="chargeBoxSerialNumber">
+                    </mat-form-field>
+        </div>
+        <div class="row">
+        <mat-form-field appearance="outline" >
+            <mat-label>MeterType</mat-label>
+            <input matInput type="text" placeholder="Digital" formControlName="meterType"> 
+          </mat-form-field>
+          </div>
+       
+        <div class="row">
             <mat-radio-group aria-label="Select an option" formControlName="isAppSupport">
                 <mat-label><b>isAppSupport</b></mat-label>
                 <mat-radio-button value="Available">Yes</mat-radio-button>

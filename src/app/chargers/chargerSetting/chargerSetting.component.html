@@ -1,73 +1,277 @@
-<h1>Charger Settings</h1>
-<div class="edit-option">
-    <h4>Change Charger Setting </h4>
-    <mat-slide-toggle [(ngModel)]="isChecked"></mat-slide-toggle> 
-    
-</div>
+
+<h3 style="margin-left: 25px;"><mat-icon style="vertical-align: middle; color: black; margin-top: -2px; font-size: 26px;">ev_station</mat-icon>
+  Update Charger Settings</h3>
+  
 <div class="charger-setting-page">
-<form [formGroup]="chargerSetting" (ngSubmit)="updateChargerForm()">
-            <div mat-dialog-content>
-                <div class="row">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Charger Id </mat-label>
-                        <input matInput type="text"  placeholder="CHG1234" formControlName="chargerId"> 
-                      </mat-form-field>
-                      <mat-form-field appearance="outline">
-                        <mat-label>Charger Name</mat-label>
-                        <input matInput type="text"  placeholder="DC 7.4" formControlName="chargerName">
-                      </mat-form-field>
-                      <mat-form-field appearance="outline">
-                        <mat-label>Charger Input Voltage</mat-label>
-                        <input matInput type="text" placeholder="220V" formControlName="chargerInputVoltage"> 
-                      </mat-form-field>
-                      <mat-form-field appearance="outline">
-                        <mat-label>Charger Output Voltage</mat-label>
-                        <input matInput type="text" placeholder="12V" formControlName="chargerOutputVoltage">
-                      </mat-form-field>
+<form [formGroup]="chargerForm" (ngSubmit)="updateChargerForm()">
+           
+            <!-- <div class="container">
+              <div style="border: 1px ; padding: 10px;  background-color: white; margin-left: -14px; width: 90%;">
+              <div class="row1" style="margin-left: 10px;">
+                <div class="input-group">
+                  <p>Charger Name</p>
+                  <input type="text" placeholder="DC 7.4" formControlName="chargerName" class="input-field1">
+                </div>
+                <div class="input-group">
+                  <p>Charger Number</p>
+                  <input type="text" placeholder="1234" formControlName="chargerNumber" class="input-field1">
+                </div>
+                <div class="input-group">
+                  <p>ChargerIPRating</p>
+                  <input type="text" placeholder="IP67"  formControlName="chargerIPRating" class="input-field1">
+                </div>
+                </div>
+              </div><br>
+              
+              <div style="border: 1px ; padding: 10px;  background-color: white; margin-left: -14px; width: 90%;">
+                <h3 style="margin-left: 10px; margin-top: -40px; color: #3f51b5;"> <mat-icon style="vertical-align: middle; color: black; margin-top: -2px;">list_alt</mat-icon> Serial Numbers</h3><br>
+              <div class="row2">
+                
+                <div class="input-group">
+                  <p>Charger Serial Number</p>
+                  <input type="text" placeholder="CHG123" formControlName="chargerSerialNumber" class="input-field1">
+                </div>
+                <div class="input-group">
+                  <p>Charger Point Serial Number</p>
+                  <input type="text"  placeholder="VPEL"  formControlName="chargerPointSerialNumber" class="input-field2">
+                </div>
+               
+                <div class="input-group" >
+                  <p>Charge Box Serial Number</p>
+                  <input type="text" placeholder="VPEL"  formControlName="chargeBoxSerialNumber" class="input-field2">
+                </div>
+                <div class="input-group1">
+                  <p style="font-size: 15px; margin-top: 4px; margin-left: -21px;" ><b>ChargerStatus</b></p>
+                  <mat-slide-toggle formControlName="chargerStatus" style="margin-left: 4px;">Active</mat-slide-toggle>
+                </div>
+              </div><br>
+            </div><br>
+            <div style="border: 1px ; padding: 10px;  background-color: white; margin-left: -14px; width: 90%;">
+              <h3 style="margin-left: 10px; margin-top: -40px; color: #3f51b5;"> <mat-icon style="vertical-align: middle; color: black;">topic</mat-icon> Types</h3><br>
+            <div class="row2">
+              <div class="input-group">
+                <p>Charger Mount Type</p>
+                <input type="text" placeholder="wall mounted" formControlName="chargerMountType" class="input-field">
+              </div>
+              <div class="input-group">
+                <p>MeterType</p>
+                <input type="text" placeholder="Digital" formControlName="meterType" class="input-field">
+              </div>
+              <div class="input-group">
+                <p>Charger ConnectorType</p>
+                <input type="text" placeholder="Type 1" formControlName="chargerConnectorType" class="input-field">
+              </div>
+          
+            </div><br>
+          </div><br>
+          <div style="border: 1px ; padding: 10px;  background-color: white; margin-left: -14px; width: 90%;">
+            <h3 style="margin-left: 5px; margin-top: -29px;"><mat-icon style="vertical-align: middle; color: black; margin-right: 5px; margin-top: -2px;">input</mat-icon>Inputs</h3>
+              <div class="row3" style="margin-left: 10px;">
+                
+                <div class="input-group">
+                  <p>Charger Input Voltage</p>
+                  <input type="text" placeholder="220V" formControlName="chargerInputVoltage" class="input-field">
+                </div>
+                <div class="input-group">
+                  <p>ChargerMinInputAmpere</p>
+                  <input type="text" placeholder="10A"  formControlName="chargerMinInputAmpere" class="input-field">
+                </div>
+                <div class="input-group">
+                  <p>ChargerMaxInputAmpere</p>
+                  <input type="text" placeholder="10A"  formControlName="chargerMaxInputAmpere" class="input-field">
+                </div>
+                <div class="input-group">
+                  <p>ChargerInputFrequency</p>
+                  <input type="text" placeholder="50Hz" formControlName="chargerInputFrequency" class="input-field">
+                </div>
+              </div>
+              </div><br>
+              <div style="border: 1px ; padding: 10px;  background-color: white; margin-left: -14px; width: 90%;">
+              <h3 style="margin-left: 1px; margin-top: -35px;"><mat-icon style="vertical-align: middle; color: black; margin-right: 5px; margin-top: -2px;">output</mat-icon>Outputs</h3>
+              <div class="row" style="margin-left: 10px;">
+                <div class="input-group">
+                  <p>Charger Output Voltage</p>
+                  <input type="text" placeholder="12V" formControlName="chargerOutputVoltage" class="input-field">
+                </div>
+                <div class="input-group">
+                  <p>Charger Output Ampere</p>
+                  <input type="text" placeholder="50A"  formControlName="chargerOutputAmpere" class="input-field">
+                </div>
+               
+                <div class="input-group">
+                  <p>Charger Output Frequency</p>
+                  <input type="text" placeholder="50Hz" formControlName="chargerOutputFrequency" class="input-field">
+                </div>
+                </div>
+              </div><br>
+              
+              <div style="border: 1px ; padding: 10px;  background-color: white; margin-left: -14px; width: 90%;">
+                <h3 style="margin-left: 7px; margin-top: -40px; color: #3f51b5;"> <mat-icon style="vertical-align: middle; color: black;">offline_bolt</mat-icon> Charger Details</h3><br>
+              <div class="row" style="margin-left: 10px;">
+                <div class="input-group">
+                  <p>Charger Point Model</p>
+                  <input type="text" placeholder="T2AC"  formControlName="chargePointModel" class="input-field">
+                </div>
+                <div class="input-group">
+                  <p>Charger Point Vendor</p>
+                  <input type="text" placeholder="VIRTUOSO"  formControlName="chargePointVendor" class="input-field">
+                </div>
+                <div class="input-group">
+                  <p>Firmware Version</p>
+                  <input type="text" placeholder="0.0.9.12" formControlName="firmwareVersion"  class="input-field">
+                </div>
+                 
+               
+              </div><br>
+              <div class="row" style="margin-left: 10px;">
+              <div class="input-group">
+                <p>Number Of Connector</p>
+                <input type="text" placeholder="2" formControlName="chargerNumberOfConnector"  class="input-field">
+              </div>
+
+              <div class="input-group">
+                <p>charger OCPP Protocol</p>
+                <input type="text" placeholder="OCPP 1.6"  formControlName="chargerOCPPProtocol"  class="input-field">
+              </div>
+              </div>
+            </div><br>
+            <div style="border: 1px ; padding: 10px;  background-color: white; margin-left: -14px; width: 90%;">
+            
+              <div class="row" style="margin-left: 10px;">
+                <div class="radio-group">
+                  <label><b>isRFID</b></label>
+                  <input type="radio"  value="Yes" formControlName="isRFID" style="margin-left: 30px; margin-top: -5px;">
+                  <label for="isRFID">Yes</label>
+                  <input type="radio"  value="No" formControlName="isRFID" style="margin-top: -5px;">
+                  <label for="isRFID">No</label>
                 </div>
             
-                <div class="row">
-                    <mat-form-field appearance="outline">
-                        <mat-label>chargerMinInputAmpere</mat-label>
-                        <input matInput type="text" placeholder="10A"  formControlName="chargerMinInputAmpere"> 
-                      </mat-form-field>
-                      <mat-form-field appearance="outline">
-                        <mat-label>chargerMaxInputAmpere</mat-label>
-                        <input matInput type="text" placeholder="10A"  formControlName="chargerMaxInputAmpere">
-                      </mat-form-field>
-                      <mat-form-field appearance="outline">
-                        <mat-label>chargerOutputAmpere</mat-label>
-                        <input matInput type="text" placeholder="50A"  formControlName="chargerOutputAmpere"> 
-                      </mat-form-field>
-                      <mat-form-field appearance="outline">
-                        <mat-label>chargerInputFrequency</mat-label>
-                        <input matInput type="text" placeholder="50Hz" formControlName="chargerInputFrequency">
-                      </mat-form-field>
-                </div>       
+                <div class="radio-group">
+                  <label><b>isAppSupport</b></label>
+                  <input type="radio"  value="Yes" formControlName="isAppSupport" style="margin-left: 5px; margin-top: -4px;">
+                  <label for="isAppSupport">Yes</label>
+                  <input type="radio"  value="No" formControlName="isAppSupport" style="margin-top: -5px;">
+                  <label for="isAppSupport">No</label>
+                </div>
+            
+                <div class="radio-group">
+                  <label><b>isTBCutOff</b></label>
+                  <input type="radio"  value="Yes" formControlName="isTBCutOff" style="margin-left: 40px;">
+                  <label for="isTBCutOff">Yes</label>
+                  <input type="radio" value="No" formControlName="isTBCutOff">
+                  <label for="isTBCutOff">No</label>
+                </div>
+                </div>
+                <div class="row" style="margin-left: 10px;">
+                  <div class="radio-group">
+                    <label><b>isAntitheft</b></label>
+                    <input type="radio"  value="Yes" formControlName="isAntitheft" style="margin-left: 3px; margin-top: -4px;">
+                    <label for="isAntitheft">Yes</label>
+                    <input type="radio" value="No" formControlName="isAntitheft" style="margin-top: -5px;">
+                    <label for="isAntitheft">No</label>
+                  </div>
+              
+                  <div class="radio-group">
+                    <label><b>isLEDDisplay</b></label>
+                    <input type="radio"  value="Yes" formControlName="isLEDDisplay" style="margin-left: 10px; margin-top: -4px;">
+                    <label for="isLEDDisplay">Yes</label>
+                    <input type="radio"  value="No" formControlName="isLEDDisplay" style="margin-top: -4px;">
+                    <label for="isLEDDisplay">No</label>
+                  </div>
+              
+                  <div class="radio-group">
+                    <label><b>isLEDIndications</b></label>
+                    <input type="radio" value="Yes" formControlName="isLEDIndications" style="margin-left: 5px; margin-top: -4px;">
+                    <label for="isLEDIndications">Yes</label>
+                    <input type="radio"  value="No" formControlName="isLEDIndications" style="margin-top: -4px;">
+                    <label for="isLEDIndications">No</label>
+                  </div>
+                </div>
+                <div class="row" style="margin-left: 10px;"> 
+                  <div class="radio-group">
+                    <label><b>isSmart</b></label>
+                    <input type="radio"  value="Yes" formControlName="isSmart" style="margin-left: 20px; margin-top: -4px;">
+                    <label for="isSmart">Yes</label>
+                    <input type="radio"  value="No" formControlName="isSmart" style="margin-left: 1px; margin-top: -5px;">
+                    <label for="isSmart">No</label>
+                  </div>
+                </div>
+              </div><br>
+            
                 
-                <div class="row">
-                    <mat-form-field appearance="outline">
-                        <mat-label>chargerOutputFrequency</mat-label>
-                        <input matInput type="text" placeholder="Vaibhav" formControlName="chargerOutputFrequency"> 
-                      </mat-form-field>
-                      <mat-form-field appearance="outline">
-                        <mat-label>chargerIPRating</mat-label>
-                        <input matInput type="text" placeholder="IP67"  formControlName="chargerIPRating">
-                      </mat-form-field>
-                      <mat-form-field appearance="outline">
-                        <mat-label>chargerMountType</mat-label>
-                        <input matInput type="text" placeholder="wall mounted" formControlName="chargerMountType"> 
-                      </mat-form-field>
-                      <mat-form-field appearance="outline">
-                        <mat-label>Charger Serial Number</mat-label>
-                        <input matInput type="text" placeholder="CHG12" formControlName="chargerSerialNumber">
-                      </mat-form-field>
-                </div> 
             </div>
-            <div mat-dialog-actions class="action" *ngIf="isChecked">
+             
+            <div mat-dialog-actions class="action" >
                 <button mat-raised-button class="form-button" type="button" mat-dialog-close="false" (click)="closeUpdateCharger()">Cancel</button>
                 <button mat-raised-button class="form-button" type="submit" (click)="updateChargerForm()">Update</button>
-            </div>
+            </div> -->
+            
+            <div mat-dialog-content>
+              <div style="border: 1px ; padding: 10px;  background-color: white; margin-left: -14px; width: 50%;">
+                <h3 style="margin-left: 7px; margin-top: -40px; color: #3f51b5;"> <mat-icon style="vertical-align: middle; color: black;">offline_bolt</mat-icon> Charger Details</h3>
+                <div class="edit-option">
+    
+                  <button mat-raised-button (click)="toggleSlideToggle()">Edit</button>
+                </div>
+              <div class="row">
+                
+                <div class="form-field">
+                  <label for="chargerName">Charger Name</label>
+                  <input type="text" id="chargerName" placeholder="DC 7.4" formControlName="chargerName" style="margin-left: 95px;">
+                </div>
+                <div class="form-field">
+                  <label for="chargerInputVoltage">Charger Input Voltage</label>
+                  <input type="text" id="chargerInputVoltage" placeholder="220" formControlName="chargerInputVoltage" style="margin-left: 48px;">
+                </div>
+                <div class="form-field">
+                  <label for="chargerOutputVoltage">Charger Output Voltage</label>
+                  <input type="text" id="chargerOutputVoltage" placeholder="12" formControlName="chargerOutputVoltage" style="margin-left: 38px;">
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="form-field">
+                  <label for="chargerMinInputAmpere">Charger Min Input Ampere</label>
+                  <input type="text" id="chargerMinInputAmpere" placeholder="10" formControlName="chargerMinInputAmpere" style="margin-left: 19px;">
+                </div>
+                <div class="form-field">
+                  <label for="chargerMaxInputAmpere">Charger Max Input Ampere</label>
+                  <input type="text" id="chargerMaxInputAmpere" placeholder="10" formControlName="chargerMaxInputAmpere" style="margin-left: 18px;">
+                </div>
+                <div class="form-field">
+                  <label for="chargerOutputAmpere">Charger Output Ampere</label>
+                  <input type="text" id="chargerOutputAmpere" placeholder="50" formControlName="chargerOutputAmpere" style="margin-left: 37px;">
+                </div>
+                <div class="form-field">
+                  <label for="chargerInputFrequency">Charger Input Frequency</label>
+                  <input type="text" id="chargerInputFrequency" placeholder="50" formControlName="chargerInputFrequency" style="margin-left: 31px;">
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="form-field">
+                  <label for="chargerOutputFrequency">Charger Output Frequency</label>
+                  <input type="text" id="chargerOutputFrequency" formControlName="chargerOutputFrequency" style="margin-left: 20px;">
+                </div>
+                <div class="form-field">
+                  <label for="chargerIPRating">Charger IP Rating</label>
+                  <input type="text" id="chargerIPRating" placeholder="IP65" formControlName="chargerIPRating" style="margin-left: 75px;">
+                </div>
+                <div class="form-field">
+                  <label for="chargerMountType">Charger Mount Type</label>
+                  <input type="text" id="chargerMountType" placeholder="wall mounted" formControlName="chargerMountType" style="margin-left: 57px;">
+                </div>
+                <div class="form-field">
+                  <label for="chargerPointSerialNumber">Charger Serial Number</label>
+                  <input type="text" id="chargerPointSerialNumber" placeholder="CHG12" formControlName="chargerPointSerialNumber" style="margin-left: 40px;">
+                </div>
+              </div>
+          </div>
+          <div mat-dialog-actions class="action" *ngIf="isChecked">
+            <button mat-raised-button class="form-button" type="button" mat-dialog-close="false" (click)="closeUpdateCharger()">Cancel</button>
+            <button mat-raised-button class="form-button" type="submit" (click)="updateChargerForm()">Update</button>
+          </div>
+          </div>
 </form>
 </div>
 

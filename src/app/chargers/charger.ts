@@ -18,6 +18,11 @@ export class Charger {
   chargerPointSerialNumber!:string;
   chargerOCPPProtocol!:string;
   chargerConnectorType!:string;
+  chargerPointModel!:string;
+  chargerPointVendor!:string;
+  chargeBoxSerialNumber!:string;
+  meterType!:string;
+  
   isAppSupport!:string;
   isTBCutOff!:string;
   isAntitheft!:string;
