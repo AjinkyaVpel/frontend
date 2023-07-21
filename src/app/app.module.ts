@@ -76,12 +76,14 @@ import { ManageFaqComponent } from './manage-faq/manage-faq.component';
 import { AddFaqDailogComponent } from './manage-faq/add-faq-dailog/add-faq-dailog.component';
 import { DeleteFaqComponent } from './manage-faq/delete-faq/delete-faq.component';
 import { ViewFaqDetailsComponent } from './manage-faq/view-faq-details/view-faq-details.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
+import { AddVehicleComponent } from './vehicle/add-vehicle/add-vehicle.component';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ManageUserComponent } from './manage-user/manage-user.component';
 import { AddUserComponent } from './manage-user/add-user/add-user.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-
-
 
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
@@ -129,6 +131,8 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     AddFaqDailogComponent,
     DeleteFaqComponent,
     ViewFaqDetailsComponent,
+    VehicleComponent,
+    AddVehicleComponent,
     ManageUserComponent,
     AddUserComponent,
     LoginComponent,
@@ -167,6 +171,8 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     MatBadgeModule,
    MatButtonModule,
    FlexLayoutModule,
+   NgxMatSelectSearchModule,
+   MatAutocompleteModule
    AngularEditorModule,
    FormsModule
    FlexLayoutModule

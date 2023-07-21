@@ -21,6 +21,7 @@ import { RestrictedAccessComponent } from './manageStation/restrictedAccess/rest
 import { ChargingSessionComponent } from './dashboard/charging-session/charging-session.component';
 import { NotificationComponent } from './notification/notification.component';
 import { ManageFaqComponent } from './manage-faq/manage-faq.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
 import { ManageUserComponent } from './manage-user/manage-user.component';
 
 
@@ -91,6 +92,8 @@ const routes: Routes = [
     component: DownloadsComponent
   },
   {
+    path:'vehicles',
+    component: VehicleComponent
     path:'Manage Notification',
     component: NotificationComponent
   },
