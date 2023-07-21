@@ -126,7 +126,7 @@ export class ChargersComponent implements OnInit {
 
         title: "Are you sure?",
 
-        message: "Are you sure you want to delete user "
+        message: "Are you sure you want to delete Charger "
 
       }
 
