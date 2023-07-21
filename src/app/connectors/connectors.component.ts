@@ -28,7 +28,7 @@ export class ConnectorsComponent {
   connctorId:any
   displayedColumns: string[] = [ 'id','brands','models','variants'];
   dataSource!: MatTableDataSource<any>;
-
+  
   constructor(private activeRoute: ActivatedRoute,private connectorApi:ConnectorService,  private route:Router,private dialog:MatDialog){}
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -54,7 +54,7 @@ export class ConnectorsComponent {
   getConnectorUsingIds(stationById: string,chargerById: string){
     this.connectorApi.getConnector(stationById,chargerById).subscribe({
       next: (res:any) => {
-        console.warn(res);
+        // console.log(res);
         
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;

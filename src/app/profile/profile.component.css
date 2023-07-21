@@ -37,6 +37,7 @@ h2 {
 .profile-middle-container{
     padding: 50px 10px;
     justify-content: left;
+    display: flex;
 }
 .profile-middle-container .div1{
     text-align: left;
@@ -44,14 +45,18 @@ h2 {
     padding: 15px 50px;
 }
 .profile-middle-container .div2{
-    padding: 8px 0px;
+    padding: 4px 0px;
+    margin-top: 3px;
 }
 .ans-title{
     /* border: 1px solid black; */
-    padding: 4px 10px;
+    padding: 6px 10px;
     color: black;
     background-color: #E2E8F0;
     border-radius: 5px;
+}
+.title{
+    padding: 4px 10px;
 }
 /* profile footer CSS */
 .profile-footer-container{
@@ -107,5 +112,9 @@ h2 {
     color: white !important;
     border: none;
     background-color: #C7D2FE;
+}
+.password-toggle-icon{
+    margin-left: 5px;
+    
 }
 
