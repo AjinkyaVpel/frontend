@@ -1,0 +1,86 @@
+<h2>Manage Users</h2>
+<div class="table-header-card tab-content">
+    <mat-card>
+      <mat-card-content>
+        <span class="example-spacer"></span>
+        <button mat-raised-button color="primary" (click)="addUserDailog()">
+          <mat-icon aria-hidden="false" style aria-label="Example download icon" fontIcon="add" ></mat-icon>New User</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
+  <div class="table-content-card">
+    <mat-card>
+      <mat-card-content>
+          
+  <!-- using mat-table for display list of charger list for particular station-->
+  <table mat-table [dataSource]="dataSource" matSort>
+  
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="2"> Sr No </th>
+      <td mat-cell *matCellDef="let row; let i=index;"> {{ paginator.pageIndex * paginator.pageSize + i + 1 }} </td>
+    </ng-container>
+
+
+     <ng-container matColumnDef="hostFirstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1" >First Name </th> <!--(click)="openChargerList()"-->
+        <td mat-cell *matCellDef="let row"> {{row.hostFirstName}} </td>
+      </ng-container>
+              
+      <ng-container matColumnDef="hostLastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1"> Last Name</th>
+        <td mat-cell *matCellDef="let row"> {{row.hostLastName}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="hostEmail">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1"> Email </th>
+          <td mat-cell *matCellDef="let row"> {{row.hostEmail}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="role">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>UserRole<mat-select [(ngModel)]="selectedStatus" (ngModelChange)="statusFilter()">
+            <mat-option value="">All</mat-option>
+            <mat-option value="completed">Admin</mat-option>
+            <mat-option value="failed">Host</mat-option>  
+            <mat-option value="pending">Vendor</mat-option>
+                       
+          </mat-select></th>
+          <td mat-cell *matCellDef="let row" > {{row.role |titlecase}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1">Status</th>
+          <td mat-cell *matCellDef="let row">  </td>
+        </ng-container>
+
+      <ng-container matColumnDef="menu">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header  class="menu-col">Action</th>
+          <td mat-cell *matCellDef="let row">
+              <mat-icon class="vertical-menu-icon" style="color: rgb(21, 99, 112); margin-right: 20px;" >edit</mat-icon> 
+              <mat-icon class="vertical-menu-icon" style="color: orangered;">delete</mat-icon>
+          </td>
+      </ng-container>
+
+      
+    
+    <tr mat-header-row *matHeaderRowDef="[ 'hostFirstName', 'hostLastName','hostEmail','role','status','menu']"></tr> <!-- display these column in the 1st row -->
+    <tr mat-row *matRowDef="let row; columns: [ 'hostFirstName', 'hostLastName','hostEmail','role','status','menu']"></tr> <!--display value -->
+    
+    </table>
+    
+    <mat-paginator [length]="100"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page">
+  </mat-paginator>
+  
+      </mat-card-content>
+    </mat-card>
+  
+    <div class="myStation-back-button">
+      <h3 routerLink="/manageStation">Back To Station</h3>
+    </div>
+
+  
+  

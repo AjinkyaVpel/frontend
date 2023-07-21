@@ -76,6 +76,10 @@ import { ManageFaqComponent } from './manage-faq/manage-faq.component';
 import { AddFaqDailogComponent } from './manage-faq/add-faq-dailog/add-faq-dailog.component';
 import { DeleteFaqComponent } from './manage-faq/delete-faq/delete-faq.component';
 import { ViewFaqDetailsComponent } from './manage-faq/view-faq-details/view-faq-details.component';
+import { ManageUserComponent } from './manage-user/manage-user.component';
+import { AddUserComponent } from './manage-user/add-user/add-user.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -125,7 +129,12 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     AddFaqDailogComponent,
     DeleteFaqComponent,
     ViewFaqDetailsComponent,
-    
+    ManageUserComponent,
+    AddUserComponent,
+    LoginComponent,
+    SignupComponent,
+  
+
     
   ],
   imports: [
@@ -157,6 +166,7 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     MatButtonModule,
     MatBadgeModule,
    MatButtonModule,
+   FlexLayoutModule,
    AngularEditorModule,
    FormsModule
    FlexLayoutModule

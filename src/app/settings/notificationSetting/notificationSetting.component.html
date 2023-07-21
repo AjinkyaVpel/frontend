@@ -1,1 +1,42 @@
-<h1>Notification Setting</h1>
+<div class="login-container">
+  <div class="login-form">
+    <h1 class="login-heading">Login</h1>
+    <form *ngIf="!showOtpInput" (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="identifier">Phone Number or Email</label>
+        <input type="text" id="identifier" class="form-control" placeholder="Enter your phone number or email" required (input)="detectInputType()" [(ngModel)]="emailOrPhone" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div *ngIf="showPasswordInput" class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="Enter your password" required [(ngModel)]="password">
+      </div>
+      <div class="button-container">
+        <button type="submit" class="btn btn-primary">Login</button>
+        <div class="or" *ngIf="showOrText">OR</div>
+      </div>
+      <button *ngIf="!showPasswordInput && !showOtpInput" class="btn btn-secondary" (click)="requestOTP()">Request OTP</button>
+    </form>
+    <form *ngIf="showOtpInput" (ngSubmit)="loginWithOTP()">
+      <div class="form-group">
+        <label for="identifier">Phone Number</label>
+        <input type="text" id="identifier" class="form-control" placeholder="Enter your phone number" required [(ngModel)]="emailOrPhone">
+      </div>
+      <div class="form-group">
+        <label for="otp">OTP</label>
+        <input type="text" id="otp" class="form-control" placeholder="Enter the OTP" required [(ngModel)]="password">
+      </div>
+      <div class="button-container">
+        <button type="submit" class="btn btn-primary">Login with OTP</button>
+      </div>
+    </form>
+    <div class="social-login-options">
+      <p class="or">Or Continue With</p>
+      <div class="social-buttons">
+        <a href="#" class="social-icon google"><i class="fab fa-google"></i></a>
+        <a href="#" class="social-icon microsoft"><i class="fab fa-windows"></i></a>
+        <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+    <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+  </div>
+</div>

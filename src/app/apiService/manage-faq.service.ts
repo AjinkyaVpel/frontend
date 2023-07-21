@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ManageFaq } from '../manage-faq/manage-faq';
 
 @Injectable({
   providedIn: 'root'
@@ -8,18 +9,11 @@ export class ManageFaqService {
 
   constructor( private http:HttpClient) { }
   getAllFaqList(){          
-    return this.http.get( `http://192.168.0.243:8098/manageFaq/faqs`);
+    return this.http.get<ManageFaq[]>( `http://192.168.0.243:8098/manageFaq/faqs`);
   }
 
   addFaq(data:any){
-    return this.http.post(`http://192.168.0.243:8098/manageFaq/addFaq`,data).subscribe(
-      (response) => {
-        console.log('Response', response);
-      },
-      (error) => {
-        console.log('Error', error.status);
-      }
-    )  //real station api
+    return this.http.post(`http://192.168.0.243:8098/manageFaq/addFaq`,data);
   }
 
   editFaq(faqId:string,data:any){ 

@@ -20,6 +20,9 @@ h2 {
   .vertical-menu-icon {
     margin-right: 10px;
   }
-
+  .menu-col {
+    width: 150px; /* Adjust the width value as needed */
+  }
+  
   
   

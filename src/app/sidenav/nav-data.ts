@@ -71,6 +71,11 @@ export const navbarData:INavbarData[] = [                //array to store the li
         label: 'Manage FAQ'
     },
     {
+        routeLink: 'manageUser',
+        icon: 'fas fa-users',
+        label: 'Manage User'
+    },
+    {
         routeLink: 'support-status',
         icon: 'fas fa-user-headset',
         label: 'Help & Support'
