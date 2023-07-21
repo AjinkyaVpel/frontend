@@ -1,0 +1,44 @@
+<h2>Vehicles</h2>
+<div class="table-header-card tab-content">
+    <mat-card>
+      <mat-card-content>
+        <span class="example-spacer"></span>
+        <button mat-raised-button color="primary" (click)="addVehicleDialog()">
+          <mat-icon aria-hidden="false" aria-label="Example download icon" fontIcon="add"></mat-icon>
+          Add Vehicle
+        </button>
+      </mat-card-content>
+    </mat-card>
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="2"> Sr No </th>
+        <td mat-cell *matCellDef="let row; let i=index;">{{ paginator.pageIndex * paginator.pageSize + i + 1 }} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="brands">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1"> Brands </th>
+        <td mat-cell *matCellDef="let row"> {{row.brands}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="models">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1"> Models </th>
+        <td mat-cell *matCellDef="let row"> {{row.models}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="variants">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [attr.rowspan]="1"> Variants </th>
+        <td mat-cell *matCellDef="let row"> {{row.variants}} </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="[ 'id', 'brands','models','variants']"></tr> <!-- display these column in the 1st row -->
+      <tr mat-row *matRowDef="let row; columns: [ 'id', 'brands','models','variants']"></tr> <!--display value -->
+      
+      </table>
+      
+      <mat-paginator [length]="100"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      aria-label="Select page">
+    </mat-paginator>
+  </div>

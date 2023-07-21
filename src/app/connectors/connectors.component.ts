@@ -26,7 +26,7 @@ export class ConnectorsComponent {
   errorMessage!:string;
   openForm:boolean = false;
   connctorId:any
-  displayedColumns: string[] = [ 'id','connectorNumber', 'connectorType','connectorSocket','connectorStatus','connectorOutputPower', 'menu'];
+  displayedColumns: string[] = [ 'id','brands','models','variants'];
   dataSource!: MatTableDataSource<any>;
 
   constructor(private activeRoute: ActivatedRoute,private connectorApi:ConnectorService,  private route:Router,private dialog:MatDialog){}

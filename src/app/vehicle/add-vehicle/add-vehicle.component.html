@@ -1,0 +1,59 @@
+<form [formGroup]="addVehicle" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content>
+    <div class="row">
+      <mat-form-field class="example-full-width">
+        <mat-label>Brands</mat-label>
+        <input type="text"
+               placeholder="Pick one"
+               aria-label="Brands"
+               matInput
+               formControlName="brand"
+               [matAutocomplete]="brandAuto">
+        <mat-autocomplete #brandAuto="matAutocomplete">
+          <mat-option *ngFor="let brand of filteredBrands | async" [value]="brand" (click)="onBrandSelected(brand)">
+            {{ brand }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="example-full-width">
+        <mat-label>Models</mat-label>
+        <input type="text"
+               placeholder="Pick one"
+               aria-label="Models"
+               matInput
+               formControlName="model"
+               [matAutocomplete]="modelAuto"
+              >
+        <mat-autocomplete #modelAuto="matAutocomplete">
+          <mat-option *ngFor="let model of filteredModels | async" [value]="model" (click)="onModelSelected(model)">
+            {{ model }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="example-full-width">
+        <mat-label>Variants</mat-label>
+        <input type="text"
+               placeholder="Pick one"
+               aria-label="Variants"
+               matInput
+               formControlName="variant"
+               [matAutocomplete]="variantAuto"
+               >
+        <mat-autocomplete #variantAuto="matAutocomplete">
+          <mat-option *ngFor="let variant of filteredVariants | async" [value]="variant">
+            {{ variant }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button color="basic" type="button" mat-dialog-close="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </div>
+</form>

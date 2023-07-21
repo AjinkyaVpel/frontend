@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import '../node_modules/font-awesome/css/font-awesome.css';
 @import '~mapbox-gl/dist/mapbox-gl.css';
+
 
 
 * {
@@ -8,6 +10,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+.angular-editor-wrapper img { 
+    max-width: 80%;
+    max-height: 70%;
+ }
 
 body {
     position: relative;
@@ -246,3 +252,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

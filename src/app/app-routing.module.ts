@@ -19,7 +19,9 @@ import { ConnectorsComponent } from './connectors/connectors.component';
 import { ControlAccessComponent } from './manageStation/controlAccess/control-access.component';
 import { RestrictedAccessComponent } from './manageStation/restrictedAccess/restricted-access.component';
 import { ChargingSessionComponent } from './dashboard/charging-session/charging-session.component';
+import { NotificationComponent } from './notification/notification.component';
 import { ManageFaqComponent } from './manage-faq/manage-faq.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
 import { ManageUserComponent } from './manage-user/manage-user.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -104,6 +106,12 @@ const routes: Routes = [
   {
     path:'downloads',
     component: DownloadsComponent
+  },
+  {
+    path:'vehicles',
+    component: VehicleComponent
+    path:'Manage Notification',
+    component: NotificationComponent
   },
   {
     path:'support-status',
