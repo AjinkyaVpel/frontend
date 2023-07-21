@@ -8,6 +8,14 @@ import { NotificationDialogComponent } from './notification-dialog/notification-
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+    //display key group for roles management
+    supportDisplayKey:boolean=true;
+    vendorDisplayKey:boolean=true;
+    hostDisplayKey:boolean=true;
+    adminDisplayKey:boolean=true;
+    superAdminDisplayKey:boolean=true;
+    //display key group ends
+    
     @Input() collapsed = false;
     @Input() screenWidth = 0;
        

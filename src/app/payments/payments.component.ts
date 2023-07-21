@@ -18,3 +18,11 @@ export class PaymentsComponent {
 //     defaultFontName: 'Arial',
 // }
 }
+  //display key group for roles management
+  supportDisplayKey:boolean=true;
+  vendorDisplayKey:boolean=true;
+  hostDisplayKey:boolean=true;
+  adminDisplayKey:boolean=true;
+  superAdminDisplayKey:boolean=true;
+  //display key group ends
+}

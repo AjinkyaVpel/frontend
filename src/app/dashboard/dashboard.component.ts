@@ -1,6 +1,10 @@
 import { Component, OnInit, } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
+import { StationLocation } from '../manageStation/station-location';
+import * as mapboxgl from 'mapbox-gl';
+import { ManageStationService } from '../apiService/manage-station.service';
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -8,6 +12,14 @@ import { Router } from '@angular/router';
   
 })
 export class DashboardComponent implements OnInit {
+    //display key group for roles management
+    supportDisplayKey:boolean=true;
+    vendorDisplayKey:boolean=true;
+    hostDisplayKey:boolean=true;
+    adminDisplayKey:boolean=true;
+    superAdminDisplayKey:boolean=true;
+    //display key group ends
+    
     displayCard:boolean=true;
     selectedOption: string = 'daily';
     months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];  //used in dropdown for selecting month to show booking data of that particular month
@@ -15,12 +27,20 @@ export class DashboardComponent implements OnInit {
   deviceValue: number=0;
   revenueValue:number=0;
   energyValue:number=0;
-  constructor( private router:Router){}
+  mapButton:boolean=true;
+  myAccessToken!:string;
+stations: StationLocation[] = [];
+hostId:string="HST20230518045359411";
+
+
+  constructor(private router:Router, private stationApi:ManageStationService){}
   ngOnInit(){
+   
     this.startCounter();
     this.TotalDeviceCounter()
     this.RevenueCounter();
     this.TotalEnergyCounter()
+   
   }
   // displayHide(){
   //   this.displayCard=false;
@@ -101,4 +121,67 @@ export class DashboardComponent implements OnInit {
     // Redirect to the charging session page
     this.router.navigate(['/charging-session']); // Replace '/charging-session' with the actual route path of your charging session page
   }
+
+  mapInit(){
+    if(this.mapButton){
+    this.mapButton=!this.mapButton;
+    }
+    this.stationApi.getStationLocationByHostId(this.hostId).subscribe(res=>{
+      this.stations=res;
+      
+      this.getMap(this.stations);
+      // console.log(this.stations[0]);
+    },err=>{
+      console.log(err);
+    })
+  }
+
+  getMap(stations:StationLocation[]){
+    // Set your Mapbox access token
+      // mapboxgl.accessToken = '';
+      this.myAccessToken=environment.mapBoxPublicKey;
+      // Initialize the map
+      const map = new mapboxgl.Map({
+        accessToken:this.myAccessToken,
+        container: 'map-container', // ID of the map container element
+        style: environment.mapBoxMapStyle, // Mapbox style URL
+        center: [environment.mapBoxCenterLong, environment.mapBoxCenterLat], // Initial map center coordinates
+        zoom: 5, // Initial zoom level
+      });
+      stations.forEach(station => {
+        let status = station.stationStatus.toLowerCase();
+        let color;
+        if (status === 'available') {
+          color = 'green'; // Green
+        } else if (status === 'outoforder') {
+          color = 'red'; // Red
+        } else if (status === 'busy') {
+          color = 'orange'; // Orange
+        } else {
+          color = 'grey'; // Default color if status is unknown
+        }
+       console.log(station)
+        const marker = new mapboxgl.Marker({ color })
+          .setLngLat([station.stationLongitude,station.stationLatitude])
+          .addTo(map);
+
+
+          //onclick Station not working so commented out
+        //<a>Status: ${this.navigateToStation(station.stationId)}</a>
+          const popup = new mapboxgl.Popup({ offset: 25, anchor:'center', closeButton:false, closeOnMove:true, closeOnClick:true})
+          
+          .setHTML(`<strong>${station.stationName}</strong><br><a>Status: ${station.stationStatus}</a>`);
+  
+        marker.setPopup(popup);
+      
+      });
+      
+    }
+
+    navigateToStation(stationId: string){
+      alert('clicked')
+      this.router.navigate(['manageStation/controlAccess/', stationId]);
+    }
+    
+    
 }

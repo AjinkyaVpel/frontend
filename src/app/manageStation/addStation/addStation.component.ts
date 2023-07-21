@@ -11,6 +11,13 @@ import { ManageStationService } from 'src/app/apiService/manage-station.service'
   styleUrls: ['./addStation.component.css']
 })
 export class AddStationComponent {
+  //display key group for roles management
+  supportDisplayKey:boolean=true;
+  vendorDisplayKey:boolean=true;
+  hostDisplayKey:boolean=true;
+  adminDisplayKey:boolean=true;
+  superAdminDisplayKey:boolean=true;
+  //display key group ends
   addStation:FormGroup;
   stationData:any;
   updateStationId!:string;
@@ -50,9 +57,9 @@ export class AddStationComponent {
       stationCity:'',
       stationLatitude: ['', [Validators.required, Validators.min(-90), Validators.max(90), Validators.pattern(/^[-+]?([1-8]?\d(\.\d{1,15})?|90(\.0{1,15})?)$/)]],
       stationLongitude: ['', [Validators.required, Validators.min(-180), Validators.max(180), Validators.pattern(/^-?((1?[0-7]?|[0-9]?[0-9])[0-9](\.\d{1,15})?|180(\.0{1,15})?)$/)]],
-      ystationLocationURL: ['', [Validators.pattern('^https:\/\/goo\.gl\/maps\/[A-Za-z0-9]+$')]],
+      stationLocationURL: ['', [Validators.pattern('^https:\/\/goo\.gl\/maps\/[A-Za-z0-9]+$')]],
       stationParkingArea: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-      stationContactNumber: ['+91', [Validators.required, Validators.pattern(/^\+91\d{10}$/)]],
+      stationContactNumber: '',
       stationStatus: '',
       stationPowerStandard: '',
       stationOpeningTime:'',

@@ -1,27 +1,9 @@
-.dialog-box{
-    width: 250px;
-    height: 250px;
-    text-align: center;
-    overflow: hidden;
-    box-sizing: border-box;
-    
+
+  button{
+    float: right;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+   
 }
-button{
-    color: black;
-    width: 100px;
-    height: 30px;
-    justify-content: space-between;
-    margin: 5px;
-}
-.mat-raisd-button  {
-    display: table-cell;
-    max-width: 600px;
-    text-align: center;
-    
-  }
-  .delete{
-    background-color: orangered;
-  }
-  .delete-btn{
-   background-color: lightskyblue;
-  }
+

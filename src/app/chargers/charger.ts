@@ -1,7 +1,7 @@
 import { Connector } from "../connectors/connector";
 
 export class Charger {
-    chargerId!:string;
+  chargerId!:string;
   chargerName!:string;
   chargerNumber!:number;
   chargerInputVoltage!:string;
@@ -15,7 +15,7 @@ export class Charger {
   chargerMountType!:string;
   chargerNumberOfConnector!:number;
   isRFID!:string;
-  chargerSerialNumber!:string;
+  chargerPointSerialNumber!:string;
   chargerOCPPProtocol!:string;
   chargerConnectorType!:string;
   isAppSupport!:string;

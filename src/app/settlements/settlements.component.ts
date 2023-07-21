@@ -13,6 +13,14 @@ import { MatSelect } from '@angular/material/select';
   styleUrls: ['./settlements.component.css']
 })
 export class SettlementsComponent {
+    //display key group for roles management
+    supportDisplayKey:boolean=true;
+    vendorDisplayKey:boolean=true;
+    hostDisplayKey:boolean=true;
+    adminDisplayKey:boolean=true;
+    superAdminDisplayKey:boolean=true;
+    //display key group ends
+    
   stationId:any;
   openSearch:boolean = false;
   completed:boolean = false;

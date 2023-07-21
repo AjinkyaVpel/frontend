@@ -6,6 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./multi-chart.component.css']
 })
 export class MultiChartComponent {
+	  //display key group for roles management
+	  supportDisplayKey:boolean=true;
+	  vendorDisplayKey:boolean=true;
+	  hostDisplayKey:boolean=true;
+	  adminDisplayKey:boolean=true;
+	  superAdminDisplayKey:boolean=true;
+	  //display key group ends
+	  
   chart: any;
 	
 	chartOptions = {

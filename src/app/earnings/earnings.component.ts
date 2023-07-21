@@ -12,6 +12,15 @@ import { TransactionService } from '../apiService/transaction.service';
   styleUrls: ['./earnings.component.css']
 })
 export class EarningsComponent implements OnInit{
+    //display key group for roles management
+    supportDisplayKey:boolean=true;
+    vendorDisplayKey:boolean=true;
+    hostDisplayKey:boolean=true;
+    adminDisplayKey:boolean=true;
+    superAdminDisplayKey:boolean=true;
+    //display key group ends
+
+    
   hostId!: string;
   selectedStatus!:string;
   
