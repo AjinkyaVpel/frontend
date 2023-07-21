@@ -126,7 +126,7 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     ChargingSessionComponent,
     NotificationComponent,
     AddNotificationComponent,
-    DeleteNotificationComponent
+    DeleteNotificationComponent,
     ManageFaqComponent,
     AddFaqDailogComponent,
     DeleteFaqComponent,
@@ -170,9 +170,9 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
    MatButtonModule,
    FlexLayoutModule,
    NgxMatSelectSearchModule,
-   MatAutocompleteModule
+   MatAutocompleteModule,
    AngularEditorModule,
-   FormsModule
+   FormsModule,
    FlexLayoutModule
   ],
   providers: [],

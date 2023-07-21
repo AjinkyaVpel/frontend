@@ -39,8 +39,11 @@ export const navbarData:INavbarData[] = [                //array to store the li
     {
         routeLink: 'vehicles',
         icon: 'fas fa-car',
-        label: 'vehicles'
-        routeLink: 'Manage Notification',
+        label: 'Vehicles',
+       
+    },
+    {
+        routeLink: 'notification',
         icon: 'fa fa-bell',
         label: 'Manage Notification'
     },

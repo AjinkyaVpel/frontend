@@ -94,11 +94,11 @@ export class AddChargerComponent {
 
   onFormSubmit() {
     this.chargerApi.addChargerToList(this.addStation.value, this.stationId).subscribe(
-      (response) => {
+      (response:any) => {
         console.log('Response', response);
         this.openSnackBar("Charger added successfully", "Done");
       },
-      (error) => {
+      (error:any) => {
         console.log('Error', error);
         this.openSnackBar("Something went wrong", "Close");
       });

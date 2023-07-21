@@ -111,7 +111,10 @@ const routes: Routes = [
   {
     path:'vehicles',
     component: VehicleComponent
-    path:'Manage Notification',
+    
+  },
+  {
+    path:'notification',
     component: NotificationComponent
   },
   {

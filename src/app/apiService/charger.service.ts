@@ -34,14 +34,7 @@ export class ChargerService {
   addChargerToList(data: any,stationId:any) {
     console.log(data);
     console.log(stationId);
-    return this.http.post(environment.stationServiceUrl+`manageCharger/addCharger?stationId=${stationId}`, data).subscribe(
-      (response) => {
-        console.log('Response', response);
-      },
-      (error) => {
-        console.log('Error', error.status);
-      }
-    )  //real station api
-    return this.http.post(`http://192.168.0.243:8096/manageCharger/addCharger?stationId=${stationId}`, data,{ responseType: 'text' });
+    return this.http.post(environment.stationServiceUrl+`manageCharger/addCharger?stationId=${stationId}`, data);
+    
   }
 }
