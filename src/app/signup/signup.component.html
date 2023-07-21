@@ -1,1 +1,89 @@
-<p>signup works!</p>
+<div class="container">
+  <h1 class="heading">Registration Form</h1>
+  <!-- Registration Form -->
+  <form *ngIf="!showAdditionalDetailsForm" [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="form-group">
+      <label class="label" for="phoneNumber">Phone Number:</label>
+      <input class="input-field" type="text" id="phoneNumber" formControlName="phoneNumber" placeholder="Enter your phone number">
+      <div *ngIf="registerForm.controls['phoneNumber'].invalid && (registerForm.controls['phoneNumber'].dirty || registerForm.controls['phoneNumber'].touched)"
+        class="error-message">
+        Field required. Please enter a 10-digit number.
+      </div>
+    </div>
+
+    <div *ngIf="otpErrorMessage && !continueAsHost" class="error-message">
+      {{ otpErrorMessage }}
+    </div>
+
+    <div *ngIf="otpRequested ">
+      <div *ngIf="!userExist || continueAsHost">
+        <div class="form-group">
+          <label class="label" for="otp">OTP:</label>
+          <input class="input-field" type="text" id="otp" placeholder="Enter OTP" formControlName="otp">
+        </div>
+        <button class="button" type="button"  (click)="continue()">Continue</button>
+      </div>
+    </div>
+
+    <button *ngIf="userExist && !continueAsHost" class="button continue-as-host-button" type="button" 
+      (click)="continueAsHostClicked()">Continue as Host</button>
+
+    <div *ngIf="otpValid">
+      <button class="button"  type="submit" [disabled]="registerForm.invalid" (click)="register()">Register11</button>
+    </div>
+    
+    <div *ngIf="!otpRequested && !otpErrorMessage && !userExist">
+      <button class="button" type="button" [disabled]="!registerForm.controls['phoneNumber'].valid"
+        (click)="requestOTP()">Request OTP</button>
+    </div>
+  </form>
+
+  <!-- Additional Details Form -->
+  <form *ngIf="showAdditionalDetailsForm" [formGroup]="additionalDetailsForm" (ngSubmit)="updateUserDetails()">
+    <div class="form-group">
+      <label class="label">Phone Number:</label>
+      <input class="input-field" type="text" [value]="phoneNumber" readonly>
+    </div>
+    <div *ngIf="!continueUserAsHost" class="form-group">
+      <label class="label" for="firstName">First Name:</label>
+      <input class="input-field" type="text" id="firstName" formControlName="hostFirstName" placeholder="Enter your first name">
+      <!-- Add validation messages if needed -->
+    </div>
+    <div *ngIf="!continueUserAsHost" class="form-group">
+      <label class="label" for="lastName">Last Name:</label>
+      <input class="input-field" type="text" id="lastName" formControlName="hostLastName" placeholder="Enter your last name">
+      <!-- Add validation messages if needed -->
+    </div>
+    <div *ngIf="!continueUserAsHost" class="form-group">
+      <label class="label" for="email">Email ID:</label>
+      <input class="input-field" type="email" id="email" formControlName="hostEmail" placeholder="Enter your email">
+      <!-- Add validation messages if needed -->
+    </div>
+    <div class="form-group">
+      <label class="label" for="password">Create Password:</label>
+      <div class="password-input-container">
+        <input
+          class="input-field password-input"
+          type="{{ showPassword ? 'text' : 'password' }}"
+          id="password"
+          formControlName="password"
+          placeholder="Create your password"
+        >
+        <span class="password-toggle" (click)="togglePasswordVisibility()">
+          <i class="{{ showPassword ? 'fas fa-eye-slash' : 'fas fa-eye' }}"></i>
+        </span>
+      </div>
+      <!-- Add validation messages if needed -->
+    </div>
+    <button *ngIf="continueUserAsHost" class="button" type="submit"  (click)="registerExistingUser()">Register</button>
+    <button *ngIf="!continueUserAsHost" class="button" type="submit" [disabled]="additionalDetailsForm.invalid">Register</button>
+  </form>
+
+  <!-- Success Message -->
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+
+  <p class="login-link">Already a user? <a routerLink="/login">Login</a></p>
+</div>
+ 

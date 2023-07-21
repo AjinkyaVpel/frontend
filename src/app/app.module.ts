@@ -61,7 +61,6 @@ import { LiveDataComponent } from './dashboard/live-data/live-data.component';
 import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
 import { MultiChartComponent } from './dashboard/multi-chart/multi-chart.component';
 import { MatButtonModule } from '@angular/material/button';
-
 import { NotificationDialogComponent } from './header/notification-dialog/notification-dialog.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { ChargingSessionComponent } from './dashboard/charging-session/charging-session.component';
@@ -84,6 +83,7 @@ import { ManageUserComponent } from './manage-user/manage-user.component';
 import { AddUserComponent } from './manage-user/add-user/add-user.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+
 
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
@@ -137,9 +137,7 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     AddUserComponent,
     LoginComponent,
     SignupComponent,
-  
 
-    
   ],
   imports: [
     BrowserModule,

@@ -23,9 +23,25 @@ import { NotificationComponent } from './notification/notification.component';
 import { ManageFaqComponent } from './manage-faq/manage-faq.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { ManageUserComponent } from './manage-user/manage-user.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes = [
+  {
+    path:'',
+   redirectTo:'login',
+   pathMatch:'full'
+  },
+  {
+    path:'login',
+    component: LoginComponent
+  },
+  {
+    path:'signup',
+    component: SignupComponent
+  },
+ 
   {
     path:'',
     redirectTo: 'dashboard',
